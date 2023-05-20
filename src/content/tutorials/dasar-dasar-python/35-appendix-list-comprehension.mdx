@@ -1,0 +1,130 @@
+---
+title: Appendix - List Comprehension
+author: Reno Iqbalsah
+published: 15/05/2023
+slug: dasar-dasar-python/appendix-list-comprehension
+draft: false
+description: Bagian ini membahas cara membuat list yang lebih ringkas dengan menggunakan list comprehension dalam bahasa pemrograman Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
+
+Kalau diminta untuk membuat sebuah `list` yang berisi angka 1 sampai 10, kode apa yang akan kalian buat? Cara yang paling 
+standard mungkin seperti di bawah ini.
+
+<Code
+lang="python"
+theme="one-dark-pro"
+code = {
+`new_list = []
+
+for i in range(1,11):
+    new_list.append(i)
+    
+print(new_list) # output : [1,2,3,4,5,6,7,8,9,10]`
+}
+/>
+
+Tahukah kalian bahwa kode di atas dapat kita ganti hanya dengan 1 baris kode saja?
+
+## _List / Tuple / Set Comprehension_
+
+_Comprehension_ sebenarnya tidak hanya dapat digunakan dalam `list` saja, tetapi juga tipe data lain seperti `tuple`, `set`, dan bahkan `dict`. Kita hanya perlu 
+menyatakan statement yang dibatasi `[]` untuk `list`, `()` untuk `tuple`, dan `{}` untuk `set` atau `dict`.
+
+Contohnya kita akan mengubah kode di atas dengan list comprehension, maka hasilnya adalah:
+
+<Code
+lang="python"
+theme="one-dark-pro"
+code = {
+`new_list = [x for x in range(1,11)]
+    
+print(new_list) # output : [1,2,3,4,5,6,7,8,9,10]`
+}
+/>
+
+Kode di atas akan dieksekusi dengan sama persis seperti kode kita yang pertama tadi, tapi dengan lebih ringkas, sehingga dapat mempercepat waktu kita dalam _coding_. 
+Hanya saja, notasi ini lebih cocok digunakan untuk _statement_ yang sederhana, apabila kita membutuhkan _statement_ yang rumit, maka akan lebih baik jika kita menggunakan 
+for loop biasa.
+
+## _Dictionary Comprehension_
+
+Kita dapat membuat `dict` menggunakan _comprehension_ dengan cara seperti di bawah ini, misalnya kita ingin membuat `dict` dengan isi angka 1 sampai 3 sebagai `key` dan 
+`value`-nya adalah nilai `key * 2`.
+
+<Code
+lang="python"
+theme="one-dark-pro"
+code = {
+`new_dict = {x : x*2 for x in range(1,4)}
+    
+print(new_dict)
+
+# output : {1:2, 2:4, 3:6}`
+}
+/>
+
+Pada kode di atas, dapat kita lihat bahwa notasi `x` dan `x * 2` dibatasi oleh tanda `:` yang menyatakan pemisah antara `key` dan `value`.
+
+## Menggunakan _Conditional Statement_
+
+Kita juga dapat menggunakan _conditional statement_ dalam notasi _comprehension_. Misalnya kita ingin membuat `list` berisi kelipatan angka 1 s.d. 10, dengan syarat:
+- Angka ganjil dikalikan 3
+- Angka genap dikalikan 2
+
+Maka dapat kita tulis menjadi kode seperti di bawah ini:
+
+<Code
+lang="python"
+theme="one-dark-pro"
+code = {
+`kelipatan = [x*3 if x % 2 else x*2 for x in range(1,11)]
+    
+print(kelipatan)
+
+# output : [3,4,9,8,15,12,21,16,27,20]`
+}
+/>
+
+_Conditional statement_ harus diletakkan di depan sebelum notasi `for` loop, kita pun dapat menggunakannya tanpa kondisi `else`.
+
+## Challenge: Text Cleansing
+
+Diketahui alamat di bawah ini:
+
+`Jl.Naga Bonar nomor 15 RT 16/RW 26,Koja,Jakarta Utara`
+
+Dari alamat tersebut, akan kita _cleansing_ dengan aturan seperti di bawah ini:
+- Hapus seluruh tanda baca (gunakan _library_ `string` seperti pada _challenge_ sebelum ini) dan ganti menjadi spasi
+- Ubah semuanya menggunakan huruf kecil
+- Gunakan maksimal 5 baris kode untuk menyelesaikan _challenge_ ini.
+
+Lihat jawabannya di sini:
+<CollapsibleCode
+title="Jawaban Challenge Text Cleansing"
+lang="python"
+theme="monokai"
+code= {
+`import string
+alamat = "Jl.Naga Bonar nomor 15 RT 16/RW 26,Koja,Jakarta Utara"
+cleaned ="".join([char.lower() if char not in string.punctuation else " " for char in alamat])
+print(cleaned)`
+}
+/>
+
+_Text cleansing_ sangat sering digunakan untuk analisis-analisis data berbentuk teks, terutama dalam _Natural Language Processing_ (NLP) seperti dalam 
+_topic modelling_ atau _sentiment analysis_. Baca tulisan saya terkait NLP dalam jurnal ilmiah [**di sini**](https://doi.org/10.52869/st.v4i2.486)
+dan repositori kode saya di account [**GitHub saya**](https://github.com/renoob21/NLP-DJP-Call-For-Paper).
+
+<PostsNav
+  next={{
+    title: "Python Function (Basic)",
+    slug: "python-function-basic"
+  }}
+  prev={{
+    title: "Python Loop - Continue dan Break",
+    slug: "python-loop-continue-dan-break"
+  }}  
+/>

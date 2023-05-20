@@ -1,0 +1,202 @@
+---
+title: Python :"Hello, world!"
+author: Reno Iqbalsah
+published: 11/03/2023
+slug: dasar-dasar-python/python-hello-world
+draft: false
+description: Bagian ini akan menjelaskan bagaimana dasar-dasar dalam menggunakan fungsi "print" pada python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+"Hello, World!" merupakan kata yang paling populer digunakan untuk menggambarkan _syntax_ dasar dari sebuah bahasa pemrograman. 
+Kata ini biasanya digunakan untuk memunculkan output pada layar. Dalam bahasa pemrograman Python, kita dapat menggunakan fungsi `print`
+untuk menampilkan output.
+
+Contoh penggunaan:
+
+<Code
+code={`print("Hello, world!")`}
+lang="python"
+/>
+
+Maka akan keluar output:
+
+<Code
+code={`Hello, world!`}
+/>
+
+## Pentingnya Fungsi `print()`
+
+Sebelum belajar lebih lanjut mengenai bahasa Python, kita harus lebih dahulu memahami fungsi `print()`. Mengapa? Karena setiap 
+proses yang dijalankan ketika kita _coding_ akan terjadi di latar belakang. Tidak akan ada hasil yang muncul kecuali kita 
+nyatakan dalam fungsi print.
+
+Misalnya kode di bawah ini:
+
+<Code
+code={`500 + 900
+print(700 + 900)`}
+lang="python"
+/>
+
+Maka output yang muncul adalah:
+
+<Code
+code={`1600`}
+/>
+
+Terlihat bahwa operasi angka 500 + 900 tidak muncul pada output. Padahal, sebenarnya operasi tersebut tetap terjadi di 
+latar belakang. Sedangkan operasi 700 + 900 muncul sebagai output karena dinyatakan dalam fungsi `print()`.
+
+## Penggunaan Fungsi `print()` secara Umum
+
+Fungsi `print` merupakan fungsi yang cukup sederhana dan mudah digunakan. Kita hanya perlu menulis perintah `print` diikuti 
+dengan tanda kurung `()`, semua hal yang ingin kita tampilkan sebagai output, tinggal dimasukkan di antara kedua kurung tersebut 
+sebagai argumen (penjeasan mengenai argumen akan dibahas saat kita membahas fungsi di Python).
+
+### Fungsi `print` dengan Variabel
+
+Untuk mendeklarasi variabel di Python, kita cukup menuliskan nama variabel diikuti dengan tanda `=` dan nilai / _value_ dari variabel tersebut. Misalnya:
+
+<Code
+code={`variabel1 = "kucing"
+variabel2 = "naga"
+variabel1 = "mawar"`}
+lang="python"
+/>
+
+Kita dapat menggunakan nama apapun sebagai nama variabel, dengan syarat:
+- hanya dapat mengandung huruf, angka, dan karakter _underscore_ (_)
+- tidak boleh diawali dengan angka
+- bukan merupakan nama yang sudah menjadi [**_keyword_**](https://www.w3schools.com/python/python_ref_keywords.asp) dalam bahasa pemrograman Python
+
+Namun, alangkah baiknya kita menggunakan nama yang deskriptif, misalnya variabel di atas dapat kita ubah menjadi lebih deskriptif
+
+<Code
+code={`hewan1 = "kucing"
+hewan2 = "naga"
+bunga1 = "mawar"`}
+lang="python"
+/>
+
+Kemudian untuk menampilkan _value_ pada variabel sebagai output, kita hanya perlu memasukkan nama variabel sebagai argumen pada fungsi print.
+
+<Code
+code={`hewan1 = "kucing"
+hewan2 = "naga"
+bunga1 = "mawar"
+
+print(hewan1)
+print(hewan2)
+print(bunga1)`}
+lang="python"
+/>
+
+Output:
+
+<Code
+code={
+`kucing
+naga
+mawar`}
+/>
+
+Dapat dilihat bahwa pada setiap _statement_ `print` akan menghasilkan baris baru, sehingga 3 _statement_ `print` akan menghasilkan 3 baris output.
+
+### Fungsi `print` dengan Beberapa Argumen Sekaligus
+
+Selain melakukan `print` untuk setiap variabel di atas, kita juga dapat melakukan print secara sekaligus dalam satu fungsi `print`, dengan cara membatasi 
+semua variabel di atas dengan dibatasi koma (,).
+
+<Code
+code={`hewan1 = "kucing"
+hewan2 = "naga"
+bunga1 = "mawar"
+
+print(hewan1, hewan2, bunga1)`}
+lang="python"
+/>
+
+Output:
+
+<Code
+code={
+`kucing naga mawar`
+}
+/>
+
+Seluruh argumen dalam fungsi `print` akan muncul dengan dipisahkan oleh karakter (spasi) yang membatasi antar argumen. Kita juga dapat menggabungkan antara 
+variabel dengan teks (_string_), angka, dan sebaganya dalam satu fungsi `print`, misalnya:
+
+<Code
+code={
+`print(hewan1, "kuda", bunga1, 10)`
+}
+lang="python"
+/>
+
+Output:
+
+<Code
+code={
+`kucing kuda mawar 10`
+}
+/>
+
+Kita dapat 
+
+### Menggunakan Argumen `sep=` dan `end=`
+
+Pada contoh di atas, kita lihat bahwa setiap argumen dalam fungsi `print` akan dipisahkan satu sama lain oleh spasi, dan 
+setiap _statement_ `print` akan dibatasi oleh bari baru / enter (setiap akhir fungsi `print` akan diikuti oleh enter). Kedua perilaku ini dapat kita ubah dengan menambahkan argumen `sep=` dan `end=`.
+
+Argumen `sep=` akan mengganti pembatas antar argumen dari spasi menjadi nilai lain yang kita tentukan. Misalnya:
+
+<Code
+code={
+`print(hewan1, "kuda", bunga1, 10, sep="-")`
+}
+lang="python"
+/>
+
+Pernyataan diatas akan mengubah pembatas dari spasi menjadi tanda strip (-) seperti ini:
+
+<Code
+code={
+`kucing-kuda-mawar-10`
+}
+/>
+
+Sedangkan argumen `end=` akan mengubah akhir dari setiap fungsi `print` dari enter menjadi nilai yang kita tentukan. Misalnya:
+
+<Code
+code={
+`print(hewan1, end=" ")
+print(hewan2, end="/")
+print(bunga1)`
+}
+lang="python"
+/>
+
+Output:
+
+<Code
+code={
+`kucing naga/mawar`
+}
+/>
+
+Itulah beberapa dasar-dasar penggunaan fungsi `print`, selanjutnya kita akan belajar tentang tipe-tipe data (_data types_) 
+dalam bahasa pemrograman Python.
+
+<PostsNav
+  next={{
+    title: "Tipe-Tipe Data dalam Python",
+    slug: "tipe-tipe-data-dalam-python"
+  }}
+  prev={{
+    title: "Memulai Pemrograman dengan Python",
+    slug: "memulai-pemrograman-dengan-python"
+  }}
+/>

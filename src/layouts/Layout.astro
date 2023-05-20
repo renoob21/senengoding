@@ -1,0 +1,23 @@
+---
+import Navigation from "../components/Navigation/Navigation.astro";
+import Footer from "../components/Footer/Footer.svelte";
+const {title} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+        <Navigation/>
+		<main class="min-h-screen pt-24 flex content-center m-auto bg-gray-100">
+            <slot />
+		</main>
+		<Footer/>
+	</body>
+</html>

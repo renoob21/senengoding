@@ -1,0 +1,65 @@
+---
+title: Python - Tipe Data Boolean
+author: Reno Iqbalsah
+published: 22/03/2023
+slug: dasar-dasar-python/python-tipe-data-boolean
+draft: false
+description: Bagian ini memembahas tentang tipe data boolean (bool) dalam bahasa pemrograman Python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Tipe data boolean (`bool`) adalah tipe data yang hanya memiliki dua nilai, benar (`True`) dan salah (`False`).
+Perlu diingat bahawa penulisan `True` dan `False` harus diawali dengan huruf besar, dan tanpa menggunakan tanda petik.
+
+Tipe data ini didasarkan pada sebuah konsep yang digagas oleh seorang matematikawan inggris [**George Boole**](https://en.wikipedia.org/wiki/George_Boole).
+Boolean dapat juga digambarkan sebagai `0` adalah `False` dan `1` adalah `True`. Selain sebagai tipe data sendiri, `bool` juga akan sangat
+berkaitan dengan [**Comparison Operators**](python-operator-comparison).
+
+## Fungsi `bool()`
+
+Fungsi `bool()` akan mengkonversi tipe data dari suatu data menjadi `bool`, dan hanya akan menghasilkan nilai `True` atau `False`. 
+Fungsi ini akan mengevaluasi apakah data tersebut benar-benar memiliki "nilai" (_value_) atau tidak. Misalnya angka 100 akan dianggap memiliki 
+_value_ sehingga menghasilkan nilai `True` sedangkan 0 akan menghasilkan `False` karena 0 tidak bernilai.
+
+### Hampir Semua Nilai adalah `True`
+
+Ketika kita menggunakan fungsi `bool()` sebagian besar akan menghasilkan `True`, karena sebagian besar data dalam Python pastinya memiliki nilai.
+
+<Code
+code={
+`print(bool(15)) # output : True
+print(bool("Keramas")) # output : True`
+}
+lang="python"
+/>
+
+### Nilai yang Menghasilkan _Output_ `False`
+
+Hanya nilai-nilai "kosong" yang akan dievaluasi sebagai `False` dalam bahasa pemrograman Python. Seperti string kosong `""`, `0`, tipe data seperti `list`, `tuple`, dan
+`dict` yang kosong (`[]`, `()`, `{}`), dan `None`. `False` tentu saja juga akan menghasilkan nilai `False`.
+
+<Code
+code={
+`print(bool(False)) # output : False
+print(bool("")) # output : False
+print(bool(0)) # output : False
+print(bool([])) # output : False
+print(bool(())) # output : False
+print(bool({})) # output : False`
+}
+lang="python"
+/>
+
+Menurutmu, jika kita menjalankan fungsi `bool("0")`, apakah akan menghasilkan `True` atau `False`?
+
+<PostsNav
+  next={{
+    title: "Python Operator - Aritmatika",
+    slug: "python-operator-aritmatika"
+  }}
+  prev={{
+    title: `Python String - Escape Characters`,
+    slug: "python-string-escape-characters"
+  }}
+/>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E2E8F0;}
+	.st1{fill:#6B7280;}
+	.st2{fill:#1F2937;}
+	.st3{fill:#DC2626;stroke:#6B7280;stroke-width:0.25;stroke-miterlimit:10;}
+	.st4{fill:#16A34A;stroke:#6B7280;stroke-width:0.25;stroke-miterlimit:10;}
+	.st5{display:none;}
+	.st6{display:inline;fill:#6B7280;}
+	.st7{font-family:'HelveticaRounded-Bold';}
+	.st8{font-size:39.2199px;}
+	.st9{font-family:'BebasNeue-Regular';}
+	.st10{font-size:197.7655px;}
+	.st11{display:inline;}
+	.st12{font-family:'Consolas-Italic';}
+	.st13{font-size:24.2507px;}
+	.st14{fill:#075985;}
+	.st15{fill:#DC2626;}
+	.st16{fill:#16A34A;}
+</style>
+<g id="Layer_1">
+	<g>
+		<path class="st0" d="M88.88,367.88c-5.93,0-10.75-4.82-10.75-10.75V154.88c0-5.93,4.82-10.75,10.75-10.75h334.24
+			c5.93,0,10.75,4.82,10.75,10.75v202.24c0,5.93-4.82,10.75-10.75,10.75H88.88z"/>
+		<g>
+			<path class="st1" d="M423.12,144.25c5.86,0,10.63,4.77,10.63,10.63v202.24c0,5.86-4.77,10.63-10.63,10.63H88.88
+				c-5.86,0-10.63-4.77-10.63-10.63V154.88c0-5.86,4.77-10.63,10.63-10.63H423.12 M423.12,144H88.88C82.87,144,78,148.87,78,154.88
+				v202.24c0,6.01,4.87,10.88,10.88,10.88h334.24c6.01,0,10.88-4.87,10.88-10.88V154.88C434,148.87,429.13,144,423.12,144
+				L423.12,144z"/>
+		</g>
+	</g>
+	<g>
+		<path class="st2" d="M434,179v178.12c0,6.01-4.87,10.88-10.88,10.88H88.88C82.87,368,78,363.13,78,357.12V179H434z"/>
+	</g>
+	<path class="st2" d="M434,179v178.12c0,6.01-4.87,10.88-10.88,10.88H88.88C82.87,368,78,363.13,78,357.12V179H434z"/>
+	<circle class="st3" cx="408.5" cy="161.5" r="11.5"/>
+	<circle class="st4" cx="380.5" cy="161.5" r="11.5"/>
+</g>
+<g id="_x31_" class="st5">
+	<rect x="161" y="208" class="st6" width="249" height="11"/>
+	<rect x="161" y="227" class="st6" width="249" height="11"/>
+	<rect x="161" y="246" class="st6" width="249" height="11"/>
+	<rect x="101" y="265" class="st6" width="309" height="11"/>
+	<rect x="101" y="284" class="st6" width="248" height="11"/>
+	<rect x="101" y="303" class="st6" width="248" height="11"/>
+	<rect x="101" y="322" class="st6" width="248" height="11"/>
+	<text transform="matrix(1 0 0 1 101.3633 243.6074)" class="st6 st7 st8">&lt;&gt;</text>
+	<text transform="matrix(1 0 0 1 354.3633 319.6074)" class="st6 st7 st8">&lt;/&gt;</text>
+</g>
+<g id="_x32_">
+	<text transform="matrix(1 0 0 1 140.353 335.4482)" class="st1 st9 st10">&lt;/&gt;</text>
+</g>
+<g id="_x33_" class="st5">
+	<text transform="matrix(1 0 0 1 118.4937 222.9341)" class="st11"><tspan x="0" y="0" class="st1 st12 st13">main() {</tspan><tspan x="0" y="29.1" class="st1 st12 st13">   const a = (b) =&gt; {</tspan><tspan x="0" y="58.2" class="st1 st12 st13">     return b ** 2</tspan><tspan x="0" y="87.3" class="st1 st12 st13">   }</tspan><tspan x="0" y="116.4" class="st1 st12 st13">}</tspan></text>
+</g>
+<g id="Layer_2" class="st5">
+	<g class="st11">
+		<rect x="18" y="15" class="st14" width="40" height="40"/>
+	</g>
+	<g class="st11">
+		<rect x="68" y="15" class="st0" width="40" height="40"/>
+	</g>
+	<g class="st11">
+		<rect x="118" y="15" class="st2" width="40" height="40"/>
+	</g>
+	<g class="st11">
+		<rect x="168" y="15" class="st1" width="40" height="40"/>
+	</g>
+	<g class="st11">
+		<rect x="218" y="15" class="st15" width="40" height="40"/>
+	</g>
+	<g class="st11">
+		<rect x="268" y="15" class="st16" width="40" height="40"/>
+	</g>
+	<g class="st11">
+		<rect x="318" y="15" class="st14" width="40" height="40"/>
+	</g>
+	<g class="st11">
+		<rect x="368" y="15" class="st14" width="40" height="40"/>
+	</g>
+	<g class="st11">
+		<rect x="418" y="15" class="st14" width="40" height="40"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,92 @@
+---
+title: Python String - Concatenate dan Format
+author: Reno Iqbalsah
+published: 17/03/2023
+slug: dasar-dasar-python/python-string-concatenate-dan-format
+draft: false
+description: Bagian ini memembahas bagaimana kita menggabungkan beberapa string dengan concatenation, dan menggunakan metode .format() dan f-string
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Selain menggunakan string secara mandiri, kita juga dapat menggabungkan beberapa string menjadi satu. Untuk melakukannya, kita dapat menggunakan
+_concatenation_, metode `.format()`, dan _f_-string.
+
+## _Concatenate_
+
+Untuk melakukan _concatenation_, kita cukup menggabungkan beberapa string dengan tanda `+`.
+
+<Code
+code={
+`sayur = "bayam"
+buah = "apel"
+
+print("Saya suka makan " + sayur + " dan " + buah) 
+# output : Saya suka makan bayam dan apel`
+}
+
+lang="python"
+/>
+
+Namun, metode _concatenation_ hanya dapat menggabungkan string dengan string, sedangkan tipe data lain seperti _numbers_ tidak dapat digabungkan.
+
+## Metode `.format()`
+
+Metode `.format()` pada string dapat menggabungkan tipe data apapun ke dalam string, dan metode ini jauh lebih praktis digunakan dibandingkan 
+dengan _concatenation_ di mana kita harus menambahkan banyak tanda `+`.
+
+<Code
+code={
+`nama = "Shan"
+umur = 26
+
+print("Nama saya {}, saya {} tahun".format(nama, umur)) 
+# output : Nama saya Shan, saya 26 tahun`
+}
+
+lang="python"
+/>
+
+Seluruh tanda `{}` akan diganti dengan nilai yang kita masukkan sebagai argumen dalam metode `format()` dengan urutan sesuai
+dengan urutan kita memasukkan argumen. Untuk menghindari perilaku ini, kita dapat memasukkan angka urutan mulai dari `0` (seperti indeks) 
+berdasarkan urutan argumen.
+
+<Code
+code={
+`nama = "Shan"
+umur = 26
+
+print("Namanya adalah {1}, {1} berusia {0} tahun".format(umur, nama)) 
+# output : Namanya adalah Shan, Shan berusia 26 tahun`
+}
+
+lang="python"
+/>
+
+## Menggunakan _f_-String
+
+Untuk menggunakan _f_-string kita cukup menambahkan huruf _f_ di depan string yang kita buat. Penggunaan _f_-string sangat mirip dengan metode `.format()`,
+hanya saja kita perlu memasukkan nama variabel ke dalam tanda kurung `{}`.
+
+<Code
+code={
+`nama = "Shan"
+umur = 26
+
+print(f"Namanya adalah {nama}, {nama} berusia {umur} tahun") 
+# output : Namanya adalah Shan, Shan berusia 26 tahun`
+}
+
+lang="python"
+/>
+
+<PostsNav
+  next={{
+    title: "Python String - Metode-Metode Dalam String",
+    slug: "python-string-metode-metode-dalam-string"
+  }}
+  prev={{
+    title: `Python String - Umum`,
+    slug: "python-string-umum"
+  }}
+/>

@@ -1,0 +1,158 @@
+---
+title: Python:Tipe Data Numerik
+author: Reno Iqbalsah
+published: 15/03/2023
+slug: dasar-dasar-python/python-tipe-data-numerik
+draft: false
+description: Bagian ini memembahas tipe data numerik berupa integer (int) dan floating point (float) dalam bahasa pemrograman Python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Tipe data numerik dalam Python yang utama adalah integer (`int`) dan _floating point_ (`float`). Sebenarnya ada satu lagi tipe
+data numerik, yaitu `complex`. Namun, tipe data tersebut lebih banyak digunakan dalam pemrograman tingkat lanjutan dan yang berkaitan
+dengan penghitungan matematika rumit, sehingga belum akan dibahas dalam tutorial ini.
+
+## Tipe Data Integer
+
+Integer adalah tipe data berupa bilangan bulat penuh. Integer tidak dapat menyimpan data berupa angka di belakang desimal. Semua angka tanpa desimal akan 
+secara otomatis dianggap sebagai integer dalam bahasa pemrograman python.
+
+Contoh:
+
+<Code
+code = {
+`x = 5
+
+print(type(x))
+print(type(7))`
+}
+lang="python"
+/>
+
+Output:
+
+<Code
+code = {
+`int
+int`
+}
+/>
+
+Selain itu, kita juga dapat melakukan _type casting_ atau mengubah tipe data lain menjadi integer dengan fungsi `int()`. Misalnya:
+
+<Code
+code = {
+`x = "5"
+y = int(x)
+a = 9.5
+b = int(a)
+
+print(type(x), "->", type(y))
+print(a, "->", b)
+print(type(a), "->", type(b))`
+}
+lang="python"
+/>
+
+Output:
+
+<Code
+code = {
+`str -> int
+9.5 -> 9
+float -> int`
+}
+/>
+
+Perlu diingat bahwa apabila kita melakukan konversi dari _floating point_ ke integer, seluruh angka desimal (di belakang koma) akan hilang, atau bisa dibilang dibulatkan ke bawah.
+baik angka X.1 maupun X.9 akan menjadi angka X apabila diubah menjadi integer.
+
+Selain itu, ketika kita mengkonversi _string_ menjadi integer, seluruh elemen dalam _string_ tersebut haruslah berupa angka (numerik). Kalau ada karakter selain angka, maka akan 
+menyebabkan galat (_error_). Misal:
+
+<Code
+code = {
+`a = "5"
+b = "haha5"
+c = "haha"
+
+print(int(a))
+print(int(b))
+print(int(c))`
+}
+lang="python"
+/>
+
+Output:
+
+<Code
+code = {
+`5
+ValueError: invalid literal for int() with base10: 'haha5'`
+}
+/>
+
+Baris `print` ke-3 tidak akan dieksekusi karena terjadi eror pada baris di atasnya.
+
+## Tipe Data _Floating Point_
+
+Tipe data _floating point_ adalah berupa angka desimal. Untuk menetapkan `float`, kita hanya perlu memasukkan angka desimal, pembatas desimal yang digunakan adalah "."
+karena Python menggunakan standard penulisan angka internasional.
+
+<Code
+code = {
+`a = 5.3
+b = 6.9
+
+print(a, type(a)) # output: 5.3 float
+print(b, type(b)) # output: 6.9 float
+`
+}
+lang="python"
+/>
+
+Apabila kita akan menetapkan angka bulat sebagai `float`, maka kita hanya perlu menambahkan ".0" atau cukup "." saja di belakang angka tersebut.
+
+<Code
+code = {
+`a = 5.0
+b = 6.
+
+print(a, type(a)) # output: 5.0 float
+print(b, type(b)) # output: 6.0 float
+`
+}
+lang="python"
+/>
+
+Untuk mengkonversi tipe data lain ke _floating point_, kita dapat menggunakan fungsi `float()`.
+
+<Code
+code = {
+`a = 5
+b = float(a)
+x = "5.9"
+y = float(x)
+
+print(a, "->", b) # output: 5 -> 5.0
+print(type(a), "->", type(b)) # output: int -> float
+print(type(x), "->", type(y)) # output: str -> float
+`
+}
+lang="python"
+/>
+
+Mirip dengan fungsi `int()`, fungsi `float()` juga tidak dapat mengubah karakter selain angka menjadi _floating point_. Hanya saja, karakter pembatas desimal (".") 
+bisa dikonfersi oleh `float()` tapi tidak oleh `int()`.
+
+<PostsNav
+  next={{
+    title: "Python String - Umum",
+    slug: "python-string-umum"
+  }}
+  prev={{
+    title: `Tipe-Tipe Data dalam Python`,
+    slug: "tipe-tipe-data-dalam-python"
+  }}
+/>

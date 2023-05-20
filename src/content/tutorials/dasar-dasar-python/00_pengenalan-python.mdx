@@ -1,0 +1,84 @@
+---
+title: Pengenalan Bahasa Pemrograman Python
+author: Reno Iqbalsah
+published: 08/03/2023
+slug: dasar-dasar-python/pengenalan-python
+draft: false
+description: Seksi ini akan membahas tentang apa itu bahasa pemrograman Python, teknologi di baliknya, apa itu interpreted dan compiled language, dan di bidang apa saja python di gunakan
+---
+
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+![Bahasa python](https://cdn.activestate.com/wp-content/uploads/2021/12/python-coding-mistakes.jpg)
+
+Python merupakan salah satu bahasa pemrograman yang paling populer saat ini. Kesederhanaan _syntax_ dan kemampuannya 
+menyelesaikan berbagai macam persoalan, membuat python banyak digemari. Baik _programmer_ dan pekerja profesional seperti _data analyst_ dan _data scientist_ juga menggunakan bahasa pemrograman ini dalam 
+pekerjaannya. Tak hanya mereka saja, apapun pekerjaanmu, baik pelajar, mahasiswa, bahkan pegawai 
+administrasi kantoran, belajar Python akan mempermudah tugas sehari-hari. Lalu, sebenarnya apa itu Python?
+
+
+## Bahasa Pemrograman
+
+```01100001 01100010 01100011```
+
+Melihat kode di atas, apa yang terlintas dalam pikiranmu? Begitulah bahasa yang dimengerti oleh komputer, atau biasa disebut _machine code_.
+Komputer "berbicara" dengan serangkaian angka 0 dan 1 yang biasa disebut binary/bit. Rangkaian bit ini yang kemudian akan menentukan perintah
+apa yang harus dijalankan oleh komputer. Sebagai manusia, memahami kode tersebut tentu sangat sulit. Untuk itu, perlu adanya 
+bahasa untuk menjembatani antara bahasa manusia dan komputer.
+
+### _High-level vs Low-level language_
+
+Bahasa mesin seperti di atas, biasa disebut sebagai _low-level language_ karena dapat dijalankan secara langsung pada processor, dan
+memiliki akses penuh. Kemudian, untuk mempermudah pekerjaan manusia, dibuatlah _high-level language_, yaitu bahasa pemrograman 
+untuk menjalankan perintah pada komputer, tetapi juga dapat dimengerti oleh manusia.
+
+Dengan _High-level language_, kita dapat menulis kode untuk program yang kita buat dengan lebih mudah, kode akan disimpan dalam bentuk 
+_source code_ yang nantinya akan diterjemahkan ke dalam bahasa mesin baik menggunakan _interpreter_ maupun _compiler_.
+
+### _Compiled vs Interpreted_
+**_Compiled language_** adalah bahasa pemrograman yang menggunakan _compiler_ sebagai sarana penerjemah bahasa pemrograman ke bahasa mesin.
+_Compiler_ akan menerjemahkan _source code_ menjadi bahasa mesin sebelum program dapat dijalankan. _Compiler_ akan mengkompilasi 
+seluruh _source code_ berdasarkan pada sistem operasi apa yang akan digunakan untuk menjalankan program tersebut.
+
+Beberapa kelebihan _Compiled language_ antara lain:
+- Menghasilkan program yang lebih cepat dan ringan
+- Memiliki lebih banyak kontrol terhadap _hardware_ seperti alokasi memori dan penggunaan CPU
+- Source code tetap aman, karena aplikasi _end-user_ sudah berupa _machine code_, sehingga lebih sulit untuk dieksploitasi
+
+Sedangkan beberapa kelemahannya adalah:
+- Memerlukan _build time_, yaitu sebelum dapat dijalankan, program harus terlebih dahulu dikompilasi menjadi _machine code_ yang dapat memakan waktu cukup lama, begitu juga ketika ada perubahan, maka haru melakukan _build_ ulang
+- Harus dikompilasi untuk masing-masing sistem operasi, misalnya program untuk Windows harus dikompilasi ke file dengan ekstensi `.exe` yang hanya dapat dijalankan di Windows saja
+
+**_Interpreted language_** adalah bahasa pemrograman yang menerjemahkan _source code_ pada saat program dijalankan dengan menggunakan _interpreter_. 
+Program akan tetap disimpan dalam bentuk _source code_ dan hanya diubah ke bahasa mesin ketika dijalankan saja.
+
+Beberapa kelebihan _Interpreted language_ antara lain:
+- Tidak memerlukan _build time_, sehingga proses pembuatan program lebih cepat, dan apabila ada perubahan, program dapat langsung dapat dijalankan kembali
+- _Source code_ dapat langsung dijalankan di mana saja, dengan sistem operasi apapun
+
+Kelemahan _Interpreted language_:
+- Biasanya lebih berat, program berjalan sambil melakukan penerjemahan ke bahasa mesin
+- Pengguna (_end-user_) dapat melihat langsung _source code_ sehingga rentan dieksploitasi
+- Setiap pengguna harus menginstall _interpreter_ untuk dapat menjalankan program, atau _interpreter_ harus di _bundle_ menjadi satu dengan program
+
+## Python
+Python adalah _high-level interpreted language_ yang pertama kali dikembangkan oleh Guido van Rossum pada tahun 1991. 
+Python merupakan bahasa pemrograman dinamis, yang artinya tidak memerlukan kita untuk menetapkan tipe data dalam suatu variabel atau operasi, 
+dan tipe data dapat diubah-ubah kemudian. Python mendukung pemrograman fungsional maupun pemrograman berorientasi objek / _object oriented programming_ (OOP).
+
+Sebagai _interpreted language_, Python cukup terkenal "lemot" karena memakan banyak memori. Namun, predikatnya sebagai _general purpose language_ 
+membuatnya tetap banyak dipakai di berbagai macam bidang, misalnya seperti:
+- **_Data science_** & **_data analytics_**, termasuk juga bidang ilmu statistik, karena kemampuannya yg sangat andal dalam mengolah data dengan _library_ seperti Pandas dan Numpy yang didasarkan pada bahasa pemrograman R
+- **_Big data analysis_** dengan _library_ seperti PySpark yang mendukung analisis data terdistribusi 
+- **_Back end development_**, dengan _framework_ seperti Django dan Flask
+- **_Cyber Security_** & **_Ethical Hacking_**, python memiliki akses yang cukup mumpuni terhadap sistem operasi dan jaringan
+- **_Machine Learning_** & **_Artificial Intelligence_**, dengan _library_ seperti Scikit-Learn, PyTorch, dan TensorFlow 2.0, pemrograman _machine learning_ dan _AI_ lebih mudah dan cepat
+
+Bagaimana? Sangat menarik bukan? Di bagian selanjutnya, kita akan mulai pemrograman dengan python, mulai dari instalasi _interpreter_, dan persiapan _developer environtment_ agar mempermudah kita melakukan pemrograman.
+
+<PostsNav 
+ next={{
+    title:'Memulai pemrograman dengan python',
+    slug:'memulai-pemrograman-dengan-python'
+    }}
+/>

@@ -1,0 +1,197 @@
+---
+title: Python Operator - Logical dan Bitwise
+author: Reno Iqbalsah
+published: 22/03/2023
+slug: dasar-dasar-python/python-operator-logical-dan-bitwise
+draft: false
+description: Bagian ini memembahas tentang logical operators dan bitwise operators dalam bahasa pemrograman Python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+
+_Logical Operators_ atau operator logikal akan membandingkan dua pernyataan dengan syarat tertentu. Untuk dasar yang lebih lengkap, teman-teman bisa membaca tentang [**Gerbang Logika**](https://id.wikipedia.org/wiki/Gerbang_logika).
+Sedangkan _bitwise operators_ juga menggunakan logika yang sama dengan _logical operators_, hanya saja _bitwise operators_ melakukan operasi pada tingkat `bit` pada tiap nilai.
+
+## _Logical Operators_
+
+Ada 3 _logical operators_ dalam Python, yaitu:
+
+|Operator|Deskripsi|Contoh|
+|---|---|---|
+|`and`|Menghasilkan `True` apabila kedua pernyataan `True`|`x > 5 and y == 3`|
+|`or`|Menghasilkan `True` apabila setidaknya salah satu pernyataan `True`|`x > 5 or y == 3`|
+|`not`|Membalikkan hasil dari sebuah pernyataan|`(x > 5 not y == 3)`|
+
+Berikut ini tabel untuk membandingkan perbedaan dari beberapa _logical operators_ yang dinotasikan dalam `a` dan `b` sebagai
+dua buah statement yang dibandingkan.
+
+### `and` Operator
+
+<div class="special-table"></div>
+|a|b|a and b|
+|---|---|---|
+|False|False|False|
+|True|False|False|
+|False|True|False|
+|True|True|True|
+
+### `or` Operator
+
+<div class="special-table"></div>
+|a|b|a or b|
+|---|---|---|
+|False|False|False|
+|True|False|True|
+|False|True|True|
+|True|True|True|
+
+### `not` Operator
+
+<div class="special-table"></div>
+|a|not a|
+|---|---|
+|True|False|
+|False|True|
+
+Sekarang, coba sendiri dengan kode di bawah ini!
+
+<Code
+code={
+`x = 5
+y = 3
+
+print(x > y and y <= 5) # output : True
+print(x == y and x == 5) # output : False
+print(x == y or x == 5) # output : True
+print(not(x == 5)) # output : False`
+}
+
+lang="python"
+/>
+
+## _Bitwise Operators_
+
+_Bitwise operators_ menggunakan fundamental yang sama dengan _logical operators_, hanya saja logika tersebut digunakan untuk mengoperasikan angka `0` dan `1` pada 
+level binary. Sebelum lebih lanjut, ada baiknya untuk terlebih dahulu membaca tentang [**Sistem Bilangan Biner**](https://id.wikipedia.org/wiki/Sistem_bilangan_biner).
+
+Berikut ini daftar _bitwise operators_
+
+|Operator|Nama|Deskripsi|Contoh Penggunaan|
+|---|---|---|---|
+|`&`|AND|Menghasilkan bit 1 jika kedua bit yang dibandingan adalah 1|`x & y`|
+|`\|`|OR|Menghasilkan bit 1 jika setidaknya salah satu dari dua bit yang dibandingan adalah 1|`x \| y`|
+|`^`|XOR|Menghasilkan bit 1 jika hanya salah satu dari dua bit yang dibandingan adalah 1|`x ^ y`|
+|`~`|NOT|Membalikkan semua bit (1 menjadi 0, 0 menjadi 1)|`~x`|
+|`<<`|_Zero fill left shift_|Menggeser bit ke kiri dan menambahkan 0 di sisi kanan|`x << 2`|
+|`>>`|_Signed right shift_|Menggeser bit ke kanan dan menghilangkan 0 di sisi kanan|`x >> 3`|
+
+Untuk menjelaskannya kita akan menggunakan angka 11 dan 17, jika menggunakan biner 8 bit, maka kedua angka ini adalah `00001011` dan `00010001`.
+
+### Operator `&`
+
+Operator ini melakukan operasi seperti di bawah ini:
+
+<div class="special-table"></div>
+|a|b|a & b|
+|---|---|---|
+|0|0|0|
+|1|0|0|
+|0|1|0|
+|1|1|1|
+
+Sangat mirip dengan operator `and` hanya saja `True` menjadi `1` dan `False` menjadi `0`. Apabila kita mengoperasikan `11 & 17`, maka hasil operasinya adalah:
+
+<div class="special-table"></div>
+|Angka| | | | | | | | |
+|---|---|---|---|---|---|---|---|---|
+|11|0|0|0|0|1|0|1|1|
+|17|0|0|0|1|0|0|0|1|
+|11 & 17|0|0|0|0|0|0|0|1|
+
+Hasil operasi dari `11 & 17` adalah `00000001` atau angka 1.
+
+### Operator `|`
+
+Operator `|` melakukan operasi sebagai berikut:
+
+<div class="special-table"></div>
+|a|b|a \| b|
+|---|---|---|
+|0|0|0|
+|1|0|1|
+|0|1|1|
+|1|1|1|
+
+Hal ini menggunakan logika yang sama dengan operator `or`. Jika kita melakukan operasi `11 | 17` maka:
+
+<div class="special-table"></div>
+|Angka| | | | | | | | |
+|---|---|---|---|---|---|---|---|---|
+|11      |0|0|0|0|1|0|1|1|
+|17      |0|0|0|1|0|0|0|1|
+|11 \| 17|0|0|0|1|1|0|1|1|
+
+Hasil dari `11 | 17` adalah `00011011` atau 27.
+
+### Operator `^`
+
+Nama dari operator ini adalah `XOR` atau _eXclusive OR_, operator ini mirip dengan `or` dan `|`, hanya saja `XOR` akan menghasilkan 1 apabila hanya salah satu dari 
+kedua bit adalah 1.
+
+<div class="special-table"></div>
+|a|b|a ^ b|
+|---|---|---|
+|0|0|0|
+|1|0|1|
+|0|1|1|
+|1|1|0|
+
+Operasi `11 ^ 17` akan menghasilkan seperti di bawah ini:
+
+<div class="special-table"></div>
+|Angka| | | | | | | | |
+|---|---|---|---|---|---|---|---|---|
+|11     |0|0|0|0|1|0|1|1|
+|17     |0|0|0|1|0|0|0|1|
+|11 ^ 17|0|0|0|1|1|0|1|0|
+
+Hasil dari operasi `11 ^ 17` adalah `00011010` atau 26.
+
+### Operator `~`
+
+Operator `~` akan membalik seluruh nilai digit biner dari suatu nilai. Yang artinya semua digit `0` akan diubah menjadi `1` dan semua digit `1` akan diubah menjadi `0`. Misalnya saja:
+
+<div class="special-table"></div>
+|Angka| | | | | | | | |
+|---|---|---|---|---|---|---|---|---|
+|11     |0|0|0|0|1|0|1|1|
+|~11    |1|1|1|1|0|1|0|0|
+
+Sehingga, hasil dari ~11 adalah `11110100` atau -12.
+
+### Operator `<<` dan `>>`
+
+Secara sederhana, operator ini akan menggeser digit biner dari suatu nilai. Misalnya `x << 3` berarti nilai `x` akan digeser digitnya ke kiri sebanyak 3 kali (menambahkan 3 angka 0 di belakang).
+Sebaliknya, `x >> 3` akan menggeser digit `x` ke kanan 3 kali (menghilangkan 3 angka paling belakang).
+
+<div class="special-table"></div>
+|Angka| | | | | | | | |
+|---|---|---|---|---|---|---|---|---|
+|11       |0|0|0|0|1|0|1|1|
+|`11 << 2`|0|0|1|0|1|1|0|0|
+|`11 >> 2`|0|0|0|0|0|0|1|0|
+
+Hasil dari `11 << 2` adalah `00101100` atau 44, sedangkan `11 >> 2` adalah `00000010` atau 2.
+
+<PostsNav
+  next={{
+    title: "Python Operator - Identity dan Membership",
+    slug: "python-operator-identity-dan-membership"
+  }}
+  prev={{
+    title: `Python Operator - Comparison`,
+    slug: "python-operator-comparison"
+  }}
+  
+/>

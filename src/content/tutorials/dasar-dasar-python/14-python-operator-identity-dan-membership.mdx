@@ -1,0 +1,59 @@
+---
+title: Python Operator - Identity dan Membership
+author: Reno Iqbalsah
+published: 23/03/2023
+slug: dasar-dasar-python/python-operator-identity-dan-membership
+draft: false
+description: Bagian ini memembahas tentang identity operators dan membership operators dalam bahasa pemrograman Python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+_Identity_ dan _Membership_ operator merupakan operator yang lebih akan banyak kita gunakan dalam tipe-tipe data berbasis objek seperti `list`, `tuple`, `dict`, dan `set`.
+
+## _Identity Operators_
+
+_Identity Operators_ akan membandingkan dua buah objek buka hanya pada nilainya saja, melainkan apakah kedua objek tersebut merupakan objek yang sama dan disimpan pada memori yang
+sama.
+
+|Operator|Deskripsi|Contoh Penggunaan|
+|---|---|---|
+|`is`|Akan menghasilkan `True` apabila dua objek merupakan objek yang sama|`x is y`|
+|`is not`|Akan menghasilkan `True` apabila dua objek bukan merupakan objek yang sama|`x is not y`|
+
+## _Membership Operators_
+_Membership operators_ akan membandingkan apakah suatu nilai/data terdapat pada sebuah objek seperti `list` atau `tuple`. _Membership operators_ juga dapat digunakan
+untuk mengecek apakah suatu data ada dalam sebuah string (`str`).
+
+|Operator|Deskripsi|Contoh Penggunaan|
+|---|---|---|
+|`in`|Akan menghasilkan `True` apabila sebuah data ada dalam suatu objek yang dibandingan|`x in y`|
+|`not in`|Akan menghasilkan `True` apabila sebuah data tidak ada dalam suatu objek yang dibandingan|`x not in y`|
+
+Contoh penggunaan _membership operators_ dalam string:
+
+<Code
+code={
+`x = "Aku suka pisang"
+y = "Rayya suka bakso"
+
+print("bakso" in x) # output : False
+print("bakso" in y) # output : True
+print("apel" not in y) # output : True`
+}
+lang="python"
+/>
+
+Kita akan membahas lebih lanjut lagi penggunaan operator-operator di atas ketika membahas tipe data berbasis objek.
+
+<PostsNav
+  next={{
+    title: "Python Operator - Precedence (Hierarki Operator)",
+    slug: "python-operator-precedence-hierarki-operator"
+  }}
+  prev={{
+    title: `Python Operator - Logical dan Bitwise`,
+    slug: "python-operator-logical-dan-bitwise"
+  }}
+  
+/>

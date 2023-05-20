@@ -1,0 +1,173 @@
+---
+title: Python Dictionary - Memodifikasi Item dalam Dictionary
+author: Reno Iqbalsah
+published: 12/04/2023
+slug: dasar-dasar-python/python-dictionary-memodifikasi-item-dalam-dictionary
+draft: false
+description: Bagian ini memembahas tentang bagaimana kita dapat mengubah, menambah, dan mengurangi item dalam sebuah Dictionary pada bahasa pemrograman Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Dictionary merupakan tipe data yang _mutable_, yang artinya dapat diubah-ubah. Kita dapat mengubah suatu entri / item, menambah, maupun mengurangi item dalam suatu `dict`.
+
+## Mengubah Item dalam `dict`
+
+Untuk mengubah item dalam sebuah `dict`, kita dapat menggunakan notasi _index_ maupun menggunakan metode `.update()`.
+
+### Menggunakan Notasi _Indexing_
+
+Untuk mengubah item dalam suatu `dict` dengan notasi _indexing_, kita dapat mengambil salah satu `key` dan meng-_assign_ `key` tersebut pada `value` / nilai baru.
+
+<Code
+code={
+`dict1 = {
+    "bayam" : "sayur",
+    "apel" : "buah",
+    "steak" : "lauk",
+    "nasi" : "karbohidrat"
+}
+
+dict1["steak"] = "daging"
+print(dict1)`
+}
+lang="python"
+theme="dracula-soft"
+/>
+
+### Menggunakan Metode `.update()`
+
+Dengan menggunakan metode `.update()`, kita dapat memasukkan sebuah _key-value pair_ untuk mengubah _value_ dari sebuah item dalam `dict`.
+
+<Code
+code={
+`dict1 = {
+    "bayam" : "sayur",
+    "apel" : "buah",
+    "steak" : "lauk",
+    "nasi" : "karbohidrat"
+}
+
+dict1.update({"nasi" : "goreng"}
+print(dict1))`
+}
+lang="python"
+theme="dracula-soft"
+/>
+
+## Menambah Item ke dalam Sebuah `dict`
+
+Untuk menambah item ke dalam sebuah `dict`, kita dapat menggunakan cara yang sama persis dengan bagaimana kita mengubah item dalam sebuah `dict`, yaitu dengan
+notasi _indexing_ atau dengan metode `.update()` Hanya saja, kita perlu menambahkan sebuah `key` baru untuk dimasukkan ke dalam sebuah `dict`.
+
+<Code
+code={
+`mobil1 = {
+    "merk" : "Toyota",
+    "tipe" : "Innova Zenix Hybrid",
+    "tahun" : 2023
+}
+
+mobil2 = {
+    "merk" : "Honda",
+    "tipe" : "HR-V Turbo RS",
+    "tahun" : 2023
+}
+
+mobil1["warna"] = "Attitude Black"
+mobil2.update({"warna" : "Crystal Black Pearl"})
+
+print(mobil1)
+print(mobil2)`
+}
+lang="python"
+theme="dracula-soft"
+/>
+
+## Mengurangi / Menghapus Item dalam Sebuah `dict`
+
+Ada beberapa cara yang dapat kita gunakan untuk menghapus item dalam sebuah `dict`. Kita dapat menggunakan metode `.pop()`, `.popitem()`, maupun _keyword_ `del`.
+
+### Menggunakan Metode `.pop()`
+
+Metode ini akan menghapus item berdasarkan `key` yang kita tentukan.
+
+<Code
+code={
+`dict1 = {
+    "bayam" : "sayur",
+    "apel" : "buah",
+    "steak" : "lauk",
+    "nasi" : "karbohidrat"
+}
+
+dict1.pop("steak")
+print(dict1))`
+}
+lang="python"
+theme="dracula-soft"
+/>
+
+Kode di atas akan menghapus item dengan `key` "steak".
+
+### Menggunakan Metode `.popitem()`
+
+Metode ini akan menghapus salah satu item dalam sebuah `dict`. Hanya saja, ada perbedaan perlakuan oleh _interpreter_ terhadap metode ini.
+Dalam Python versi 3.7 ke atas, maka item yang dihapus adalah item yang terakhir dimasukkan ke dalam `dict`. Sedangkan untuk versi di bawah 3.7,
+metode ini akan menghapus item secara acak / random.
+
+Hal ini terjadi karena pada versi sebelum 3.7, _dictionary_ dalam Python dianggap _unordered_ (tidak berurutan), sedangkan sejak Python versi 3.7, _dictionary_ dianggap _ordered_ 
+(berurutan).
+
+<Code
+code={
+`dict1 = {
+    "bayam" : "sayur",
+    "apel" : "buah",
+    "steak" : "lauk",
+    "nasi" : "karbohidrat"
+}
+
+dict1.popitem()
+print(dict1))`
+}
+lang="python"
+theme="dracula-soft"
+/>
+
+Apabila kode di atas dijalankan pada Python versi 3.7 dan setelahnya, maka akan menghapus item "nasi", karena item tersebut dimasukkan paling akhir / bawah.
+
+### Menggunakan _Keyword_ `del`
+
+Dengan _keyword_ `del`, kita dapat menghapus item berdasarkan `key` dengan notasi _indexing_.
+
+<Code
+code={
+`dict1 = {
+    "bayam" : "sayur",
+    "apel" : "buah",
+    "steak" : "lauk",
+    "nasi" : "karbohidrat"
+}
+
+del dict1["apel"]
+
+print(dict1))`
+}
+lang="python"
+theme="dracula-soft"
+/>
+
+Selain ketiga metode di atas, kita juga dapat menggunakan metode `.clear()` untuk menghapus seluruh item dalam sebuah dictionary sebagaimana kita menggunakannya pada tipe data lain
+seperti `list` dan `set`.
+
+<PostsNav
+  next={{
+    title: "Python Conditional Statement (if ... else ...)",
+    slug: "python-conditional-statement"
+  }}
+  prev={{
+    title: "Python Dictionary - Umum",
+    slug: "python-dictionary-umum"
+  }}  
+/>

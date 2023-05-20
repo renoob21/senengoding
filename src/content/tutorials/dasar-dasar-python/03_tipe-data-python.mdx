@@ -1,0 +1,61 @@
+---
+title: Tipe-Tipe Data dalam Python
+author: Reno Iqbalsah
+published: 13/03/2023
+slug: dasar-dasar-python/tipe-tipe-data-dalam-python
+draft: false
+description: Bagian ini memembahas tipe-tipe data yang ada dalam bahasa pemrograman Python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Tipe data merupakan salah satu konsep paling penting dalam pemrograman, tipe data satu dengan yang lain memiliki fungsi yang berbeda-beda, sehingga dengan menentukan tipe data
+yang tepat, akan menentukan bagaimana kita akan melakukan operasi pada data tersebut kemudian.
+
+## Tipe Data Bawaan dalam Python
+
+Python memiliki beberapa tipe data bawaan, dari tipe-tipe data tersebut dapat dikategorikan sebagai berikut:
+
+- Tipe data **teks**, yaitu tipe data String atau `str`
+- Tipe data **numerik**, meliputi tipe data `int` (integer) dan `float` (_floating point_)
+- Tipe data **sekuen/urutan**, meliputi `list` dan `tuple`
+- Tipe data **mapping**, yaitu `dict` atau _dictionary_
+- Tipe data **set**, meliputi `set` dan `frozenset `
+- Tipe data data **boolean** atau `bool`
+- Tipe data **biner**, yaitu `bytes`, `bytearray`, dan `memoryview`
+- Tipe data **None Type** (`NoneType`)
+
+## Mengecek Tipe Data pada Python
+
+Untuk mengecek tipe data, kita dapat menggunakan fungsi `type()`. Contohnya:
+
+<Code
+code={
+`x = 5
+y = "lima"
+
+print(type(x))
+print(type(y))`
+}
+lang="python"
+/>
+
+Output:
+
+<Code
+code={
+`int
+str`
+}
+/>
+
+<PostsNav
+  next={{
+    title: "Python:Tipe Data Numerik",
+    slug: "python-tipe-data-numerik"
+  }}
+  prev={{
+    title: `Python :"Hello, world!"`,
+    slug: "python-hello-world"
+  }}
+/>

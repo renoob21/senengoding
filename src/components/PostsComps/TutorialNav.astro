@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+
+const {slug} = Astro.params;
+const allTutorials = await getCollection("tutorials");
+const currTutorial = await allTutorials.filter(entry => {
+    return entry.slug.startsWith(slug?.split("/")[0] ?? "")
+})
+
+---
+
+<div class="md:w-1/5 w-2/3 md:mx-2 fixed md:relative z-10 md:z-0 ">
+    <button 
+            class="md:rounded-b-none rounded-xl md:text-xl text-sm font-bold 
+                 md:bg-gray-300 md:p-3 p-6 peer md:w-full -translate-x-20 focus:translate-x-0 md:translate-x-0 cursor-default
+                   group bg-gray-800 ease-in-out duration-300 text-gray-50 md:text-gray-900">
+                 Navigasi
+                 
+    </button>
+    <div class="bg-white drop-shadow-xl flex flex-col py-3 rounded-xl md:rounded-t-none collapse 
+                  peer-focus:visible ease-in-out duration-300 md:visible border-gray-200 
+                  border-2 md:border-none overflow-y-scroll md:overflow-auto max-h-[75vh] md:max-h-full
+                  opacity-0 md:opacity-100 peer-focus:opacity-100 -translate-x-6 md:translate-x-0 peer-focus:translate-x-0">
+    {currTutorial.map(tut => {
+            return <a class="hover:bg-gray-200 hover:font-semibold p-2 nav-items" href={`/tutorials/${tut.slug}`}>{tut.data.title}</a>
+    })}
+    </div>
+</div>
+
+<script>
+    const navs = document.querySelectorAll(".nav-items")
+    navs.forEach(nav => {
+        if (nav.innerHTML === document.title.split(" |")[0]) {
+            nav.classList.add("font-semibold")
+            nav.classList.add("bg-gray-200")
+        }
+    })
+</script>

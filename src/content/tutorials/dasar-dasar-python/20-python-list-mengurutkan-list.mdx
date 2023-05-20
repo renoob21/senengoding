@@ -1,0 +1,118 @@
+---
+title: Python List - Mengurutkan List (Sorting)
+author: Reno Iqbalsah
+published: 01/04/2023
+slug: dasar-dasar-python/python-list-mengurutkan-list-sorting
+draft: false
+description: Bagian ini memembahas tentang bagaimana kita dapat mengubah urutan item-item di dalam sebuah list pada bahasa pemrograman Python. Misalnya mengurutkan secara ascending dan descending, membalik urutan (reverse), dan menukar posisi item.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Selain menambah, mengurangi, dan mengubah item dalam sebuah `list`, kita juga dapat mengubah urutan item yang ada dalam sebuah `list`.
+
+## Mengurutkan `list` dengan Metode `.sort()`
+
+Untuk menggunakan metode `.sort()`, cukuplah mudah, kita tidak harus memasukkan argumen apapun ke dalam metode ini.
+
+<Code
+code={
+`list_a = ["kucing", "ayam", "kambing", "sapi"]
+list_b = [50, 31, 15, 45]
+
+print(list_a.sort()) # output : ["ayam", "kambing", "kucing", "sapi"]
+print(list_b.sort()) # output : [15, 31, 45, 50]`
+}
+lang="python"
+/>
+
+Secara _default_, metode ini akan mengurutkan `list` secara _ascending_ (dari kecil ke besar), untuk mengubahnya menjadi descending, kita hanya perlu menambahkan argumen
+`reverse=True`
+
+<Code
+code={
+`list_a = ["kucing", "ayam", "kambing", "sapi"]
+list_b = [50, 31, 15, 45]
+
+print(list_a.sort(reverse=True)) # output : ["sapi", "kucing", "kambing", "ayam"]
+print(list_b.sort(reverse=True)) # output : [50, 45, 31, 15]`
+}
+lang="python"
+/>
+
+### Menggunakan Fungsi Kustom sebagai Argumen
+
+Selain argumen `reverse=`, metode `.sort()` juga menerima argumen `key=`. Argumen ini menerima fungsi sebagai _value_ yang kemudian fungsi ini akan diaplikasikan pada setiap
+item dalam `list`.
+
+Misalnya saja kita ingin mengurutkan angka mana yang paling mendekati 30. Kita dapat membuat fungsi yang menghasilkan selisih setiap item dengan angka 30.
+
+<Code
+code={
+`angka = [50, 31, 15, 45]
+
+def selisih_30(angka):
+    return abs(angka-30)
+
+print(angka.sort(key=selisih_30)) # output : [31, 45, 15, 50]`
+}
+lang="python"
+/>
+
+Fungsi `selisih_30` akan menghasilkan nilai setiap angka dikurangi 30, kita juga menggunakan fungsi `abs` di dalam fungsi `selisih_30` yang artinya _absolute_, agar fungsi 
+`selisih_30` akan selalu menghasilkan angka mutlak / positif.
+
+Hal ini juga bisa diterapkan pada item berupa string. Misalnya saja, ketika kita menggunakan metode `.sort()` pada item string, secara _default_ akan mengurutkan huruf kapital
+sebelum huruf kecil. Dengan kode di bawah ini, kita dapat mengurutkan string dengan mengabaikan huruf besar dan kecil.
+
+<Code
+code={
+`hewan = ["Kucing", "ayam", "Sapi", "rusa"]
+
+def kecil(teks):
+    return teks.lower()
+
+print(hewan.sort()) 
+# output : ["Kucing", "Sapi", "ayam", "rusa"]
+
+print(hewan.sort(key=kecil))
+ # output : ["ayam", "Kucing", "rusa", "Sapi"]`
+}
+lang="python"
+/>
+
+Fungsi `kecil` akan memperlakukan semua item sebagai huruf kecil, sehingga seolah-olah tidak ada perbedaan besar-kecil.
+
+Jika kita perhatikan juga, argumen `key=` akan mengubah urutan dari `.sort()`, tapi tidak mengubah nilai dari masing-masing item (besar kecil tetap, angka tetap). Hal ini dikarenakan
+operasi fungsi tersebut hanya terjadi di latar belakang, dan tidak mengubah item secara langsung.
+
+## Membalik Urutan Item dengan Metode `.reverse()`
+
+Metode ini sangat simpel, metode ini akan membalik urutan item dari sebuah `list`.
+
+<Code
+code={
+`list_a = ["kucing", "ayam", "kambing", "sapi"]
+list_b = [50, 31, 15, 45]
+
+print(list_a.reverse()) # output : ["sapi", "kambing", "ayam", "kucing"]
+print(list_b.sort(reverse=True)) # output : [45, 31, 15, 45]`
+}
+lang="python"
+/>
+
+Metode ini hanya akan membalikkan urutan dari sebuah `list`, tanpa memperhatikan nilai dari item (besar-kecil angka, huruf, dsb).
+
+Selain dua metode di atas, masih ada metode lain untuk mengubah urutan dari `list`, salah satunya menggunakan _tuple unpacking_. Namun, metode ini akan dijelaskan ketika kita
+membahas tentang `tuple`.
+
+<PostsNav
+  next={{
+    title: "Python List - Menyalin List (List Copy)",
+    slug: "python-list-menyalin-list-list-copy"
+  }}
+  prev={{
+    title: "Python List - Menghapus Item di Dalam List",
+    slug: "python-list-menghapus-item-di-dalam-list"
+  }}  
+/>

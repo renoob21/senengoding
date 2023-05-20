@@ -1,0 +1,116 @@
+---
+title: Python Function - Return
+author: Reno Iqbalsah
+published: 16/05/2023
+slug: dasar-dasar-python/python-function-return
+draft: false
+description: Bagian ini membahas statement return dalam bahasa pemrograman Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
+
+Sejauh ini kita sudah menggunakan fungsi dengan mengeluarkan output dengan `print()`. Namun, pada prakteknya, kita tidak akan sering menggunakan `print()` dalam 
+sebuah fungsi, melainkan kita akan sering menggunakan _keyword_ `return`.
+
+_Keyword_ `return` akan "mengembalikan" sebuah value sebagai hasil dari operasi yang dijalankan dari sebuah fungsi. Jika sebelumnya hasil dari operasi kita keluarkan sebagai
+output, jika kita menggunakan `return`, kita dapat menyimpan hasil tersebut ke dalam sebuah variabel, ataupun menggunakannya dalam operasi lain.
+
+## Penggunaan `return`
+
+<Code
+lang="python"
+theme="one-dark-pro"
+code={
+`def tambah(a, b):
+    return a + b
+
+tambah(5,6)`
+}
+/>
+
+Dari kode di atas, tidak akan muncul output apapun, padahal sebenarnya operasi tersebut sudah terjadi. Untuk mengeluarkannya sebagai output, kita dapat melakukan seperti 
+di bawah ini.
+
+<Code
+lang="python"
+theme="one-dark-pro"
+code={
+`print(tambah(5,6)) # output: 11
+
+hasil = 5 + tambah(5,6)
+
+print(hasil) # output: 16`
+}
+/>
+
+Kita juga dapat menggunakan beberapa _keyword_ `return` dalam sebuah fungsi dengan menggunakan _conditional statement_.
+
+<Code
+lang="python"
+theme="one-dark-pro"
+code={
+`def gage(num):
+    if num % 2:
+        return "ganjil"
+    else:
+        return "genap"
+
+print(gage(5)) # output: ganjil`
+}
+/>
+
+Sebagai contoh lagi, kita coba ubah fungsi `jumlah()` pada bagian sebelumnya dengan menggunakan `return`.
+
+<Code
+lang="python"
+theme="one-dark-pro"
+code={
+`def jumlah(*nums):
+    jml = 0
+    for num in nums:
+        jml += num
+    return jml
+    
+hasil = jumlah(1,4,2,1)
+print(hasil) # output: 8`
+}
+/>
+
+Seperti contoh di atas, kita juga dapat menggunakan variabel `jml` yang ada pada fungsi tersebut untuk dijadikan sebagai _return value_ dari fungsi `jumlah()`.
+
+## Cara Kerja `return`
+
+Bagaimana cara `return` bekerja? Hal ini termasuk jarang dibahas dalam beberapa tutorial yang saya baca maupun lihat. Padahal, sebenarnya konsep ini cukup penting
+dan menarik untuk kita pelajari.
+
+Kita coba dengan melihat pada fungsi `jumlah()` di atas untuk dapat lebih kita pahami.
+
+<Code
+lang="python"
+theme="one-dark-pro"
+code={
+`def jumlah(*nums):
+    jml = 0
+    for num in nums:
+        jml += num
+    return jml
+    
+hasil = jumlah(1,4,2,1)
+print(hasil) # output: 8`
+}
+/>
+
+Kita mendefinisikan fungsi `jumlah()` pada baris pertama dan melakukan _function call_ pada baris ke 7. Pada saat kita melakukan _function call_ pada baris ke 7, _interpreter_ 
+akan kembali ke baris 1 untuk menjalankan fungsi yang kita buat. 
+
+Ketika _interpreter_ sampai pada _keyword_ `return` di baris 5, _interpreter_ akan "kembali" atau `return` ke 
+tempat fungsi tersebut di panggil (dilakukan _function call_), dalam kasus ini program akan kembali ke baris 7 dengan membawa variabel `jml` yang kemudian di-_assign_ pada 
+variabel `hasil`.
+
+<PostsNav
+  prev={{
+    title: "Python Function - Menggunakan Arguments",
+    slug: "python-function-menggunakan-arguments"
+  }}  
+/>

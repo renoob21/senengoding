@@ -1,0 +1,212 @@
+---
+title: Python For Loop (Dictionary)
+author: Reno Iqbalsah
+published: 11/05/2023
+slug: dasar-dasar-python/python-for-loop-dictionary
+draft: false
+description: Bagian ini membahas penggunaan for loop untuk mengiterasi tipe data dictionary dalam bahasa pemrograman Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
+
+Dictionary juga merupakan salah satu tipe data _iterable_ dalam bahasa pemrograman Python, hanya saja perlakuannya sedikit berbeda dengan _iterables_ yang lainnya, karena `dict`
+menggunakan `key` - `value` pair untuk menyatakan elemen-elemen dalam objek tersebut.
+
+## Iterasi Langsung pada Sebuah Dictionary
+
+Jika kita melakukan iterasi pada sebuah `dict`, maka kita akan mendapatkan seluruh `key` dalam dictionary tersebut.
+
+<Code
+lang="python"
+theme="dracula"
+code={
+`mafa = {
+    "Rudi" : "nasi goreng",
+    "Rani" : "rendang",
+    "Rendi" : "soto ayam"
+}
+
+for nama in mafa:
+    print(nama, end=" ")
+    
+# output : Rudi Rani Rendi`
+}
+/>
+
+## Menggunakan Metode `.keys()`
+
+Metode ini berlaku sama persis seperti saat kita mengiterasi sebuah _dictionary_ secara langsung. Hanya saja, metode `.keys()` 
+akan mengambil seluruh `key` pada sebuah `dict` dan mengubahnya menjadi `list`.
+
+<Code
+lang="python"
+theme="dracula"
+code={
+`mafa = {
+    "Rudi" : "nasi goreng",
+    "Rani" : "rendang",
+    "Rendi" : "soto ayam"
+}
+
+print(mafa.keys())
+
+for nama in mafa.keys():
+    print(nama, end=" ")
+    
+# output :
+# dict_keys(["Rudi", "Rani", "Rendi"]) 
+# Rudi Rani Rendi`
+}
+/>
+
+Selain kode di atas, kita juga dapat memanfaatkan iterasi `keys` dari sebuah `dict` untuk mendapatkan `values`-nya. Kita dapat sedikit memodifikasi for loop di atas menjadi
+seperti di bawah ini.
+
+<Code
+lang="python"
+theme="dracula"
+code={
+`mafa = {
+    "Rudi" : "nasi goreng",
+    "Rani" : "rendang",
+    "Rendi" : "soto ayam"
+}
+
+for nama in mafa.keys():
+    print(f"{nama} suka makan {mafa[nama]}")
+    
+# output :
+# Rudi suka makan nasi goreng
+# Rani suka makan rendang
+# Rendi suka makan soto ayam`
+}
+/>
+
+Kode di atas juga dapat juga digunakan dengan mengiterasi `dict` secara langsung tanpa menggunakan metode `.keys()`
+
+## Menggunakan Metode `.values()`
+
+Dengan metode `.values()`, kita akan mendapatkan seluruh `value` dari sebuah _dictionary_.
+
+<Code
+lang="python"
+theme="dracula"
+code={
+`mafa = {
+    "Rudi" : "nasi goreng",
+    "Rani" : "rendang",
+    "Rendi" : "soto ayam"
+}
+
+for makan in mafa.values():
+    print(makan)
+    
+# output :
+# nasi goreng
+# rendang
+# soto ayam`
+}
+/>
+
+## Menggunakan Metode `.items()`
+
+Metode `.items()` mengubah sebuah _dictionary_ menjadi `list` berisi `tuple` yang di dalamnya memuat pasangan `key` dan `value` dari sebuah `dict`.
+Agar lebih mudah, coba jalankan kode ini.
+
+<Code
+lang="python"
+theme="dracula"
+code={
+`mafa = {
+    "Rudi" : "nasi goreng",
+    "Rani" : "rendang",
+    "Rendi" : "soto ayam"
+}
+
+print(mafa.items())
+
+# output : dict_items([("Rudi", "nasi goreng"), ("Rani", "rendang"), ("Rendi", "soto ayam")])`
+}
+/>
+
+Lalu, bagaimana cara kita mendapatkan elemen `key` dan `value` dari _dictionary_ tersebut? Kita dapat melakukannya dengan menggabungkan 
+for loop dengan _tuple unpacking_. 
+
+<Code
+lang="python"
+theme="dracula"
+code={
+`mafa = {
+    "Rudi" : "nasi goreng",
+    "Rani" : "rendang",
+    "Rendi" : "soto ayam"
+}
+
+for name, food in mafa.items():
+    print(f"{name} suka makan {food}")
+
+# output :
+# Rudi suka makan nasi goreng
+# Rani suka makan rendang
+# Rendi suka makan soto ayam`
+}
+/>
+
+Pada kode di atas, notasi `name, food` akan me-_refer_ pada setiap `tuple` hasil dari metode `mafa.items()` dan melakukan _unpacking_ untuk masing-masing `tuple`.
+Proses iterasi terjadi seperti di bawah ini:
+- Pada iterasi pertama: `name, food = ("Rudi", "nasi goreng")`
+- Pada iterasi kedua: `name, food = ("Rani", "rendang")`
+- Pada iterasi ketiga: `name, food = ("Rendi", "soto ayam")`
+
+## Challange: Naik Gaji
+
+PT Mager Digital Solutions ingin menaikkan gaji bagi _software engineer_ dan _data scientist_ karena sudah memberikan kinerja yang sangat baik. Daftar pegawai
+pada PT MDS adalah sebagai berikut:
+
+<div class="special-table"></div>
+|Nama|Jabatan|
+|---|---|
+|Reno|CEO|
+|Shan|Software Engineer|
+|Lakusae|Data Scientist|
+|Rayya|CFO|
+
+Masukkan data tersebut ke dalam sebuah `dict`, dan keluarkan output:
+
+`"Gaji {nama pegawai} tahun ini {naik/tidak naik}"`
+
+Gunakan metode manapun yang menurut kalian paling mudah.
+Lihat jawabannya di sini:
+<CollapsibleCode
+title="Jawaban Challenge Naik Gaji"
+lang="python"
+theme="monokai"
+code= {
+`pegawai = {
+    "Reno" : "CEO",
+    "Shan" : "Software Engineer",
+    "Lakusae" : "Data Scientist",
+    "Rayya" : "CFO"
+}
+
+for nama, jabatan in pegawai.items():
+    ket_gaji = ""
+    if jabatan in ["Software Engineer", "Data Scientist"]:
+        ket_gaji = "naik"
+    else:
+        ket_gaji = "tidak naik"
+    print(f"Gaji {nama} tahun ini {ket_jabatan}")`
+}
+/>
+
+<PostsNav
+  next={{
+    title: "Python Loop - Continue dan Break",
+    slug: "python-loop-continue-dan-break"
+  }}
+  prev={{
+    title: "Python For Loop (Iterables)",
+    slug: "python-for-loop-iterables"
+  }}  
+/>

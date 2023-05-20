@@ -1,0 +1,167 @@
+---
+title: Python Loop - Continue dan Break
+author: Reno Iqbalsah
+published: 12/05/2023
+slug: dasar-dasar-python/python-loop-continue-dan-break
+draft: false
+description: Bagian ini membahas penggunaan notasi break dan continue pada loop dalam bahasa pemrograman Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
+
+Dalam bahasa pemrograman Python, `continue` dan `break` adalah _control flow_ khusus untuk meng-_handle_ loop.
+- `continue` artinya melompati satu loop, dan akan langsung masuk ke putaran loop berikutnya
+- `break` artinya adalah menghentikan loop, kemudian mengeksekusi kode yang ada setelah statement loop berakhir
+
+## Statement `continue`
+
+Kita dapat menggunakan `continue` untuk melompati sebuah loop apabila suatu syarat terpenuhi.
+
+<Code
+lang="python"
+theme="one-dark-pro"
+code= {
+`for i in range(5):
+    if i == 3:
+        continue
+    print(i, end=" ")
+
+# output : 0 1 2 4`
+}
+/>
+
+Pada kode di atas, angka 3 tidak akan dikeluarkan sebagai output, karena dalam kode tersebut kita mencantumkan sebuah kondisi.
+Apabila `i = 3`, maka _interpreter_ akan langsung melompati loop tersebut dan berlanjut ke nilai `i = 4`.
+
+Statement `continue` dapat digunakan baik dalam for loop maupun while loop.
+
+## Statement `break`
+
+Sedangkan `break` dapat kita gunakan untuk menghentikan loop jika suatu kondisi terpenuhi.
+
+<Code
+lang="python"
+theme="one-dark-pro"
+code= {
+`num = 0
+
+while True:
+    print(num, end =" ")
+    num += 1
+    if num == 5:
+        break
+
+# output : 0 1 2 3 4`
+}
+/>
+
+Pada kode di atas, statement `while True` adalah sebuah while loop yang tidak berujung (_infinitive loop_), tapi dengan menggunakan `break` kita dapat menghentikan
+loop tersebut apabila suatu kondisi terpenuhi.
+
+## Menggunakan Dengan String
+
+Kita juga dapat kedua statement ini dengan string, hal ini akan berguna apabila kita ingin memformat ulang sebuah string.
+
+<Code
+lang="python"
+theme="one-dark-pro"
+code= {
+`nama = "Komarudin Jamal, S.Kom, M.Cs, Ph.D"
+gabung = []
+
+for char in nama:
+    if char == " ":
+        continue
+    if char == ",":
+        break
+    gabung.append(char)
+
+new_name = "".join(gabung)
+
+print(u_name)
+# output : KomarudinJamal`
+}
+/>
+
+Pada kode di atas, dari string `nama`, kita akan mengeluarkan _output_ berupa nama orang tersebut di mana karakter spasi akan dihilangkan, dan seluruh gelar dari yang
+bersangkutan tidak akan dimuat. 
+
+Caranya adalah dengan memindahkan seluruh karakter pada string `nama` ke dalam `list` bernama `gabung`. Jika ada karakter spasi (" ") maka akan dilewati (`continue`), 
+dan apabila ada karakter koma (`,`), maka program akan berhenti (karena pada umumnya gelar dibatasi koma). 
+
+Metode `.join()` akan menggabungkan seluruh elemen dalam `list` menjadi sebuah string dengan pembatas/pemisah string yang diletakkan sebelum metode tersebut. Dalam hal ini 
+`"".join(gabung)` akan menggabung elemen dalam `gabung` dengan pembatas _empty string_ (tidak ada pembatas).
+
+## Challange : Membuat Username
+
+Cangkruk.com merupakan sebuah sosial media yang baru saja dirilis, mereka ingin menambahkan fitur _username suggestion_ bagi para pengguna barunya berdasarkan alamat email.
+Berikut beberapa contoh email para user:
+- erwin.gunawan12@gmail.com
+- santrio.gandhi99@yahoo.co.id
+- indra.hartoyo@gmail.com
+- sanjaya_handoyo64@hotmail.com
+- rohmat.ramndhan44@gmail.com
+
+**Disclaimer** : email di atas merupakan email fiktif dan dibuat dengan ngawur secara seketika dan sekaligus, apabila ada kesamaan dengan nama / alamat email seseorang, hal itu hanyalah kebetulan.
+
+Syarat _username suggestion_ adalah sebagai berikut:
+- Segala karakter khusus / simbol dari alamat email akan dihapuskan (dalam kasus ini hilangkan karakter "." dan "_")
+- Hilangkan karakter @ dan domain dari email tersebut
+- Gunakan fungsi `input()` untuk mengambil email dari user
+
+
+**Bonus** : Gunankan _library_ `string` untuk menghapus seluruh angka dari alamat email. Cek dokumentasinya [**di sini**](https://docs.python.org/3/library/string.html)
+
+Cek jawabannya di sini:
+<CollapsibleCode
+title="Jawaban Challenge Username"
+lang="python"
+theme = "monokai"
+code = {
+` # basic
+email = input("Masukkan alamat email: ")
+gabung = []
+
+for char in email:
+    if char == "@":
+        break
+    if char == "." or char == "_":
+        continue
+    gabung.append(char)
+
+username = "".join(gabung)
+
+print(username)
+
+# bonus
+
+import string
+email = input("Masukkan alamat email: ")
+gabung = []
+
+for char in email:
+    if char == "@":
+        break
+    elif char in string.punctuation:
+        continue
+    elif char in string.digits:
+        continue
+    gabung.append(char)
+
+username = "".join(gabung)
+
+print(username)`
+}
+/>
+
+<PostsNav
+  next={{
+    title: "Appendix - List Comprehension",
+    slug: "appendix-list-comprehension"
+  }}
+  prev={{
+    title: "Python For Loop (Dictionary)",
+    slug: "python-for-loop-dictionary"
+  }}  
+/>

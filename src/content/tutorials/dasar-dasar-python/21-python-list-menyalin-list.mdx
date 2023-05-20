@@ -1,0 +1,123 @@
+---
+title: Python List - Menyalin List (List Copy)
+author: Reno Iqbalsah
+published: 02/04/2023
+slug: dasar-dasar-python/python-list-menyalin-list-list-copy
+draft: false
+description: Bagian ini memembahas tentang bagaimana kita dapat menyalin data dari sebuah list pada bahasa pemrograman Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Dalam bahasa pemrograman Python, kita dapat menyalin sebuah variabel ke variabel lain. Seperti di bawah ini.
+
+<Code
+code={
+`x = 3
+y = x
+x+= 2
+
+print(x,y) # output : 5 3`
+}
+lang="python"
+/>
+
+Pada contoh di atas, angka 3 sebagai nilai dari variabel `x` akan diassign ke variabel `y`, kemudian variabel `y` akan berdiri sendiri
+sebagai variabel baru. Tapi bagaimana kalau kita ingin menyalin data dalam bentuk `list`?
+
+<Code
+code={
+`x = ["kucing", "tupai", "perkutut"]
+y = x
+x.append("anjing")
+
+print(f'nilai x adalah {x}') 
+# output : nilai x adalah ["kucing", "tupai", "perkutut", "anjing"]
+print(f'nilai y adalah {y}') 
+# output : nilai x adalah ["kucing", "tupai", "perkutut", "anjing"]`
+}
+lang="python"
+/>
+
+Wow! Padahal kita hanya mengubah variabel `x` saja, tapi kenapa variabel `y` ikut berubah?
+
+## _Pass by Value vs Pass by Reverence_
+
+Ketika kita meng-_assign_ (menetapkan) tipe data primitif (number, string, boolean) ke dalam sebuah variabel, maka Python akan memperlakukannya sebagai _pass by value_, yaitu nilai dari
+data yang kita memasukkan akan disimpan dalam suatu variabel, sehingga ketika variabel tersebut di-_assign_ kembali pada variabel lain, maka nilai tersebut akan di 
+_assign_ ke variabel baru.
+
+Sedangkan ketika kita meng-_assign_ tipe data berbasis objek (list, tuple, dictionary, set) ke dalam sebuah variabel, Python akan memperlakukannya sebagai _pass by reverence_. 
+Yang artinya, variabel tersebut bukan menyimpan nilai dari data tersebut, melainkan referensi di mana lokasi data tersebut disimpan dalam memori. Sehingga ketika variabel tersebut
+di-_assign_ ulang pada variabel baru, maka data yang disimpan pada variabel baru juga merupakan referensi pada sebuah objek yang sama.
+
+<Code
+code={
+`x = ["kucing", "tupai", "perkutut"]
+y = x
+
+print(x is y) # output : True`
+}
+lang="python"
+/>
+
+Ketika kita mengevaluasi nilai `x is y`, ternyata operasi tersebut menghasilkan output `True`, yang berarti kedua variabel tersebut bukan hanya sama dalam segi nilai,
+melainkan keduanya merupakan suatu objek yang sama dan disimpan pada memori yang sama. Lalu, bagaimana jika kita ingin menyalin data dari suatu `list` ke variabel baru, kemudian
+mengubahnya tanpa mempengaruhi variabel aslinya?
+
+## Menggunakan Metode `.copy()`
+
+Jalan keluarnya sangatlah mudah, kita hanya perlu menambahkan metode `.copy()` ketika kita meng-_assign_ `list` pada variabel baru.
+
+<Code
+code={
+`x = ["kucing", "tupai", "perkutut"]
+y = x.copy()
+x.append("anjing")
+
+print(f'nilai x adalah {x}') 
+# output : nilai x adalah ["kucing", "tupai", "perkutut", "anjing"]
+
+print(f'nilai y adalah {y}') 
+# output : nilai x adalah ["kucing", "tupai", "perkutut"]
+
+print(x is y) # output : False`
+}
+lang="python"
+/>
+
+Kita bisa lihat bahwa dengan menggunakan metode `.copy()`, ketika kita menambahkan item "anjing" pada `x`, item tersebut tidak dimasukkan juga pada `y`. Dan operasi 
+`x is y` kini menghasilkan nilai `False`
+
+## Menggunakan Notasi _Slicing_
+
+Selain metode `.copy()`, kita juga dapat menyalin `list` dengan notasi _slicing_.
+
+<Code
+code={
+`x = ["kucing", "tupai", "perkutut"]
+y = x[:]
+x.append("anjing")
+
+print(f'nilai x adalah {x}') 
+# output : nilai x adalah ["kucing", "tupai", "perkutut", "anjing"]
+
+print(f'nilai y adalah {y}') 
+# output : nilai x adalah ["kucing", "tupai", "perkutut"]`
+}
+lang="python"
+/>
+
+Dengan notasi _slicing_ `[:]` artinya adalah kita mengambil nilai dari sebuah list dari _index_ pertama sampai dengan terakhir. Dan hasilnya, notasi ini menghasilkan output yang
+sama dengan metode `.copy()`
+
+<PostsNav
+  next={{
+    title: "Python Tuple - Umum",
+    slug: "python-tuple-umum"
+  }}
+  prev={{
+    title: "Python List - Mengurutkan List (Sorting)",
+    slug: "python-list-mengurutkan-list-sorting"
+  }}  
+/>

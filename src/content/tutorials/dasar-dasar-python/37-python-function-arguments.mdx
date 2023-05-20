@@ -1,0 +1,151 @@
+---
+title: Python Function - Menggunakan Arguments
+author: Reno Iqbalsah
+published: 16/05/2023
+slug: dasar-dasar-python/python-function-menggunakan-arguments
+draft: false
+description: Bagian ini membahas cara membuat dan menggunakan fungsi yang menggunakan argumen dalam bahasa pemrograman Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
+
+Dalam sebuah fungsi, kita dapat menambahkan parameter / argumen dalam sebuah fungsi. Pada dasarnya parameter dan argumen adalah hal yang sama, dan merupakan istilah
+yang dapat ditukar penggunaannya, hanya saja ada beberapa perbedaan mendasar, yaitu:
+- **Parameter** - adalah yang variabel yang kita masukkan dalam tanda kurung `()` ketika kita membuat sebuah fungsi.
+- **Argumen** - nilai yang kita masukkan dalam tanda kurung `()` ketika kita melakukan _function call_.
+
+Sebagai catatan, kedua perbedaan ini tidaklah terlalu penting, hanya sebagai pengetahuan saja, asalkan kita tahu bagaimana kita menggunakan argumen / parameter dalam sebuah fungsi.
+
+## _Syntax_ Dasar Argumen / Parameter
+
+<Code
+lang="python"
+theme="monokai"
+code={
+`def tambah(num1, num2):
+    hasil = num1 + 2
+    print("Hasil penjumlahan:", hasil)
+
+tambah(5,7) # output: Hasil penjumlahan: 12`
+}
+/>
+
+Pada kode di atas, dapat kita lihat bahwa variabel `num1` dan `num2` adalah parameter, sedangkan angka `5` dan `7` adalah argumen.
+
+## _Positional Arguments_
+
+Secara _default_, Python menggunakan _positional argument_. Artinya, argumen yang akan kita masukkan haruslah kita urutkan berdasarkan posisinya
+sebagaimana urutan parameter saat membuat fungsi.
+
+<Code
+lang="python"
+theme="monokai"
+code={
+`nama_depan = "Linus"
+nama_belakang = "Harvey"
+
+def indentitas(namaD,namaB):
+    print("Nama saya adalah", namaD, namaB)
+
+identitas(nama_depan, nama_belakang) 
+# output: Nama saya adalah Linus Harvey
+
+identitas(nama_belakang, nama_depan) 
+# output: Nama saya adalah Harvey Linus`
+}
+/>
+
+Pada kode di atas, kita membuat fungsi yang menerima argumen `namaD` dan `namaB`, argumen apapun yang dimasukkan pertama dalam fungsi tersebut akan 
+dianggap sebagai nilai `namaD` dan argumen kedua akan menjadi nilai `namaB`.
+
+## _Keyword Arguments_
+
+Selain menggunakan _positional argument_, kita juga dapat melakukan _function call_ dengan menggunakan _keyword argument_, caranya adalah dengan memasukkan nama parameter dan 
+value dari argumen dalam sebuah fungsi. Kita gunakan fungsi `identitas` di atas sebagai contoh.
+
+<Code
+lang="python"
+theme="monokai"
+code={
+`nama_depan = "Linus"
+nama_belakang = "Harvey"
+
+def indentitas(namaD,namaB):
+    print("Nama saya adalah", namaD, namaB)
+
+identitas(namaB = nama_belakang, namaD = nama_depan) 
+# output: Nama saya adalah Linus Harvey`
+}
+/>
+
+Pada kode tersebut, meskipun kita memasukkan kedua argumen secara tidak berurutan, tetapi urutan eksekusi oleh _interpreter_ tetap mengeksekusi `namaD` terlebih dahulu, 
+baru kemudian `namaB`.
+
+## _Arbitrary Arguments_ (`*args`)
+
+_Arbitrary argument_ memungkinkan kita untuk memasukkan argumen dengan jumlah tak terbatas, yang kemudian argumen tersebut akan diterima oleh fungsi sebagai sebuah `tuple`
+berisi seluruh argumen yang dimasukkan. Caranya, adalah dengan menambahkan tanda bintang `*` pada awal nama argumen.
+
+<Code
+lang="python"
+theme="monokai"
+code={
+`def jumlah(*nums):
+    jml = 0
+    for num in nums:
+        jml += num
+    print("Jumlah:", jml)
+ 
+ jumlah(4,5,5,1) # output: Jumlah: 15`
+}
+/>
+
+Untuk membuktikan, cobalah sisipkan kode `print(nums)` sebelum _for loop_ pada fungsi di atas, maka akan keluar output sebuah `tuple`.
+
+## _Arbitrary Keyword Arguments_ (`**kwargs`)
+
+Hampir sama dengan _arbitrary argument_, _arbitrary keyword argument_ juga dapat kita gunakan dalam sebuah fungsi untuk menerima nama argumen dan argumen yang tidak kita
+atur sejak awal. Berbeda dengan `*args` yang menerima argumen sebagai `tuple`, `**kwargs` menerima argumen sebagai `dict`.
+
+<Code
+lang="python"
+theme="monokai"
+code={
+`def perkenalan(**nama):
+    print("Nama saya adalah", nama['depan'])
+    
+perkenalan(depan="Qomat", belakang="Khamid")
+# output: Nama saya adalah Qomat`
+}
+/>
+
+_Arbitrary keyword argument_ menggunakan tanda `**` di awalan nama variabel saat kita membuat fungsi.
+
+## Nilai Default Sebuah Parameter
+
+Kita dapat menentukan nilai _default_ dari sebuah parameter dalam fungsi yang kita buat. Apabila nilai sebuah parameter kita tentukan, maka jika kita tidak memasukkan
+argumen sebagai nilai dari parameter tersebut, fungsi akan secara otomatis menggunakan nilai _default_ yang kita tentukan.
+
+<Code
+lang="python"
+theme="monokai"
+code={
+`def perkenalan(nama="Dudung"):
+    print("Nama saya adalah", nama)
+    
+perkenalan() # output: Nama saya adalah Dudung
+perkenalan("Robert") # output: Nama saya adalah Robert`
+}
+/>
+
+<PostsNav
+  next={{
+    title: "Python Function - Return",
+    slug: "python-function-return"
+  }}
+  prev={{
+    title: "Python Function - Basic",
+    slug: "python-function-basic"
+  }}  
+/>

@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+p {
+    @apply my-3
+}
+
+.tech-stack {
+    @apply opacity-50 hover:opacity-100 h-16 grayscale hover:grayscale-0
+}

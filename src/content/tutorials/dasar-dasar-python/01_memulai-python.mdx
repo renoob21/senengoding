@@ -1,0 +1,99 @@
+---
+title: Memulai Pemrograman dengan Python
+author: Reno Iqbalsah
+published: 09/03/2023
+slug: dasar-dasar-python/memulai-pemrograman-dengan-python
+draft: false
+description: Bagian ini akan menjelaskan bagaimana memulai pemrograman dengan Python. Yaitu cara menginstall interpreter, memilih editor / Integrated Development Environment (IDE), manajemen virtual environment, dan alternatif aplikasi yang dapat digunakan tanpa instalasi
+---
+import {Code} from "astro/components"
+import Python_org from "@Assets/Images/dasar-dasar-python/Python_org.png"
+import anaconda_com from "@Assets/Images/dasar-dasar-python/anaconda_com.png"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+import {Image} from "@astrojs/image/components"
+
+
+
+![Pemrograman Dengan Python](https://i0.wp.com/idsc.miami.edu/wp-content/uploads/2021/11/Python-image-with-logo-730x350-1.jpg?fit=730%2C349&ssl=1)
+
+Untuk memulai pemrograman dengan python, ada beberapa hal yang perlu disiapkan untuk memperlancar proses kita dalam _coding_.
+Diantaranya:
+- Menginstall _interpreter_ Python pada komputer
+- Memilih dan menginstall editor atau IDE
+- Alternatif lain untuk menjalankan Python
+
+## Menginstall _interpreter_ Python
+
+Pada tutorial ini, hanya akan membahas lingkup Python 3 saja. Maka dari itu, kita akan melakukan instalasi Python 3. Saat tutrial ini dibuat, versi terbaru Python adalah 3.11.2.
+
+Untuk menginstall python, kita dapat langsung mengunduhnya melalui laman _official_ dari Python melalui _link_ [**https://python.org/downloads/**](https://python.org/downloads/)
+
+<Image class="in-article-img" src={Python_org} alt="Laman download interpreter Python official"/>
+
+
+Kemudian, klik pada tombol Download, dan ikuti proses instalasi sebagaimana kita menginstall aplikasi pada umumnya. Perlu diingat bahwa instalasi kadang kali memerlukan akses administrator, 
+apabila instalasi gagal, bisa dicoba untuk menekan klik-kanan pada file _installer_ dan pilih _run as administrator_.
+
+Selain menggunakan distribusi resmi dari Python, ada beberapa alternatif _interpreter_ Python yang dapat kita gunakan. Salah satunya 
+adalah Anaconda Distribution. Anaconda adalah versi _bundle_ dari Python yang di dalamnya sudah termasuk _tools_ yang berfokus
+pada _Data Analytics_ dan _Data Science_. Meski begitu, Anaconda juga cocok untuk digunakan untuk pekerjaan lain, karena Anaconda memiliki
+manajemen _virtual environtment_ yang lebih mumpuni. Saya pribadi menggunakan Anaconda sebagai interpreter Python.
+
+Untuk melakukan instalasi Anaconda, dapat langsung menuju pada laman [**https://anaconda.com/**](https://anaconda.com/)
+
+<Image class="in-article-img" src={anaconda_com} alt="Laman download Anaconda Distribution"/>
+
+Klik download sesuai dengan sistem operasi yang dimiliki, lalu lakukan instalasi sebagaimana petunjuk.
+
+**Catatan:**
+- Dalam proses instalasi, akan ditanyakan, "would you like to add Python/Anaconda to PATH?", klik "yes" walaupun ada tulisan "not recomended", ini akan memudahkan kita dalam pemrograman Kemudian
+- Rilisan resmi Anaconda menggunakan Python 3.9, walaupun versi Python terbaru adalah 3.11, hal ini tidak terlalu masalah
+
+## Instalasi Editor / IDE
+
+Sebenarnya, hal ini bukan hal yang wajib. Namun, dengan menginstall editor / IDE akan memudahkan kita dalam menulis _script_ python.
+Instalasi resmi Python sudah mencakup IDE dengan nama IDLE yang cocok bagi pemula untuk mulai belajar Python. Namun, untuk 
+hal yang lebih _advanced_, saya merekomendasikan beberapa software berikut:
+
+- [**Sublime Text**](https://www.sublimetext.com/3), editor yang ringan dan simple, ada versi gratis dan berbayar, support banyak bahasa pemrograman.
+- [**Visual Studio Code (VSCode)**](https://code.visualstudio.com/download), cukup ringan, gratis, kumunitas pengguna yang luas, dan banyak plugin yang sangat membantu, mensupport sangat banyak bahasa pemrograman.
+- [**Pycharm**](https://www.jetbrains.com/pycharm/download/), IDE yang powerful, tetapi cukup berat untuk dijalankan, ada versi gratis dan berbayar, berfokus pada pemrograman bahasa Python saja.
+
+Saya pribadi menggunakan VSCode dalam melakukan pemrograman, baik Python maupun lainnya.
+
+
+## Alternatif Lain untuk Menjalalankan Python
+
+Tapi gan, laptop saya lemot dan jadul, tidak kuat untuk install Python, gimana dong?
+
+Jangan khawatir! Sekarang sudah banyak resource online dan gratis yang dapat kita gunakan untuk menjalankan kode yang kita buat.
+Berikut beberapa resource yang dapat digunakan:
+
+- [**Github Codespaces**](https://github.com/features/codespaces), editor VSCode sekaligus _interpreter_ dan _compiler_ dari berbagai macam bahasa pemrograman, dapat digunakan mulai dari _front-end_ sampai dengan _back-end_.
+- [**Google Colab Notebook**](https://colab.research.google.com/), fokus pada pemrograman python saja, terutama untuk _back-end_ dan _data science_, tapi dapat digunakan untuk keperluan lain dengan Python.
+
+Kedua resource tersebut dapat langsung digunakan dengan gratis tanpa instalasi apapun. Selamat belajar!
+
+## Mulai Pemrograman dengan Python!
+
+Sekarang buka editormu! Buat file dengan nama apapun dengan ekstensi `.py`.
+
+Masukkan kode di bawah ini dan klik "Run"!
+
+<Code
+  code={
+`print("Saya siap belajar Python")`
+  }
+  lang={'python'}
+/>
+
+<PostsNav
+  next={{
+    title: "Hello, world!",
+    slug: "python-hello-world"
+  }}
+  prev={{
+    title: "Pengenalan Bahasa Pemrograman Python",
+    slug: "pengenalan-python"
+  }}
+/>

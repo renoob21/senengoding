@@ -1,0 +1,70 @@
+---
+    import BsX from 'svelte-icons-pack/bs/BsX';
+    import LogoWide from "../../Assets/Images/Homepage/LogoWide.png"
+    import Icon from 'svelte-icons-pack/Icon.svelte';
+    import BsList from 'svelte-icons-pack/bs/BsList';
+    import BsSearch from 'svelte-icons-pack/bs/BsSearch';
+    import './Navigation.css'
+    import Sidebar from './Sidebar.svelte';
+    import {Image} from "@astrojs/image/components";
+    import SearchBar from "./SearchBar.svelte";
+
+---
+
+<nav class="flex justify-center items-center gap-3 p-4 bg-gray-800 drop-shadow-xl fixed top-0 w-full z-10">
+    <a href="/">
+        <div class="mr-auto text-gray-200 hover:cursor-pointer">
+            <Image src={LogoWide} alt="Logo" class="h-7 w-fit"/>
+        </div>
+    </a>
+    <div class="absolute flex items-center bg-gray-50 w-1/3 h-10 rounded-md border-2 border-gray-200 focus-within:border-gray-500">
+        <SearchBar client:load/>
+    </div>
+    <div class="ml-auto h-full text-gray-200 rounded-3xl hover-btn" id="open-navbar">
+        <Icon 
+           src={BsList} 
+           size="24" 
+           className="m-1"
+        />
+    </div>
+</nav>
+
+
+<aside class="flex justify-end collapse ease-in-out duration-30" id="navbar">
+    <div class="fixed w-10/12 md:w-1/4 top-0 ml-auto bg-gray-700 h-full drop-shadow-xl md:z-10 z-20 navbar" 
+        >
+        <div>
+            <div class="flex justify-center items-center p-4">
+                <div class="ml-auto rounded-3xl text-gray-50 hover-btn" id="close-navbar">
+                    <Icon src={BsX} size="24" className="m-1"/>
+                </div>
+            </div>
+        </div>
+        <ul class="my-5">
+            <a href="/tentang">
+                <li class="sidebar-items">Tentang</li>
+            </a>
+            <a href="/blog">
+                <li class="sidebar-items">Blog Posts</li>
+            </a>
+            <a href="/#courses">
+                <li class="sidebar-items">Tutorial</li>
+            </a>
+        </ul>
+    </div>
+</aside>
+
+<script defer>
+    const openNav = document.getElementById("open-navbar");
+    const closeNav = document.getElementById("close-navbar");
+    const navbar =  document.getElementById("navbar")
+
+    openNav?.addEventListener("click", () => {
+        navbar?.classList.toggle("collapse");
+    })
+
+    closeNav?.addEventListener("click", () => {
+        navbar?.classList.toggle("collapse");
+    })
+
+</script>

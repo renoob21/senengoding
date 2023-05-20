@@ -1,0 +1,115 @@
+---
+title: Python Tuple - Umum
+author: Reno Iqbalsah
+published: 03/04/2023
+slug: dasar-dasar-python/python-tuple-umum
+draft: false
+description: Bagian ini memembahas tentang tipe data tuple pada bahasa pemrograman Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Tuple merupakan tipe data yang sangat mirip dengan `list`, hanya saja `tuple` bersifat _immutable_, yang artinya tipe data `tuple` tidak dapat diubah-ubah.
+Sehingga, metode-metode seperti `.insert()`, `.append()`, `.remove()` dan sebagainya tidak tersedia pada tipe data `tuple`.
+
+Untuk membuat sebuah `tuple`, kita hanya perlu memasukkan item-item ke dalam tanda kurung `()`, atau bisa juga tanpa perlu menggunakan tanda kurung,
+cukup dengan meng-_assign_ beberapa item dalam satu variabel dengan dibatasi koma `,` untuk masing-masing item.
+
+<Code
+code={
+`tuple1 = ("a", "b", "c")
+tuple2 = 1, 2, 3
+
+print(type(tuple1)) # output : tuple
+print(type(tuple2)) # output : tuple`
+}
+lang="python"
+/>
+
+## _Indexing_ dan _slicing_
+
+Sebagamana `list`, item dalam `tuple` juga dapat diakses dengan metode _indexing_ dan _slicing_.
+
+<Code
+code={
+`tuple1 = ("a", "b", "c", "d", "e")
+idx = tuple1[1]
+slc = tuple1[1:4]
+
+print(idx) # output : b
+print(slc) # output : ("b", "c", "d")`
+}
+lang="python"
+/>
+
+## Metode Dalam `tuple`
+
+Hanya ada 2 metode dalam `tuple` yang tersedia secara _default_. Yaitu `.count()` dan `.index()`, kedua metode ini juga tersedia dalam tipe data `list`.
+
+Metode `.count()` menghitung jumlah kemunculan suatu item dalam sebuah `tuple` atau `list`.
+
+<Code
+code={
+`tuple1 = (1, 3, 5, 1, 4, 7, 3, 1, 2)
+
+print(tuple1.count(1)) # output : 3`
+}
+lang="python"
+/>
+
+Metode `.index()` menghasilkan _index_ kemunculan pertama dari sebuah item.
+
+<Code
+code={
+`tuple1 = (1, 3, 5, 1, 4, 7, 3, 1, 2)
+
+print(tuple1.index(3)) # output : 1`
+}
+lang="python"
+/>
+
+Pada kode di atas, item dengan nilai 3 muncul pada _index_ 1 dan 6, maka metode `.index()` hanya mengambil _index_ kemunculan pertama saja, yaitu _index_ 1.
+
+Selain itu, kita juga dapat menggunakan fungsi `len()` untuk menghitung jumlah item dalam sebuah `tuple`. Pada dasarnya, fungsi ini dapat digunakan dalam 
+semua tipe data sekuen seperti `list`, `tuple`, dan `str` (string). `len()` maksudnya adalah _length_ atau panjang dari suatu sekuen.
+
+<Code
+code={
+`tuple1 = (1, 3, 5, 1, 4, 7, 3, 1, 2)
+
+print(len(tuple1)) # output : 9`
+}
+lang="python"
+/>
+
+## Menggabungkan dan Menggandakan `tuple`
+
+Meskipun kita tidak dapat mengubah `tuple`, tapi kita dapat menggabungkan dua atau lebih `tuple` atau menggandakan sebuah `tuple`. Untuk menggabungkan `tuple` kita hanya perlu
+menggunakan operator `+`, begitu pula untuk menggandakan `tuple` kita hanya perlu menggunakan operator `*`
+
+<Code
+code={
+`tuple1 = ("kuda", "sapi", "kambing")
+tuple2 = ("ayam", "puyuh", "bebek")
+
+tuple3 =  tuple1 + tuple2
+tuple4 = tuple1 * 2
+
+print(tuple3) 
+# output : ("kuda", "sapi", "kambing", "ayam", "puyuh", "bebek")
+print(tuple4)
+# output : ("kuda", "sapi", "kambing", "kuda", "sapi", "kambing")`
+}
+lang="python"
+/>
+
+<PostsNav
+  next={{
+    title: "Python Tuple - Tuple Unpacking (Bagian 1)",
+    slug: "python-tuple-tuple-unpacking-bagian-1"
+  }}
+  prev={{
+    title: "Python List - Menyalin List (List Copy)",
+    slug: "python-list-menyalin-list-list-copy"
+  }}  
+/>

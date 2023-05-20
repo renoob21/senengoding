@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+article > h1 {
+    @apply text-5xl font-bold
+}
+
+article p {
+    @apply tracking-wider my-3 text-justify text-sm md:text-base
+}
+
+article > h2 {
+    @apply text-3xl font-bold my-5
+}
+
+article > h3 {
+    @apply text-xl font-bold my-3
+}
+
+article > ul {
+    @apply list-disc list-inside text-justify
+}
+
+article > p > img {
+    @apply mx-auto my-11 w-full
+}
+
+a > strong {
+    @apply border-b-2 border-gray-300 border-dashed hover:border-solid
+}
+
+.astro-code {
+    @apply rounded-md w-5/6 p-2 mx-auto my-10
+}
+
+.in-article-img {
+    @apply mx-auto md:w-5/6 md:my-14 w-full my-3
+}
+
+
+h2 > code, h3 > code, p > code , li > code {
+    @apply bg-gray-200 p-1 rounded-sm
+}
+
+table {
+    @apply table-auto md:border-separate border-spacing-1 border border-slate-400 mx-auto w-full rounded-sm my-4
+}
+
+th {
+    @apply border-slate-400 border p-2 text-left bg-gray-800 text-gray-50 rounded-sm
+}
+
+td {
+    @apply border-slate-400 border p-2 rounded-sm
+}
+
+table code {
+    @apply bg-gray-200 p-1 rounded-sm
+}
+
+.special-table + table {
+    @apply w-fit rounded-none border-collapse
+}

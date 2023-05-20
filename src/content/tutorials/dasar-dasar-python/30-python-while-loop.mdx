@@ -1,0 +1,119 @@
+---
+title: Python While Loop
+author: Reno Iqbalsah
+published: 18/04/2023
+slug: dasar-dasar-python/python-while-loop
+draft: false
+description: Bagian ini membahas penggunaan while loop dalam bahasa pemrograman Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
+
+
+While loop, merupakan salah satu _loop_ dalam Python. While loop akan menjalankan sebuah kode secara berulang selama suatu
+kondisi terpenuhi.
+
+<Code
+code={
+`i = 0
+while i < 5:
+    print(i, end=" ")
+    i += 1
+
+# output = 0 1 2 3 4`
+}
+lang="python"
+theme="dracula-soft"
+/>
+
+Dalam kode di atas, nilai `i` yang mulanya bernilai `0` akan dikeluarkan sebagai output. Begitu pula seterusnya, interpreter
+akan mengecek apakah nilai `i` lebih kecil dari `5`. Ketika nilai `i` mencapai nilai `5`, maka interpreter akan menghentikan
+loop tersebut.
+
+**Catatan**: While loop akan mengecek terlebih dahulu suatu kondisi yang diberikan, dan kemudian baru menjalankan program, apabila kondisi
+tidak terpenuhi sejak awal, maka program tidak akan berjalan.
+
+## Mengambil Input Secara berulang
+
+Kita juga dapat menggunakan while loop untuk mengambil input secara berulang. Misalnya kita mengambil input beberapa angka, dan menghasilkan output jumlah dari angka-angka
+yang diinput. Program akan dihentikan apabila user memasukkan angka 0.
+
+Mari berkenalan dengan salah satu _library_ dalam Python bernama `time`. _Library_ ini memungkinkan kita untuk menggunakan fungsi yang berhubungan dengan waktu. Kita akan
+menggunakan fungsi `time.sleep()` untuk memberikan jeda antar input yang dilakukan user. Untuk menggunakan _library_ ini, kita harus terlebih dahulu meng-_import_ `time` ke 
+dalam kode kita.
+
+<Code
+lang="python"
+theme="dracula-soft"
+code={
+`import time # mengimport library time
+
+user_input = 1 # angka random selain 0, agar while loop berjalan
+jumlah = 0 # jumlah awal
+
+while user_input != 0:
+   user_input = int(input("Masukkan angka: "))
+   jumlah += user_input
+   print("Jumlah: ", jumlah)
+   time.sleep(3) # menjeda program selama 3 detik`
+}
+/>
+
+Dalam kode di atas ada tanda `#` yang merupakan _comment_, seluruh tulisan di belakang tanda `#` tidak akan dibaca dan dieksekusi oleh _interpreter_. Penggunaan
+_comment_ yang tepat sangatlah bermanfaat, untuk kita menjelaskan bagaimana suatu program bekerja, baik kepada orang lain maupun untuk kita baca lagi di lain waktu.
+
+## _Perhatian:_ Menghindari _Infinite Loop_
+
+Dalam menjalanka while loop, perlu diperhatikan bahwa kita harus memastikan bahwa syarat program berhenti akan terpenuhi. Apabila syarat ini tidak terpenuhi, maka program akan
+terus berjalan dan dapat membebani memori. Misalnya pada kode di bawah ini:
+
+<Code
+lang="python"
+theme="dracula-soft"
+code={
+`i = 10
+
+while i > 5:
+   print(i)
+   i += 1`
+}
+/>
+
+Pada kode di atas, program akan terus mengeluarkan output `10 11 12 13 ...` dan seterusnya. Karena kondisi `i > 5` akan selalu terpenuhi sebab nilai `i` malah akan semakin
+besar. Pastikan hal ini tidak terjadi karena program yang kita buat akan "terjebak" dalam sebuah loop yang tidak berujung.
+
+## _Challenge_: Aplikasi Timer
+
+Mari coba kita buat sebuah aplikasi _timer_ sederhana. Dengan ketentuan:
+- Program akan mengambil angka dari user, angka ini merupakan jumlah berapa lama program akan berjalan dalam detik.
+- Program akan mengeluarkan output berupa _countdown_ dari nilai timer yang dimasukkan.
+- Gunakan fungsi `time.sleep()` untuk membuat interval antar _countdown_ menjadi 1 detik.
+
+Buka jawabannya di sini:
+<CollapsibleCode
+lang='python'
+theme="monokai"
+title="Jawaban Challenge Aplikasi Timer"
+code={
+`import time
+
+input_time = int(input("Lama timer (detik): "))
+
+while input_time >= 0:
+   print(input_time)
+   time.sleep(1)
+   input_time -= 1`
+}
+/>
+
+<PostsNav
+  next={{
+    title: "Python For Loop (Basic)",
+    slug: "python-for-loop-basic"
+  }}
+  prev={{
+    title: "Python Loop Statement",
+    slug: "python-loop-statement"
+  }}  
+/>

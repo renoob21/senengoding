@@ -1,0 +1,100 @@
+---
+title: Python Tuple - Tuple Unpacking (Bagian 2)
+author: Reno Iqbalsah
+published: 04/04/2023
+slug: dasar-dasar-python/python-tuple-tuple-unpacking-bagian-2
+draft: false
+description: Bagian ini memembahas tentang bagaimana kita memanfaatkan fitur tuple unpacking pada bahasa pemrograman Python untuk penggunaan yang lebih luas dan praktikal.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+_Tuple unpacking_ tidak hanya kita gunakan semata-mata dalam mengambil item dari sebuah `tuple` saja, melainkan ada beberapa metode yang lebih praktikal ketika kita melakukan
+pemrograman.
+
+## Mendeklarasikan Beberapa Variabel Sekaligus
+
+Masih ingat bukan, bahwa kita dapat meng-_assign_ sebuah `tuple` tanpa menggunakan tanda kurung `()`? Dengan begitu, kita dapat mendeklarasikan beberapa variabel secara 
+sekaligus dalam satu baris seperti ini.
+
+<Code
+code={
+`a, b, c = 5, 6 ,11
+
+print(a) # output : 5
+print(b) # output : 6
+print(c) # output : 11`
+}
+lang="python"
+/>
+
+Sangat praktis bukan? Perlu diingat bahwa hal ini akan membuat kode kita menjadi lebih ringkas dan rapi, tetapi apabila kita mendeklarasikan terlalu banyak variabel secara sekaligus
+maka akan membuat kode kita sulit dibaca.
+
+## Menukar Nilai dari Dua Buah Variabel
+
+_Tuple unpacking_ juga dapat kita gunakan untuk menukar nilai dari dua variabel.
+
+<Code
+code={
+`a = 11
+b = 7
+
+a, b = b, a
+
+print(a) # output : 7
+print(b) # output : 11`
+}
+lang="python"
+/>
+
+Pada kode di atas, yang terjadi adalah kita meng-_assign_ ulang variabel kedua variabel dengan cara `a = b` dan `b = a`. Namun, kedua operasi tersebut dilakukan secara bersamaan,
+sehingga nilai dari kedua variabel tersebut menjadi "tertukar" (belum ada rencana film berjudul "Variabel yang tertukar"). 
+
+Apabila kita mencoba operasi tersebut tanpa _tuple unpacking_, maka yang terjadi adalah seperti di bawah ini.
+
+<Code
+code={
+`a = 11
+b = 7
+
+a = b
+b = a
+
+print(a) # output : 7
+print(b) # output : 7`
+}
+lang="python"
+/>
+
+Kedua variabel menjadi memiliki nilai yang sama, yaitu 7. Kenapa begitu? Karena ketika kita meng-_assign_ ulang dengan `a = b`, maka nilai dari `a` berubah menjadi 7.
+Sehingga ketika kita meng-_assign_ ulang dengan `b = a` maka ini sama saja dengan meng-_assign_ `b = 7`, sehingga dalam kasus ini penukaran variabel tidak dapat dilakukan tanpa _tuple unpacking_
+
+## Menukar Posisi Item pada Sebuah `list`
+
+Selain menukar nilai dari dua variabel, _tuple unpacking_ juga dapat digunakan untuk menukar posisi dari item pada sebuah `list`.
+
+<Code
+code={
+`angka = [1, 5, 7, 11, 8]
+
+angka[1], angka[3] = angka[3], angka[1]
+
+print(angka) # output : [1, 11, 7, 5, 8]`
+}
+lang="python"
+/>
+
+Pada kode di atas, posisi dari _index_ 1 dan _index_ 3 menjadi tertukar. Hal ini menggunakan logika yang sama dengan menukar dua buah variabel. Yang terjadi adalah,
+nilai dari _index_ 1 dan _index_ 3 saling bertukar pada kode tersebut.
+
+<PostsNav
+  next={{
+    title: "Python Sets",
+    slug: "python-sets"
+  }}
+  prev={{
+    title: "Python Tuple - Tuple Unpacking (Bagian 1)",
+    slug: "python-tuple-tuple-unpacking-bagian-1"
+  }}  
+/>

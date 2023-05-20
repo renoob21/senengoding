@@ -1,0 +1,139 @@
+---
+title: Python Conditional Statement (if ... else ...)
+author: Reno Iqbalsah
+published: 13/04/2023
+slug: dasar-dasar-python/python-conditional-statement-if-else
+draft: false
+description: Bagian ini membahas penggunaan conditional statement (if ... else ...) dalam bahasa pemrograman Python.
+---
+
+import {Code} from "astro/components"
+import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+import {Image} from "@astrojs/image/components"
+import Linear from "@Assets/Images/dasar-dasar-python/Linear.png"
+import Conditional from "@Assets/Images/dasar-dasar-python/Conditional.png"
+
+Setelah belajar dasar-dasar dan gambaran umum bahasa pemrograman Python. Kita akan mulai belajar tentang _control flow_.
+ Sejauh ini, program kita hanya berjalan secara _linear_, yang artinya kode kita berjalan dari baris ke baris secara berurutan dari awal hingga akhir, sebagaimana 
+dalam ilustrasi di bawah ini.
+
+<Image src={Linear} class="in-article-img" alt="Eksekusi kode secara linear"/>
+
+_Control flow_ memungkinkan kita untuk menjalankan program kita secara lebih fleksibel. Ada dua _control flow_ yang biasa kita 
+kenal dalam bahasa pemrograman, yaitu _conditional statement_ dan _loop statement_. Dalam bagian ini akan khusus membahas tentang _conditional statement_.
+
+_Conditional statement_ memungkinkan program kita berjalan secara bercabang, seperti di bawah ini.
+
+<Image src={Conditional} class="in-article-img" alt="Eksekusi kode dengan conditional statement"/>
+
+## Menggunakan `if`
+
+Agar lebih menarik, kita akan menggunakan fungsi `input()` untuk mengambil data dari pengguna. Fungsi ini akan memunculkan _prompt_ yang dapat diisi dengan data.
+
+<Code
+code={
+`hewan = input("Masukkan nama hewan:")
+
+if hewan.lower() == "kucing":
+    print("meong")`
+}
+lang="python"
+theme="monokai"
+/>
+
+Coba jalankan kode di atas, dan masukkan kata "kucing", kemudian coba jalankan lagi dan masukkan kata-kata lain. Lihat apa bedanya.
+
+## Menggunakan `else`
+
+Pada kode sebelumnya, ketika syarat tidak terpenuhi, maka tidak akan terjadi apa-apa. Statement `else` akan dieksekusi, **jika dan hanya jika** syarat dalam statement `if`
+tidak terpenuhi.
+
+<Code
+code={
+`hewan = input("Masukkan nama hewan:")
+
+if hewan.lower() == "kucing":
+    print("meong")
+else:
+    print("hmmm")`
+}
+lang="python"
+theme="monokai"
+/>
+
+Pada kode di atas, apabila kita menginput kata "kucing", maka akan mengeluarkan output "meow", sedangkan apabila kita menginput kata selain "kucing", maka akan keluar output "hmm".
+
+## Menggunakan `elif`
+
+_Keyword_ `elif` merupakan kependekan dari _else if_. Statement ini akan mengevaluasi syarat baru apabila syarat sebelumnya tidak terpenuhi. Statement `elif` dapat digunakan secara berulang
+dan digunakan bersamaan dengan `else`.
+
+Misalnya, seorang siswa memiliki jadwal les sebagai berikut:
+- Hari senin dan rabu merupakan jadwal les renang
+- Hari selasa adalah jadwal les piano
+- Hari jumat adalah jadwal les bahasa inggris
+- Hari lainnya tidak ada jadwal les (libur)
+
+Maka, apabila dinyatakan dalam statement `if ... else` akan menjadi seperti ini
+
+<Code
+code={
+`hari = input("Hari apa ini? ")
+
+if hari.lower() == "senin" or hari.lower() == "rabu":
+    print("Les renang")
+elif hari.lower() == "selasa":
+    print("Les piano")
+elif hari.lower() == "jumat":
+    print("Les bahasa inggris")
+else:
+    print("Les libur")`
+}
+lang="python"
+theme="monokai"
+/>
+
+## _Challenge_: Bonus Tahunan
+
+PT Mager Digital Solutions sedang mendapatkan untung besar, PT MDS ingin memberikan bonus kepada para pegawainya berdasarkan jumlah penjualan masing-masing, dengan syarat:
+- Pegawai dengan penjualan sampai dengan 100 unit, akan mendapat bonus 5.000USD
+- Pegawai dengan penjualan 101 s.d. 250 unit, akan mendapat bonus 10.000USD
+- Pegawai dengan penjualan 251 s.d. 400 unit, akan mendapat bonus 15.000USD
+- Pegawai dengan penjualan di atas 400 unit, akan mendapat bonus 25.000USD
+Buatlah sebuah program yang mengambil input berupa jumlah penjualan pegawai, dan mengeluarkan output berupa besarnya bonus yang diterima.
+
+**_Hint_**: Fungsi `input` akan selalu menghasilkan string, gunakan fungsi `int()` untuk mengubahnya menjadi integer.
+
+Lihat jawabannya di bawah ini:
+<CollapsibleCode
+title="Jawaban Challenge Bonus Tahunan"
+code={
+`penjualan = int(input("Jumlah penjualan: "))
+bonus = 0
+
+if penjualan <= 100:
+    bonus = 5000
+elif penjualan <= 250:
+    bonus = 10000
+elif penjualan <= 400:
+    bonus = 15000
+else:
+    bonus = 25000
+    
+print(f"Selamat! Kamu dapat bonus sebesar {bonus}USD!")`
+}
+lang="python"
+theme="monokai"
+/>
+
+<PostsNav
+  next={{
+    title: "Python Loop Statement",
+    slug: "python-loop-statement"
+  }}
+  prev={{
+    title: "Python Dictionary - Memodifikasi Item dalam Dictionary",
+    slug: "python-dictionary-memodifikasi-item-dalam-dictionary"
+  }}  
+/>

@@ -1,0 +1,23 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { getEntryBySlug } from "astro:content";
+import TutorialNav from "src/components/PostsComps/TutorialNav.astro";
+
+const {slug} = Astro.params;
+const post =  await getEntryBySlug("tutorials", slug ?? "pengenalan-python");
+if (!post?.id) return Astro.redirect("/404")
+const {Content, headings} = await post?.render()
+
+import '../Posts.css'
+---
+
+<Layout title={`${post?.data.title} | Seneng Ngoding`}>
+    <TutorialNav/>
+    <article class="md:w-3/5 w-full rounded-md drop-shadow-xl bg-white p-9">
+        <h1>{post?.data.title}</h1>
+        <p class="text-md italic tracking-normal text-gray-500">{post?.data.author}</p>
+        <p class="text-sm tracking-normal text-gray-500 mb-10">{post?.data.published}</p>
+        <p class="text-sm text-gray-500">{post?.data.description}</p>
+        <Content/>
+    </article>
+</Layout>

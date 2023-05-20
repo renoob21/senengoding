@@ -1,0 +1,76 @@
+---
+title: Python Operator - Assignment
+author: Reno Iqbalsah
+published: 21/03/2023
+slug: dasar-dasar-python/python-operator-assignment
+draft: false
+description: Bagian ini memembahas tentang operator assignment dalam bahasa pemrograman Python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+_Assignment Operator_ adalah operator yang digunakan untuk menetapkan nilai pada variabel. Coba perhatikan operasi di bawah ini:
+
+<Code
+code={
+`x = 5
+x = x + 3
+
+print(x)`
+}
+lang="python"
+/>
+
+Menurutmu, apa output dari kode tersebut? Atau malah akan menghasilkan _error_? 
+
+Jika jawabanmu adalah 8, maka kamu benar! Dalam operasi matematika, tentu hal ini sangat tidak masuk akal. Namun, dalam pemrograman, hal ini digunakan untuk menetapkan
+nilai baru pada sebuah variabel. Variabel pada Python dapat kita ubah dengan nilai baru sesuka kita. 
+
+Pada contoh di atas, nilai 5 pada deklarasi variabel `x` di baris pertama akan ditangkap oleh sistem, maka setiap pemanggilan kembali variabel `x` akan menghasilkan 
+nilai 5. Ketika kita menetepkan ulang nilai `x` seperti pada baris 2, variabel `x` pada sisi kanan akan menghasilkan nilai 5, sehingga 5 ditambah 3 adalah 8.
+
+Notasi di atas dapat kita persingkat menjadi:
+
+<Code
+code={
+`x = 5
+x += 3
+
+print(x) # output: 8`
+}
+lang="python"
+/>
+
+Operator `+=` adalah singkatan dari `var = var + (value)`. Operator singkatan ini berlaku pada semua operator aritmatika dan _bitwise operators_.
+
+## Daftar _Assignment Operators_
+
+|Operator|Contoh|Setara Dengan|
+|---|---|---|
+|`=`|`x = 5`|`x = 5`|
+|`+=`|`x += 3`|`x = x + 3`|
+|`-=`|`x -= 4`|`x = x - 4`|
+|`*=`|`x *= 2`|`x = x * 2`|
+|`/=`|`x /= 3`|`x = x / 3`|
+|`%=`|`x %= 2`|`x = x % 2`|
+|`//=`|`x //= 3`|`x = x //3`|
+|`**=`|`x **= 4`|`x = x ** 4`|
+|`&=`|`x &= 1`|`x = x & 1`|
+|`\|=`|`x \|= 3`|`x = x \| 3`|
+|`^=`|`x ^= 3`|`x = x ^ 3`|
+|`<<=`|`x <<= 2`|`x = x << 2`|
+|`>>=`|`x >>= 2`|`x = x >> 2`|
+
+Lima operator terakhir pada tabel di atas adalah _bitwise operators_ yang akan kita bahas pada bagian lain pada tutorial ini, untuk saat ini kita cukup mengetahui bahwa 
+_bitwise operators_ juga dapat digunakan dalam _assignment operator_.
+
+<PostsNav
+  next={{
+    title: "Python Operator - Comparison",
+    slug: "python-operator-comparison"
+  }}
+  prev={{
+    title: `Python Operator - Aritmatika`,
+    slug: "python-operator-aritmatika"
+  }}
+/>

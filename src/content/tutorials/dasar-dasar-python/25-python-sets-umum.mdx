@@ -1,0 +1,112 @@
+---
+title: Python Sets
+author: Reno Iqbalsah
+published: 04/04/2023 
+slug: dasar-dasar-python/python-sets
+draft: false
+description: Bagian ini memembahas tentang Pthon Sets, yang merupakan salah satu tipe data yang tersedia di Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Tipe data `set`, adalah tipe data yang cukup unik dalam bahasa pemrograman python. Secara tampilan, `set` mirip dengan `tuple` dan `list`, hanya saja `set` menggunakan tipe kurung kurawal (_curly braces_) `{}`
+sebagai pembatasnya.
+
+Meski terlihat mirip, tapi ada karakteristik `set` yang sangat berbeda dengan tipe data lainnya:
+- Merupakan tipe data _unordered_, atau tidak berurut, sehingga kita tidak dapat mengakses data yang ada di dalamnya dengan _indexing_ maupun _slicing_ sebagaimana `list` dan `tuple`. Bahkan, urutan item dalam `set` berubah-ubah ketika kita gunakan.
+- Tidak dapat menyimpan item ganda, satu item hanya dapat dimasukkan satu kali dalam sebuah `set`
+- Item dalam `set` tidak dapat diubah, tetapi kita dapat mengurangi atau menambah item di dalamnya.
+
+Coba jalankan kode di bawah ini secara berulang beberapa kali:
+
+<Code
+code={
+`set1 = {"apel", "kurma", "pisang", "kurma"}
+
+print(set1)`
+}
+lang="python"
+/>
+
+Dalam setiap kali kita jalankan, fungsi `print` akan menghasilkan urutan `set` yang berbeda-beda, selain itu, item `kurma` hanya muncul satu kali saja dan tidak berulang sebagaimana kita tetapkan.
+
+## Menambahkan Item dalam `set`
+
+Untuk menambahkan item ke dalam sebuah `set`, kita dapat menggunakan metode `.add()` untuk menambahkan item satu-per-satu, atau menggunakan metode `.update()` untuk menambah item
+dengan _iterables_.
+
+Berikut contoh penggunaan metode `.add()`
+
+<Code
+code={
+`satset = {"ayam", "kucing", "kambing"}
+satset.add("kerbau")
+
+print(satset)`
+}
+lang="python"
+/>
+
+Berikut contoh penggunaan metode `.update()`
+
+<Code
+code={
+`watwet = {"landak", "rusa", "jerapah"}
+bonbin = ("rusa", "kijang", "kancil")
+
+watwet.update(bonbin)
+print(watwet)`
+}
+lang="python"
+/>
+
+Metode `.update()` dapat menggunakan tipe data _iterables_ manapun, baik itu `str`, `list`, `tuple`, ataupun sesama `set`. Kemudian, ketika kode di atas dijalankan, maka item
+`rusa` hanya akan muncul sekali pada variabel `watwet` karena `set` hanya memperbolehkan satu item untuk muncul satu kali.
+
+## Menghapus Item dari `set`
+
+Untuk menghapus item dalam sebuah `set` kita dapat menggunakan metode `.remove()` atau `.pop()`. Metode `.remove()` menerima argumen berupa item yang akan kita hapus, sedangkan
+metode `.pop()` akan menghapus salah satu item dalam `set` secara acak.
+
+<Code
+code={
+`set1 = {"kelinci", "beruang", "kancil", "harimau"}
+set2 = {"rusa", "landak", "kanguru"}
+
+set1.remove("beruang")
+set2.pop()
+
+print(set1) # output : {"kelinci", "kancil", "harimau"}
+print(set2)`
+}
+lang="python"
+/>
+
+## Menggabungkan Dua Buah `set`
+
+Selain menambah dan mengurangi item, kita juga dapat menggabungkan dua buah `set`. Caranya, dengan menggunakan metode `.union()`. Sekilas metode ini mirip dengan metode `.update()`,
+hanya saja metode `.union()` tidak menambah item pada salah satu `set`, melainkan menghasilkan sebuah `set` baru.
+
+<Code
+code={
+`set1 = {"kelinci", "beruang", "kancil", "harimau"}
+set2 = {"rusa", "landak", "kanguru"}
+
+set3 = set1.union(set2)
+
+print(set3) 
+# output : {"kelinci", "beruang", "kancil", "harimau", "rusa", "landak", "kanguru"}`
+}
+lang="python"
+/>
+
+<PostsNav
+  next={{
+    title: "Python Dictionary - Umum",
+    slug: "python-dictionary-umum"
+  }}
+  prev={{
+    title: "Python Tuple - Tuple Unpacking (Bagian 2)",
+    slug: "python-tuple-tuple-unpacking-bagian-2"
+  }}  
+/>

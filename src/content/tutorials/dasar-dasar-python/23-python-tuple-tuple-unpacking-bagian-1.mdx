@@ -1,0 +1,80 @@
+---
+title: Python Tuple - Tuple Unpacking (Bagian 1)
+author: Reno Iqbalsah
+published: 04/04/2023
+slug: dasar-dasar-python/python-tuple-tuple-unpacking-bagian-1
+draft: false
+description: Bagian ini memembahas tentang bagaimana kita melakukan unpacking pada tipe data tuple pada bahasa pemrograman Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+_Tuple unpacking_ adalah salah satu fitur yang paling ditonjolkan tipe data `tuple`. Fitur ini memungkinkan kita untuk dapat mengeluarkan item dari sebuah tuple dan meng-_assign_ 
+item tersebut pada variabel baru. 
+
+## _Tuple Unpacking_ Dasar
+
+Kita dapat meng-_assign_ setiap item dalam sebuah `tuple` menjadi variabel baru dengan notasi seperti di bawah ini.
+
+<Code
+code={
+`buah = ("apel", "nanas", "jeruk")
+(merah, kuning, oranye) = buah
+
+print(merah) # output : "apel"
+print(kuning) # output : "nanas"
+print(oranye) # output : "jeruk"`
+}
+lang="python"
+/>
+
+Dari kode di atas, setiap item pada variabel `buah` akan diassign ke variabel baru **sesuai dengan urutan _index_-nya**.
+
+## _Unpacking_ dengan Tanda Bintang `*`
+
+Dengan menambahkan tanda bintang pada nama variabel yang akan diassign dengan item pada `tuple`, akan menambahkan beberapa item sekaligus dalam sebuah variabel.
+
+<Code
+code={
+`buah = ("nanas", "melon", "apel", "strawberry", "cherry")
+(kuning, hijau, *merah) = buah
+
+print(kuning) # output : "nanas"
+print(hijau) # output : "melon"
+print(merah) # output : ["apel", "strawberry", "cherry"]`
+}
+lang="python"
+/>
+
+Sebagaimana pada kode di atas, _index_ 0 akan diassign ke variabel `kuning`, _index_ 1 akan diassign pada variabel `hijau`, dan sisanya akan diassign pada variabel `merah`
+sebagai sebuah `list`
+
+<Code
+code={
+`buah = ("melon", "nanas", "lemon", "apel")
+(hijau, *kuning, merah) = buah
+
+print(hijau) # output : "melon"
+print(kuning) # output : ["nanas", "lemon"]
+print(merah) # output : "apel"`
+}
+lang="python"
+/>
+
+Apabila variabel dengan tanda `*` kita letakkan di tengah, maka variabel `hijau` akan mengambil item pada _index_ 0 dan variabel `merah` akan mengambil _index_ terakhir,
+dan sisanya akan diassign pada variabel `kuning` di tengah.
+
+**Catatan** : _Tuple unpacking_ hanya meng-_assign_ variabel berdasarkan urutan _index_ saja, nama variabel tidak akan berpengaruh sama sekali. Apabila kalian pernah belajar
+JavaScript, mungkin notasi ini akan mirip dengan _object deconstructing_, tetapi akan berbeda karena _tuple unpacking_ meng-_assign_ berdasarkan _index_, sedangkan _object deconstructing_
+meng-_assign_ berdasarkan nama variabel.
+
+<PostsNav
+  next={{
+    title: "Python Tuple - Tuple Unpacking (Bagian 2)",
+    slug: "python-tuple-tuple-unpacking-bagian-2"
+  }}
+  prev={{
+    title: "Python Tuple - Umum",
+    slug: "python-tuple-umum"
+  }}  
+/>

@@ -1,0 +1,53 @@
+---
+title: Python Loop Statement
+author: Reno Iqbalsah
+published: 13/04/2023
+slug: dasar-dasar-python/python-loop-statement
+draft: false
+description: Bagian ini membahas gambaran umum penggunaan Loop Statement dalam Python, bagaimana kita dapat menjalankan salah satu bagian dalam kode kita secara berulang-ulang.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+import Loop from "@Assets/Images/dasar-dasar-python/Loop.png"
+import {Image} from "@astrojs/image/components"
+
+
+Bahasa pemrograman Python, dan bahasa-bahasa pemrograman lain, mendukung penggunaan _loop_, di mana kita dapat menjalankan salah satu bagian dari
+sebuah kode secara berulang-ulang. Dengan menggunakan _loop_, kode kita dapat berjalan seperti ilustrasi di bawah ini.
+
+<Image src={Loop} class="in-article-img" alt="Eksekusi berulang kode dengan menggunakan loop"/>
+
+Dengan fitur ini, kita dapat menggunakannya dalam berbagai macam tujuan. Misalnya untuk melakukan otomasi input data secara berulang, dan sebagainya.
+
+Dalam bahasa pemrograman Python, kita mengenal dua jenis _loop_:
+- `while` _loop_, menjalankan program secara berulang, selama suatu kriteria terpenuhi. Misalnya `while x >= 5`, maka program akan berjalan selama nilai `x`
+lebih dari atau sama dengan 5.
+- `for` _loop_, menjalankan program selama berulang, dengan jumlah pengulangan yang kita tentukan. Misalnya, `for i in range(5)`, maka program akan diulang sebanyak 5 kali.
+
+<Code
+code={
+`while hidup:
+    belajar.run()
+    skill += 1000
+    
+    if lelah:
+        belajar.pause()
+        liburan.run()
+        continue`
+}
+lang="python"
+theme="monokai"
+/>
+
+Mari kita lanjutkan belajar! Selalu semangat belajar, selama kita masih hidup.
+
+<PostsNav
+  next={{
+    title: "Python While Loop",
+    slug: "python-while-loop"
+  }}
+  prev={{
+    title: "Python Conditional Statement (if ... else ...)",
+    slug: "python-conditional-statement-if-else"
+  }}  
+/>

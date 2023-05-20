@@ -1,0 +1,57 @@
+---
+import {Image} from "@astrojs/image/components";
+import HomeLayout from '../layouts/HomeLayout.astro';
+import Reno from '@Assets/Images/Homepage/Reno.jpg';
+import SvelteLogo from "@Assets/Images/About/SvelteLogo.svg";
+import AstroLogo from "@Assets/Images/About/AstroLogo.svg";
+import NodeLogo from "@Assets/Images/About/NodeLogo.svg";
+import NetlifyLogo from "@Assets/Images/About/NetlifyLogo.svg";
+import "./tentang.css";
+import { getEntryBySlug } from "astro:content";
+const tentang = await getEntryBySlug("others", "tentang");
+const {Content} = await tentang.render();
+---
+
+<HomeLayout title="Tentang | Seneng Ngoding">
+    <div class="flex content-center bg-gray-200 min-h-screen">
+        <div class="w-7/8 md:w-3/5 mx-auto my-10">
+            <div 
+                class="flex flex-col md:flex-row text-center 
+                       items-center md:text-left pt-15 md:pt-9
+                       bg-white drop-shadow-lg rounded-lg mt-6
+                       md:mt-0 p-9">
+                <Image 
+                    class="h-24 w-24 rounded-full m-3 absolute md:relative -translate-y-32 my-3 md:translate-y-0 mt-9 md:mt-3"
+                     src={Reno} alt="Author pic"/>
+                <div class="flex content-center flex-col mx-3">
+                    <h1 class="text-5xl mt-auto font-bold">Reno Iqbalsah</h1>
+                    <p class="mb-auto mt-1 italic text-gray-500">Full-Stack Web Developer</p>
+                </div>
+            </div>
+            <article class="rounded-lg bg-white drop-shadow-lg my-5 p-5">
+                <h2 class="text-xl font-bold absolute ml-3 bg-white px-2">Tentang Website Ini</h2>
+                <div class="text-justify border-2 rounded-lg p-5 border-gray-200 mt-4">
+                    <Content/>
+                    <p class="italic ml-auto text-right">- Reno Iqbalsah, Author</p>
+                </div>
+            </article>
+            <div class="rounded-lg bg-white drop-shadow-lg my-5 p-5">
+                <h2 class="text-xl font-bold absolute ml-3 bg-white px-2">Teknologi di Balik Website Ini</h2>
+                <div class="text-justify border-2 rounded-lg p-5 border-gray-200 mt-4 flex content-center">
+                    <a href="https://svelte.dev/" class="p-3 ml-auto">
+                        <Image src={SvelteLogo} alt="Svelte Front-end Framework" title="SvelteJs" class="tech-stack"/>
+                    </a>
+                    <a href="https://astro.build/" class="p-3">
+                        <Image src={AstroLogo} alt="AstroJs Meta-Framework" title="AstroJs" class="tech-stack"/>
+                    </a>
+                    <a href="https://nodejs.org/" class="p-3">
+                        <Image src={NodeLogo} alt="NodeJs Runtime" title="NodeJs" class="tech-stack"/>
+                    </a>
+                    <a href="https://netlify.com/" class="p-3 mr-auto">
+                        <Image src={NetlifyLogo} alt="Netlify Cloud" title="Netlify" class="tech-stack"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</HomeLayout>

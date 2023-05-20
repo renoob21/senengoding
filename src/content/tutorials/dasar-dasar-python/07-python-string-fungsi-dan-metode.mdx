@@ -1,0 +1,110 @@
+---
+title: Python String - Metode-Metode Dalam String
+author: Reno Iqbalsah
+published: 18/03/2023
+slug: dasar-dasar-python/python-string-metode-metode-dalam-string
+draft: false
+description: Bagian ini memembahas beberapa metode yang umum digunakan dalam modifikasi data string
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Ada beberapa metode yang sering digunakan dalam manipulasi / modifikasi data string. Metode ini sering digunakan untuk 
+mengubah tatanan / bentuk dari string, misalnya membuat karakter menjadi huruf kapital, menjadi huruf kecil, mengubah karakter, 
+dan sebagainya.
+
+## Metode `.upper()`
+
+Metode `.upper()` digunakan untuk mengubah seluruh karakter dalam sebuah string menjadi huruf kapital (_uppercase_).
+
+
+<Code
+code = {
+`teks = "Halo, Apa Kabar?"
+
+print(teks.upper()) # output : HALO, APA KABAR?`
+}
+lang="python"
+/>
+
+## Metode `.lower()`
+
+Metode `.lower()` digunakan untuk mengubah seluruh karakter dalam sebuah string menjadi huruf kecil (_lowercase_).
+
+<Code
+code = {
+`teks = "Halo, Apa Kabar?"
+
+print(teks.lower()) # output : halo, apa kabar?`
+}
+lang="python"
+/>
+
+## Metode `.strip()`
+
+Metode `.strip()` menghilangkan karakter _whitespaces_ (spasi, tab, enter, dsb) yang berada pada awal dan akhir string.
+
+<Code
+code = {
+`teks = "   Halo, Apa Kabar? "
+
+print(teks.lower()) # output : Halo, Apa Kabar?`
+}
+lang="python"
+/>
+
+## Metode `.replace()`
+
+Metode `.replace()` mengganti karakter satu dengan karakter lainnya. Caranya adalah dengan menggunakan metode `.replace(a, b)`
+di mana:
+- **a**, adalah karakter yang akan diubah
+- **b**, adalah karakter baru
+
+<Code
+code = {
+`teks = "Halo, Apa Kabar?"
+
+print(teks.replace("H", "C")) # output : Calo, Apa Kabar?`
+}
+lang="python"
+/>
+
+Apabila terdapat beberapa karakter yang sama, maka semua akan diubah menjadi karakter yang baru.
+
+<Code
+code = {
+`teks = "Halo, Apa Kabar?"
+
+print(teks.replace("a", "i")) # output : Hilo, Api Kibir?`
+}
+lang="python"
+/>
+
+## Metode `.split()`
+
+Metode `.split()` akan memisahkan string berdasarkan karakter yang kita tentukan, dan mengubahnya menjadi `list` (_array_).
+secara _default_, metode `.split()` akan memotong string pada setiap karakter spasi. Namun, kita juga bisa menambahkan argumen
+untuk mengubah karakter apa yang akan kita gunakan.
+
+<Code
+code = {
+`teks = "Halo, Apa Kabar?"
+
+print(teks.split()) # output : ["Halo,", "Apa", "Kabar?"]
+print(teks.split(",")) # output : ["Halo", "Apa Kabar?"]`
+}
+lang="python"
+/>
+
+Lebih jelas mengenai tipe data `list` akan kita bahas nanti.
+
+<PostsNav
+  next={{
+    title: "Python String - Escape Characters",
+    slug: "python-string-escape-characters"
+  }}
+  prev={{
+    title: `Python String - Concatenate dan Format`,
+    slug: "python-string-concatenate-dan-format"
+  }}
+/>

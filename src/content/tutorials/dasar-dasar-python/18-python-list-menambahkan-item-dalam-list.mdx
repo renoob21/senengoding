@@ -1,0 +1,109 @@
+---
+title: Python List - Menambahkan Item ke Dalam List
+author: Reno Iqbalsah
+published: 31/03/2023
+slug: dasar-dasar-python/python-list-menambahkan-item-ke-dalam-list
+draft: false
+description: Bagian ini memembahas tentang bagaimana kita dapat menambahkan item ke dalam sebuah list pada bahasa pemrograman Python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Selain mengubah data dalam list, kita juga dapat menambahkan item ke dalam `list`. Ini merupakan salah satu atribut dari `list` sangat berguna dan sering digunakan.
+
+## Menggunakan Metode `.insert()`
+
+Metode `.insert()` menerima 2 buah argumen, argumen pertama adalah _index_ di mana kita ingin memasukkan item, sedangkan argumen kedua adalah item yang akan kita masukkan.
+
+<Code
+code={
+`list1 = ["sapi", "kambing", "unta"]
+list2 = ["bayam", "kangkung", "sawi"]
+
+list1.insert(0, "kerbau")
+list2.insert(1, "kubis")
+
+print(list1) # output : ["kerbau","sapi", "kambing", "unta"]
+print(list2) # output : list2 = ["bayam", "kangkung", "kubis", "sawi"]`
+}
+lang="python"
+/>
+
+Item yang baru akan dimasukkan ke dalam list dalam posisi _index_ yang kita masukkan dalam argumen, sedangkan item yang sebelumnya ada pada index tersebut akan digeser ke belakang.
+
+## Menggunakan Metode `.append()`
+
+Metode `.append()` hanya menerima satu argumen saja, yaitu item baru yang akan dimasukkan. Metode ini akan memasukkan item baru pada posisi paling belakang dari _list_
+(pada akhir list).
+
+<Code
+code={
+`list2 = ["bayam", "kangkung", "sawi"]
+
+list2.append("terong")
+print(list2) 
+# output : list2 = ["bayam", "kangkung", "sawi", "terong"]
+
+list2.append("wortel")
+print(list2) 
+# output : list2 = ["bayam", "kangkung", "sawi", "terong", "wortel"]`
+}
+lang="python"
+/>
+
+## Menggunakan Metode `.extend()`
+
+Metode `.extend()` menerima suatu data _sequence_ / _iterable_ dan akan menambahkan item-item dari data tersebut ke dalam `list`. 
+Metode ini akan menambahkan item baru tersebut pada bagian belakang `list`. Yang dimaksud dengan data _sequence_ / _iterable_ di sini 
+adalah data seperti `list`, `tuple`, dan `str`.
+
+<Code
+code={
+`sayur = ["sop", "lodeh", "tumis"]
+lauk = ["gorengan", "rendang", "opor"]
+
+sayur.extend(lauk)
+print(sayur)
+# output : ["sop", "lodeh", "tumis", "gorengan", "rendang", "opor"]
+
+lauk.extend("sate")
+print(lauk)
+# output : ["gorengan", "rendang", "opor", "s", "a", "t", "e"]`
+}
+lang="python"
+/>
+
+Bisa dilihat, ketika kita memasukkan data string sebagai argumen dalam metode `.extend()`, maka setiap karakter akan dimasukkan satu-per-satu sebagai item baru dalam `list`.
+Mengapa demikian? Karena `.extend()` akan memberlakukan string sebagai _sequence_ / _iterable_, yang artinya setiap _index_ dalam string (maupun data lain) akan dimasukkan sebagai
+item baru.
+
+## Menggabungkan Dua Buah `list`
+
+Selain menggunakan metode `.extend()` kita juga dapat menggabungkan dua buah `list` dengan operator `+`.
+
+<Code
+code={
+`sayur = ["sop", "lodeh", "tumis"]
+lauk = ["gorengan", "rendang", "opor"]
+
+gabungan = sayur + lauk
+print(gabungan)
+# output : ["sop", "lodeh", "tumis", "gorengan", "rendang", "opor"]`
+}
+lang="python"
+/>
+
+Cara ini terlihat mirip dengan metode `.extend()`. Hanya saja, jika kita menjalankan `a.extend(b)` maka semua item pada `list` b akan disimpan di `list` b.
+Sedangkan `list_a + list_b` akan menghasilkan `list` baru dengan isi gabungan dari kedua `list`, sehingga kita perlu menyimpannya pada variabel baru jika ingin kita gunakan
+berulang kali.
+
+<PostsNav
+  next={{
+    title: "Python List - Menghapus Item di Dalam List",
+    slug: "python-list-menghapus-item-di-dalam-list"
+  }}
+  prev={{
+    title: "Python List - Mengubah Item dalam List",
+    slug: "python-list-mengubah-item-dalam-list"
+  }}  
+/>

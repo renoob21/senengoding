@@ -1,15 +1,25 @@
 ---
+import HomeLayout from '../layouts/HomeLayout.astro';
+import HomeHeader from '../components/Home/HomeHeader.astro';
+import Mengapa from 'src/components/Home/Mengapa.svelte';
+import CourseCard from 'src/components/Home/CourseCard.svelte';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<HomeLayout title="Seneng Ngoding - Belajar Programming Gratis">
+	<HomeHeader/>
+	<Mengapa/>
+	<div class="flex content-center items-center mx-auto">
+		<h2 id="courses" class="font-bold text-center text-xl md:text-5xl my-9 w-full">
+			Mulai Belajar Dengan Gratis Sekarang Juga!
+		</h2>
+	</div>
+	<CourseCard 
+		title="Dasar-Dasar Python" 
+		shortDesc="Pelajari bahasa pemrograman paling populer! Digunakan dalam otomasi, back-end, hingga data science dan artificial intelligence!"
+		pict="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png"
+		href="/tutorials/dasar-dasar-python/pengenalan-python"
+		/>
+</HomeLayout>
+
+
+

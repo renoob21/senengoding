@@ -1,0 +1,98 @@
+---
+title: Python Operator - Comparison
+author: Reno Iqbalsah
+published: 21/03/2023
+slug: dasar-dasar-python/python-operator-comparison
+draft: false
+description: Bagian ini memembahas tentang operator pembanding (comparison operators) dalam bahasa pemrograman Python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Operator pembanding (_comparison operators_) digunakan untuk membandingkan dua nilai, apakah sama, lebih besar, lebih kecil, dan sebagainya. _Comparison operators_ akan 
+selalu menghasilkan boolean atau `bool` sebagai outputnya.
+
+## Daftar _Comparison Operators_ dalam Python
+
+|Operator|Nama|Contoh Penggunaan|
+|---|---|---|
+|`==`|Sama dengan|`x == y`|
+|`!=`|Tidak sama dengan| `x != y`|
+|`>`|Lebih besar dari|`x > y`|
+|`<`|Lebih kecal dari|`x < y`|
+|`>=`|Lebih besar atau sama dengan|`x >= y`|
+|`<=`|Lebih kecil atau sama dengan|`x <= y`|
+
+## Penggunaan _Comparison Operators_
+
+_Comparison Operators_ `==` berbeda dengan operator `=`. Operator `=` (satu karakter sama dengan) digunakan untuk menetapkan nilai dari suatu variabel, sedangkan`==`
+digunakan untuk membandingkan dua buah nilai. 
+
+<Code
+code={
+`print(5 == 6) # output: False
+print(6 == 6.0) # output: True
+print(6 = 6.0) # SyntaxError`
+}
+lang="python"
+/>
+
+Data numerik dengan nilai yang sama akan menghasilkan `True`, baik berupa `int`, `float`, atau gabungan keduanya, seperti dilihat dalam kode di atas. Sedangkan apabila string 
+dibandingkan dengan angka numerik menggunakan operator `==`, akan selalu menghasilkan `False`.
+
+Sedangkan untuk data boolean (`bool`), `True` setara dengan angka 1, dan `False` setara dengan angka 0.
+
+<Code
+code={
+`print(5 == "5") # output: False
+print(6 == True) # output: False
+print(1 == True) # output: True
+print(0 == False) # output: True`
+}
+lang="python"
+/>
+
+Untuk _comparison operators_ selain `==`, yaitu `>`, `<`, `>=`, `<=` dapat digunakan untuk membandingkan:
+- Data numerik dengan data numerik
+- Data numerik dengan boolean
+- Data string dengan string
+
+Apabila kita membandingkan string dengan tipe data lain, maka akan menghasilkan `TypeError`, sehingga kode tidak akan berjalan.
+
+<Code
+code={
+`print(5 >= 6.0) # output: False
+print(6 >= True) # output: True
+print(1 >= True) # output: True
+print(0 < "False") # output: TypeError`
+}
+lang="python"
+/>
+
+Untuk komparasi string, berikut urutan dari yang terkecil hingga terbesar:
+
+`whitespace` &rarr; `puctuation (tanda baca)` &rarr; `angka` &rarr; `huruf kapital` &rarr; `huruf kecil`
+
+Berlaku juga urutan di mana `a` &rarr; `z` adalah urutan dari terkecil ke terbesar, baik huruf kapital maupun huruf kecil.
+<Code
+code={
+`print("a" > "A") # output: True
+print("6" > "!") # output: True
+print("c" >= "a") # output: True`
+}
+lang="python"
+/>
+
+Lalu apa gunanya membandingkan huruf lebih besar atau lebih kecil? Tentu saja ini akan sangat berguna ketika kita mengurutkan (_sorting_) data dalam bentuk
+teks, kita dapat mengurutkan secara _ascending_ maupun _descending_ dengan membandingkan besar kecilnya "nilai" dari huruf.
+
+<PostsNav
+  next={{
+    title: "Python Operator - Logical dan Bitwise",
+    slug: "python-operator-logical-dan-bitwise"
+  }}
+  prev={{
+    title: `Python Operator - Assignment`,
+    slug: "python-operator-assignment"
+  }}
+/>

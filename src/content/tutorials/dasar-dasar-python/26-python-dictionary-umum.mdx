@@ -1,0 +1,154 @@
+---
+title: Python Dictionary - Umum
+author: Reno Iqbalsah
+published: 08/04/2023
+slug: dasar-dasar-python/python-dictionary-umum
+draft: false
+description: Bagian ini memembahas tentang gambaran umum tipe data Dictionary pada bahasa pemrograman Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Dictionary atau `dict` adalah salah satu tipe data dalam bahasa pemrograman Python yang berbentuk _key - value pair_.
+Mengapa disebut _dictionary_? Karena bentuknya yang mirip dengan kamus, di mana dalam kamus terdapat pasangan antara sebuah kata dengan makna / artinya.
+Tipe data ini mirip dengan tipe data HashMap, atau dengan format file JSON. Format sebuah `dict` adalah `{key:value}`.
+
+<Code
+code={
+`dict1 = {
+    "ayam" : "unggas",
+    "sapi" : "mamalia",
+    "ular" : "reptil"
+}
+
+print(dict1)`
+}
+lang="python"
+/>
+
+## Mengakses Data dalam Sebuah `dict`
+
+Untuk mengakses data yang ada dalam sebuah `dict`, kita dapat menggunakan notasi _indexing_, hanya saja kita tidak menggunakan angka _index_, melainkan menggunakan
+`key` dari suatu _dictionary_ untuk mendapatkan `value`-nya.
+
+<Code
+code={
+`dict1 = {
+    "ayam" : "unggas",
+    "sapi" : "mamalia",
+    "ular" : "reptil"
+}
+
+print(dict1["ayam"]) # output : "unggas"
+print(dict1["ular"]) # output : "reptil"`
+}
+lang="python"
+/>
+
+## Mendapatkan Seluruh `key` dalam `dict`
+
+Kita dapat mengambil seluruh `key` dalam sebuah _dictionary_ dengan menggunakan metode `.keys()`. Metode ini akan menghasilkan `list` berisi seluruh `key`.
+
+<Code
+code={
+`dict1 = {
+    "ayam" : "unggas",
+    "sapi" : "mamalia",
+    "ular" : "reptil"
+}
+
+print(dict1.keys()) # output : ["ayam", "sapi", "ular"]`
+}
+lang="python"
+/>
+
+## Mendapatkan Seluruh `value` dalam `dict`
+
+Sebagaimana metode `.keys()`, kita juga dapat menggunakan metode `.values()` untuk mendapatkan seluruh `value`.
+
+<Code
+code={
+`dict1 = {
+    "ayam" : "unggas",
+    "sapi" : "mamalia",
+    "ular" : "reptil"
+}
+
+print(dict1.values()) # output : ["unggas", "mamalia", "reptil"]`
+}
+lang="python"
+/>
+
+## Mendapatkan Seluruh Item dalam `dict`
+
+Selain mendapatkan seluruh `key` dan `value`, kita juga dapat mendapatkan seluruh item dalam sebuah `dict` menggunakan metode `.items()`. Metode ini akan 
+menghasilkan sebuah `list` berisi `tuple` yang di dalamnya berupa `key` dan `value` yang ada dalam sebuah _dictionary_.
+
+<Code
+code={
+`dict1 = {
+    "ayam" : "unggas",
+    "sapi" : "mamalia",
+    "ular" : "reptil"
+}
+
+print(dict1.items()) 
+# output : [("ayam", "unggas"), ("sapi", "mamalia"), ("ular", "reptil")]`
+}
+lang="python"
+/>
+
+Mengapa ketiga metode di atas penting? Ketiga metode di atas penting ketika kita melakukan iterasi ke dalam sebuah _dictionary_, yang nanti akan kita bahas dalam bagian _loop_.
+
+## Nested Dictionary
+
+Nested dictionary merupakan tipe data dictionary berlapis / berjenjang, yaitu dimana di dalam sebuah `dict` terdapat di dalamnya tipe data `dict`.
+
+<Code
+code={
+`siswa = {
+    "rayya" : {
+        "kelas" : 3,
+        "gender" : "p",
+        "nilai" : {
+            "matematika" : 85,
+            "IPA" : 90
+        }
+    },
+    "sae" : {
+        "kelas" : 2,
+        "gender" : "l",
+        "nilai" : {
+            "matematika" : 100,
+            "IPA" : 95
+        }
+    }
+}`
+}
+lang="python"
+theme="dracula-soft"
+/>
+
+Untuk mengakses item di dalamnya, kita juga melakukan notasi _indexing_ secara berlapis.
+
+<Code
+code={
+`print(siswa["rayya"]["kelas"]) # output : 3
+print(siswa["sae"]["nilai"]["matematika"]) # output : 100`
+}
+lang="python"
+theme="dracula-soft"
+/>
+
+Apa yang terjadi apabila kita menggunakan metode `.keys()`, `.values()`, dan `.items()` pada _dictionary_ `siswa`? Cobalah dan amati apa yang terjadi!
+
+<PostsNav
+  next={{
+    title: "Python Dictionary - Memodifikasi Item dalam Dictionary",
+    slug: "python-dictionary-memodifikasi-item-dalam-dictionary"
+  }}
+  prev={{
+    title: "Python Sets",
+    slug: "python-sets"
+  }}  
+/>

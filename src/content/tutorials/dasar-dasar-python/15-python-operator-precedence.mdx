@@ -1,0 +1,44 @@
+---
+title: Python Operator - Precedence (Hierarki Operator)
+author: Reno Iqbalsah
+published: 23/03/2023
+slug: dasar-dasar-python/python-operator-precedence-hierarki-operator
+draft: false
+description: Bagian ini memembahas tentang operator precedence, atau prioritas / urutan eksekusi dari operator-operator pada bahasa pemrograman Python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Seperti yang kita ketahui dalam matematika, ketika kita melakukan operasi penghitungan, maka akan ada urutan operasi yang diahulukan dibanding operasi yang lain.
+Kita biasa mengaitkannya dengan operasi `x`, `:`, `+`, dan `-`, di mana perkalian (`x`) dan pembagian (`:`) didahulukan daripada pertambahan (`+`) dan pengurangan (`-`).
+Begitu juga dalam pemrograman, karena dasar dari pemrograman adalah matematika, maka konsep matematika ini juga diadopsi oleh bahasa pemrograman Python.
+
+Berikut ini daftar urutan (hierarki) pendahuluan operasi, diurutkan dari operator paling pertama dieksekusi hingga paling akhir:
+
+|Operator|Keterangan|
+|---|---|
+|`()`|Operasi yang terjadi dalam kurung didahulukan paling utama dari operasi lain|
+|`**`|Pemangkatan / Pangkat / Eskponen|
+|`+x`, `-x`, `~x`|Operator unary plus, minus, dan bitwise NOT|
+|`*`, `/`, `//`, `%`|Kali, bagi, _floor division_, dan modulus|
+|`+`, `-`|Tambah dan kurang|
+|`<<`, `>>`|Bitwise shift left dan right|
+|`&`|Bitwise AND|
+|`^`|Bitwise XOR|
+|`\|`|Bitwise OR|
+|`==`, `!=`, `>`, `>=`, `<`, `<=`, `is`, `is not`, `in`, `not in`|Semua comparison, identity dan membership operator|
+|`not`|Logical not|
+|`and`|Logical and|
+|`or`|Logical or|
+
+<PostsNav
+  next={{
+    title: "Python List - Umum",
+    slug: "python-list-umum"
+  }}
+  prev={{
+    title: `Python Operator - Identity dan Membership`,
+    slug: "python-operator-identity-dan-membership"
+  }}
+  
+/>

@@ -1,0 +1,149 @@
+---
+title: Python For Loop (Iterables)
+author: Reno Iqbalsah
+published: 11/05/2023
+slug: dasar-dasar-python/python-for-loop-iterables
+draft: false
+description: Bagian ini membahas penggunaan for loop untuk mengiterasi tipe-tipe data berbasis objek yang termasuk iterables dalam bahasa pemrograman Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
+
+Ketika membahas tentang tipe data pada bahasa pemrograman Python, kita sudah menyebutkan beberapa tipe data merupakan _iterables_, 
+atau dapat dilakukan iterasi. Misalnya adalah tipe data string, list, tuple, dan set. Maksut dari _iterables_ di sini adalah
+bahwa pada tipe data tersebut dapat dilakukan _loop_ atas elemen-elemen di dalamnya.
+
+## Iterasi pada `list` / `tuple` / `set`
+
+Contoh iterasi pada `list`
+
+<Code
+lang="python"
+theme="monokai"
+code = {
+`list1 = ["kucing", "sapi", "kambing"]
+
+for i in list1:
+    print(i)
+
+# output :
+# kucing
+# sapi
+# kambing `
+}
+/>
+
+Untuk mengiterasi sebuah tipe data _iterable_, kita hanya perlu mengganti fungsi `range()` pada for loop menjadi objek yang akan kita iterasikan, maka nilai `i` akan menjadi
+urutan dari nilai dalam objek tersebut. Contoh di atas menggunakan tipe data `list` sebagai objek yang diiterasikan, tapi tipe data `tuple` maupun `set` juga dapat diiterasikan dengan
+cara yang sama persis dengan kode di atas.
+
+Untuk menambah _readability_ atau keterbacaan kode kita, kita dapat mengubah nama variabel-variabel di atas menjadi seperti ini
+
+<Code
+lang="python"
+theme="monokai"
+code = {
+`peternakan = ["kucing", "sapi", "kambing"]
+
+for hewan in peternakan:
+    print(hewan)`
+}
+/>
+
+Kode tersebut akan menghasilkan output yang sama persis dengan kode di atasnya.
+
+## Iterasi pada `str`
+
+Kita juga dapat mengiterasi tipe data string dengan metode sama persis dengan cara di atas. Hanya saja, nilai variabel iterasi akan menyesuaikan dengan masing-masing 
+karakter pada objek yang diiterasikan.
+
+<Code
+lang="python"
+theme="monokai"
+code = {
+`for char in "kucing":
+    print(char)
+    
+# output:
+# k
+# u
+# c
+# i
+# n
+# g`
+}
+/>
+
+Pada kode di atas, seluruh karakter pada kata "kucing" akan dikeluarkan sebagai _output_, dan dapat dilihat bahwa kita tidak harus menyimpan _value_ "kucing" ke dalam sebuah 
+variabel untuk dilakukan iterasi.
+
+Kita coba sekali lagi, dengan mengubah seluruh huruf "a" pada kaliman "aku suka belajar programming" menjadi huruf "i".
+
+<Code
+lang="python"
+theme="monokai"
+code = {
+`kalimat = "aku suka belajar programming"
+
+for char in kalimat:
+    if char == a:
+        print("i", end="")
+    else:
+        print(char, end="")
+
+# output : iku suki belijir progrimming`
+}
+/>
+
+## Perbandingan dengan Fungsi `range()`
+
+Bagaimana kita bisa melakukan iterasi terhadap objek dengan cara yang sama persis dengan for loop menggunakan fungsi `range()`?
+
+Jawabannya sangatlah mudah, karena kedua loop tersebut menggunakan prinsip yang sama. Lihat pada kode di bawah ini, dan cobalah jalankan sendiri.
+
+<Code
+lang="python"
+theme="monokai"
+code = {
+`print(range(5)) # output : [0, 1, 2, 3, 4]`
+}
+/>
+
+Apa _output_ yang dihasilkan dari kode tersebut? Benar sekali, fungsi `range(n)` adalah fungsi yang menghasilkan sebuah `list` dengan 
+elemen di dalamnya berupa angka dari `0` sampai `n-1`. Sehingga, ketika kita melakukan for loop menggunakan `range()`, sebenarnya kita 
+sedang melakukan iterasi pada `list` yang dihasilkan oleh fungsi tersebut.
+
+## Challange: Suara Hewan
+
+Buatlah sebuah `list` berisi 5 hewan, yang termasuk di dalamnya kucing dan sapi (3 hewan lainnya bebas). Kemudian tulislah kode 
+di mana ketika hewan yang terpilih adalah kucing, maka keluarkan _output_ "meong" sedangkan jika sapi, keluarkan _output_ "moo", jika 
+hewan lain maka keluarkan output "hmmmm".
+
+<CollapsibleCode
+title="Jawaban Challenge Suara Hewan"
+lang="python"
+theme="monokai"
+code = {
+`binatang = ["kucing", "kambing", "rubah", "sapi", "singa"]
+
+for hewan in binatang:
+    if hewan == "kucing":
+        print("meong")
+    elif hewan == "sapi":
+        print("moo")
+    else:
+        print("hmmmm")`
+}
+/>
+
+<PostsNav
+  next={{
+    title: "Python For Loop (Dictionary)",
+    slug: "python-for-loop-dictionary"
+  }}
+  prev={{
+    title: "Python For Loop (Basic)",
+    slug: "python-for-loop-basic"
+  }}  
+/>

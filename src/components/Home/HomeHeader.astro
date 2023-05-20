@@ -1,0 +1,25 @@
+---
+    import Blocks from "@Assets/Images/Homepage/Blocks.svg"
+    import Functions from "@Assets/Images/Homepage/Functions.svg"
+    import Sep from "@Assets/Images/Homepage/Sep.svg"
+    import {Image} from "@astrojs/image/components"
+---
+
+<div class="block md:flex my-32">
+    <div class="flex flex-col md:w-1/2 content-center items-center bg-none">
+        <div class="my-auto text-center md:text-left px-auto md:px-32">
+            <h1 class="text-5xl font-bold m-2 break-normal">Belajar Programming Gratis!</h1>
+            <h2 class="my-2 text-lg px-2 break-normal">Tingkatkan skill dalam pekerjaan anda, atau mulai pekerjaan baru di bidang IT!</h2>
+            <a href="#courses">
+                <button class="m-2 bg-blue-900 p-3 text-gray-50 font-bold rounded-sm hover:bg-sky-600">Mulai Sekarang!</button>
+            </a>
+        </div>
+    </div>
+    <div class="md:w-1/2 md:relative absolute top-0 -z-10 md:z-0 opacity-50 md:opacity-100">
+        <div class="flex content-center items-center group">
+                <Image class="h-80 mx-auto drop-shadow-xl rotate-3 group-hover:rotate-12 group-hover:translate-x-20 group-hover:-translate-y-5 ease-in-out duration-300" src={Sep} alt="Sep"/>
+                <Image class="h-80 mx-auto ml-[-100%] drop-shadow-xl group-hover:-translate-y-10 ease-in-out duration-300 " src={Functions} alt="Functions"/>
+                <Image class="h-80 mx-auto ml-[-100%] drop-shadow-xl -rotate-3 group-hover:-rotate-12 group-hover:-translate-x-20 ease-in-out duration-300 group-hover:-translate-y-5" src={Blocks} alt="Blocks"/>
+        </div>
+    </div>
+</div>

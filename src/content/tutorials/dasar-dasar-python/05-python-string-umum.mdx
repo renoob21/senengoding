@@ -1,0 +1,137 @@
+---
+title: Python String - Umum
+author: Reno Iqbalsah
+published: 16/03/2023
+slug: dasar-dasar-python/python-string-umum
+draft: false
+description: Bagian ini memembahas tipe data teks berupa string (str) dalam bahasa pemrograman Python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+String adalah tipe data teks dalam Python. Untuk menetapkan data berupa string, kita hanya perlu memasukkan data dalam bentuk apapun
+di antara dua tanda petik. Baik petik satu (') maupun petik dua (") keduanya dapat digunakan, asalkan tanda pembuka dan 
+penutup menggunakan tanda yang sama.
+
+<Code
+code = {
+`x = "ini adalah string"
+y = 'ini juga string'
+
+print(type(x), type(y)) # output: str str`
+}
+lang = "python"
+/>
+
+Metode di atas hanya berlaku untuk membuat string dalams satu baris. Sedangkan untuk membuat string dengan beberapa baris (multi-_line_) 
+kita harus menggunakan tanda petik 3 kali (''') atau (""").
+
+<Code
+code = {
+`a = """ Ini string baris 1
+ini string baris 2
+dan seterusnya """
+
+print(a)`
+}
+lang = "python"
+/>
+
+Output:
+
+<Code
+code = {
+`ini string baris 1
+ini string baris 2
+dan seterusnya`
+}
+/>
+
+Untuk mengkonversi tipe data lain menjadi string, maka kita dapat menggunakan fungsi `str()`. Hampir semua tipe data dan
+karakter apapun dapat dikonfersi menjadi string.
+
+<Code
+code = {
+`a = 6
+b = str(6)
+x = [1, 2, "c"]
+y = str(x)
+
+print(type(b)) # output : str
+print(y, type(y)) # output : '[1, 2, "c"]' str`
+}
+lang = "python"
+/>
+
+## String _Indexing_ & _Slicing_
+
+String juga merupakan salah satu bentuk data sekuen/urutan, sehingga kita dapat melakukan _indexing_ dan _slicing_ pada string.
+Indeks pada python dimulai dari angka 0, yaitu dihitung karakter pertama adalah 0 dan karakter terakhir adalah panjang karakter dukurangi 1.
+
+Untuk _indexing_ kita menggunakan tanda kurung siku "[]" dengan di dalamnya kita memasukkan angka index.
+
+<Code
+code = {
+`a = "kucing garong"
+
+print(a[0]) # output : k
+print(a[4]) # output : n`
+}
+lang = "python"
+/>
+
+Untuk mengambil huruf terakhir, kita bisa menggunakan indeks -1. Indeks negatif menunjukkan urutan dari belakang, misalnya -1 adalah paling belakang, 
+-2 adalah nomor 2 dari paling belakang, dan seterusnya.
+
+<Code
+code = {
+`a = "kucing garong"
+
+print(a[-1]) # output : g
+print(a[-3]) # output : o`
+}
+lang = "python"
+/>
+
+Sedangkan _slicing_ adalah mengambil beberapa karakter dari sebuah string. Untuk melakukannya, kita menggunakan _syntax_ string[a:b]. Di mana:
+- **a** adalah indeks awal dari string yang akan kita ambil
+- **b** adalah indeks akhir dari string yang akan kita ambil
+
+Kenapa indeks akhir harus kita ambil satu? Karena indeks akhir dalam python akan dianggap "_exclude_" atau tidak termasuk ke dalam indeks yang kita _slice_.
+
+<Code
+code = {
+`a = "kucing garong"
+
+print(a[2:6]) # output : cing
+print(a[8:-2]) # output : aro`
+}
+lang = "python"
+/>
+
+Untuk _slicing_, jika kita ingin mengambil indeks awal atau indeks terakhir, maka kita tidak harus membubuhkan nomor indeks. 
+
+<Code
+code = {
+`a = "kucing garong"
+b = a[:5] # mengambil indeks 0 s.d. 4
+c = a[3:] # mengambil indeks 3 s.d. terakhir
+d = a[:]
+
+print(b) # output : kucin
+print(c) # output : ing garong
+print(d) # output: kucing garong`
+}
+lang = "python"
+/>
+
+<PostsNav
+  next={{
+    title: "Python String - Concatenate dan Format",
+    slug: "python-string-concatenate-dan-format"
+  }}
+  prev={{
+    title: `Python:Tipe Data Numerik`,
+    slug: "python-tipe-data-numerik"
+  }}
+/>

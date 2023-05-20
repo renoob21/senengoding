@@ -1,0 +1,48 @@
+---
+title: Python String - Escape Characters
+author: Reno Iqbalsah
+published: 18/03/2023
+slug: dasar-dasar-python/python-string-escape-characters
+draft: false
+description: Bagian ini memembahas tentang escape character yang ada pada string dalam bahasa pemrograman Python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+_Escape Characters_ adalah karakter khusus pada string dalam Python, misalnya kita ingin memasukkan tanda petik sebagai elemen dalam string, 
+maka kita harus menggunakan _escape characters_. _Escape characters_ diawali dengan tanda _backslash_ (\)
+
+<Code
+code = {
+`teks = "Ia berkata, \\"Pergilah dari sini, ini bukan tempatmu!\\", seraya mengacungkan pistol"
+
+print(teks) # output : Ia berkata, "Pergilah dari sini, ini bukan tempatmu!", seraya mengacungkan pistol`
+}
+lang="python"
+/>
+
+Beberapa _escape characters_ dalam Python:
+
+|Kode|Output|
+|---|---|
+|`\'`|Petik satu (`'`)|
+|`\"`|Petik dua (`"`)|
+|`\\`|_Backslash_ (`\`)|
+|`\n`|Baris baru (enter)|
+|`\r`|Baris baru|
+|`\t`|Tab|
+|`\b`|_Backspace_|
+|`\f`|_Form feed_|
+|`\ooo`|Angka oktal (basis 8)|
+|`\xhh`|Angka heksadesimal (basis 16)|
+
+<PostsNav
+  next={{
+    title: "Python Operator - Artimatika",
+    slug: "python-operator-aritmatika"
+  }}
+  prev={{
+    title: `Python String - Metode-Metode Dalam String`,
+    slug: "python-string-metode-metode-dalam-string"
+  }}
+/>

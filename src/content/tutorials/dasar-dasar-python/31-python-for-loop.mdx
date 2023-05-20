@@ -1,0 +1,132 @@
+---
+title: Python For Loop (Basic)
+author: Reno Iqbalsah
+published: 11/05/2023
+slug: dasar-dasar-python/python-for-loop-basic
+draft: false
+description: Bagian ini membahas dasar penggunaan for loop dalam bahasa pemrograman Python.
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
+
+For loop pada Python akan mengulang sebuah program sebanyak nilai yang kita tentukan. Misalnya kita dapat mengulang sebuah 
+program sebanyak 5 kali, 10, kali, 17 kali, dan sebagainya. _Syntax_ dasar for loop adalah seperti di bawah ini.
+
+<Code
+lang="python"
+theme="monokai"
+code={
+`for i in range(5):
+   print(i, end=" ")
+
+# output : 0 1 2 3 4`
+}
+/>
+
+Pada kode di atas, nilai `i` akan disetting menjadi angka yang ditentukan pada fungsi `range()`. Pada putaran pertama, nilai 
+`i` adalah 0, putaran ke dua 1, dan seterusnya, nilai `i` akan dimulai dari angka `0` dan berakhir pada angka `n-1`, di mana 
+`n` merupakan angka yang digunakan sebagai argumen dalam fungsi `range()`.
+
+## Menggunakan Dua Argumen dalam Fungsi "range()"
+
+<Code
+lang="python"
+theme="monokai"
+code={
+`for i in range(2, 7):
+   print(i, end=" ")
+
+# output : 2 3 4 5 6`
+}
+/>
+
+Jika kita memasukkan dua buah angka sebagai argumen pada fungsi `range(x,y)`, maka nilai i akan dimulai pada angka `x` dan 
+berakhir pada angka `y-1`.
+
+## Penggunaan Variable `i`
+
+Nama variabel `i` bukan sebuah keharusan, hanya saja huruf i sering digunakan dalam for loop untuk menandai _index_. Variabel ini pun tidak harus kita gunakan, 
+misalnya kita akan memunculkan output kata kucing sebanyak 5 kali, maka kita dapat menulis kode seperti di bawah ini.
+
+<Code
+lang="python"
+theme="monokai"
+code = {
+`for i in range(5):
+   print("kucing", end = " ")
+   
+# output : kucing kucing kucing kucing kucing `
+}
+/>
+
+## Menggunakan Bersamaan dengan `if` `else`
+
+Baik for loop maupun while loop dapat digunakan bersamaan dengan seluruh operasi dalam Python, tidak terkecuali dengan notasi `if` `else`. Penggunaan loop dengan 
+_conditional statement_ secara bersamaan merupakan hal yang sangat banyak digunakan dalam pemrograman.
+
+Misalnya kita ingin mengidentifikasi angka ganjil dan genap dari angka 1 sampai dengan _n_. Maka kita dapat menulis kode seperti di bawah ini.
+
+<Code
+lang="python"
+theme="monokai"
+code={
+`top_num = int(input("Masukkan angka: "))
+
+for i in range(top_num):
+   number = i + 1
+   if number % 2:
+     print(f"angka {number} ganjil")
+   else:
+     print(f"angka {number} genap")`
+}
+/>
+
+Pada kode di atas, variabel `number` merupakan nilai `i + 1` karena nilai `i` adalah `0` s.d. `n-1`, untuk mengubahnya menjadi 1 s.d. n, maka harus ditambahkan angka 1.
+
+Kita menggunakan notasi `if number % 2` untuk mengevaluasi apakah sebuah angka dapat dibagi 2 atau tidak. Semua notasi setelah `if` akan dievaluasi sebagai _boolean_, 
+jadi notasi ini sama saja dengan `bool(number % 2)`, maka sebagai contoh:
+- Jika nilai number adalah 5, maka `number % 2` adalah 1, sehingga `bool(1)` adalah `True`, maka angka ini ganjil.
+- Jika nilai number adalah 4, maka `number % 2` adalah 0, sehingga `bool(0)` adalah `False`, maka angka ini genap.
+
+## _Challenge:_ Piramida Sederhana
+
+Dengan menggunakan for loop, buatlah sebuah program dengan syarat:
+- Ambil input berupa angka dari user
+- Keluarkan output berupa karakter `*` yang semakin bertambah, dari 1 sampai n.
+
+Contoh output seperti di bawah ini:
+
+<Code
+code={
+`*
+**
+***
+****
+*****`
+}
+/>
+
+Buka jawabannya di sini:
+<CollapsibleCode
+title="Jawaban Challenge Piramida"
+lang="python"
+theme="monokai"
+code={
+`max_num = int(input("Masukkan angka: "))
+
+for i in range(max_num):
+   print("*" * i)`
+}
+/>
+
+<PostsNav
+  next={{
+    title: "Python For Loop (Iterables)",
+    slug: "python-for-loop-iterables"
+  }}
+  prev={{
+    title: "Python While Loop",
+    slug: "python-while-loop"
+  }}  
+/>

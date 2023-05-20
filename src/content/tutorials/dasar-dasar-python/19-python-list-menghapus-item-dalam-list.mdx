@@ -1,0 +1,117 @@
+---
+title: Python List - Menghapus Item di Dalam List
+author: Reno Iqbalsah
+published: 01/04/2023
+slug: dasar-dasar-python/python-list-menghapus-item-di-dalam-list
+draft: false
+description: Bagian ini memembahas tentang bagaimana kita dapat menghapus item yang ada di dalam sebuah list pada bahasa pemrograman Python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Selain menambahkan item, kita juga dapat menghapus item yang ada di dalam sebuah `list`.
+
+## Menggunakan Metode `.remove()`
+
+Metode `.remove()` akan menghapus item tertentu yang ada di dalam sebuah `list`.
+
+<Code
+code={
+`list_a = ["kacang", "tomat", "kemangi", "apel"]
+list_a.remove("kacang")
+
+print(list_a) # output : ["tomat", "kemangi", "apel"]`
+}
+lang="python"
+/>
+
+Jika terdapat beberapa item yang sama dalam sebuah `list`, metode ini hanya akan menghapus kemunculan pertama dari item tersebut (item yang paling depan).
+
+<Code
+code={
+`list_a = ["kacang", "tomat", "kemangi", "tomat", "apel"]
+list_a.remove("tomat")
+
+print(list_a) # output : ["kacang", "kemangi", "tomat", "apel"]`
+}
+lang="python"
+/>
+
+## Menggunakan Metode `.pop()`
+
+Jika metode `.remove()` akan menghapus item tertentu, maka `.pop()` akan menghapus _index_ tertentu dari sebuah `list`.
+
+<Code
+code={
+`list_a = ["kacang", "tomat", "kemangi", "apel"]
+list_a.pop(1)
+
+print(list_a) # output : ["kacang", "kemangi", "apel"]`
+}
+lang="python"
+/>
+
+Metode ini menerima satu argumen, yaitu _index_ yang ingin kita hapus. Apabila kita tidak memasukkan argumen apapun, maka secara _default_, akan menghapus
+item terakhir di dalam `list`.
+
+<Code
+code={
+`list_a = ["kacang", "tomat", "kemangi", "apel"]
+list_a.pop()
+
+print(list_a) # output : ["kacang", "tomat", "kemangi"]`
+}
+lang="python"
+/>
+
+## Menggunakan Metode `.clear()`
+
+Metode ini akan menghapus seluruh item yang ada di dalam sebuah `list`
+
+<Code
+code={
+`list_a = ["kacang", "tomat", "kemangi", "apel"]
+list_a.clear()
+
+print(list_a) # output : []`
+}
+lang="python"
+/>
+
+## Menggunakan Keyword `del`
+
+Menggunakan keyword `del`, kita dapat menghapus _index_ tertentu pada sebuah `list`.
+
+<Code
+code={
+`list_a = ["kacang", "tomat", "kemangi", "apel"]
+del list_a[1]
+
+print(list_a) # output : ["kacang", "kemangi", "apel"]`
+}
+lang="python"
+/>
+
+Selain itu, keyword ini dapat digunakan untuk menghapus `list` sepenuhnya. Berbeda dengan metode `.clear()` yang hanya menghapus isi dari `list`,
+metode ini menghapus suatu variabel list (dapat digunakan untuk menghapus variabel apapun).
+
+<Code
+code={
+`list_a = ["kacang", "tomat", "kemangi", "apel"]
+del list_a
+
+print(list_a) # output : ReferenceError`
+}
+lang="python"
+/>
+
+<PostsNav
+  next={{
+    title: "Python List - Mengurutkan List (Sorting)",
+    slug: "python-list-mengurutkan-list-sorting"
+  }}
+  prev={{
+    title: "Python List - Menambahkan Item ke Dalam List",
+    slug: "python-list-menambahkan-item-ke-dalam-list"
+  }}  
+/>

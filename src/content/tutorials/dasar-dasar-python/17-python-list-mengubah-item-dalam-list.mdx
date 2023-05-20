@@ -1,0 +1,69 @@
+---
+title: Python List - Mengubah Item dalam List
+author: Reno Iqbalsah
+published: 30/03/2023
+slug: dasar-dasar-python/python-list-mengubah-item-dalam-list
+draft: false
+description: Bagian ini memembahas tentang bagaimana kita mengubah item data yang ada dalam sebuah list pada bahasa pemrograman Python
+---
+import {Code} from "astro/components"
+import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
+
+Seperti yang sudah dibahas sebelumnya, bahwa `list` bersifat _mutable_ (dapat diubah-ubah), yang artinya kita dapat mengubah
+menambah, maupun mengurangi item dalam sebuah `list`.
+
+## Mengubah Satu Item dalam `list`
+
+Untuk mengubah salah satu item dalam `list`, kita cukup menyatakan _index_ dari item tersebut, dan meng-_assign_ nilai baru.
+
+<Code
+code={
+`list1 = ["ayam", "sapi", "kambing", "unta"]
+list1[1] = "kerbau"
+
+print(list1) # output : ["ayam", "kerbau", "kambing", "unta"]`
+}
+lang="python"
+/>
+
+## Mengubah Beberapa Item dalam Suatu Rentang (_Range_)
+
+Selain mengubah item dalam `list` satu per satu, kita juga dapat mengubah beberapa item sekaligus menggunakan notasi _slicing_.
+
+<Code
+code={
+`list1 = ["ayam", "sapi", "kambing", "unta"]
+list1[1:3] = ["kerbau", "domba"]
+
+print(list1) # output : ["ayam", "kerbau", "domba", "unta"]`
+}
+lang="python"
+/>
+
+Jika kita mengubah beberapa data sekaligus dengan jumlah data yang lebih banyak misalnya 2 data diubah dengan 3 data, maka 2 data tersebut akan diganti dengan data baru 
+sedangkan data ketiga akan disisipkan dan menggeser data di belakangnya, sehingga akan menambah panjang dari `list`.
+
+<Code
+code={
+`list1 = ["ayam", "sapi", "kambing", "unta"]
+list1[1:3] = ["kerbau", "domba", "kalkun"]
+
+print(list1) # output : ["ayam", "kerbau", "domba", "kalkun", "unta"]
+print(len(list)) # output : 5`
+}
+lang="python"
+/>
+
+Dari kode di atas, notasi `list1[1:3]` akan mengambil _index_ 1 dan 2 dari `list1` yaitu `sapi` dan `kambing`. Item `sapi` dan `kambing` secara berurutan diubah
+menjadi `kerbau` dan `domba`, sedangkan item `kalkun` disisipkan di belakang `domba` sebelum item `unta`.
+
+<PostsNav
+  next={{
+    title: "Python List - Menambahkan Item ke Dalam List",
+    slug: "python-list-menambahkan-item-ke-dalam-list"
+  }}
+  prev={{
+    title: `Python List - Umum`,
+    slug: "python-list-umum"
+  }}  
+/>
