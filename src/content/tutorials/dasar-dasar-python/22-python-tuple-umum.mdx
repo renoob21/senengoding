@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-tuple-umum
 draft: false
 description: Bagian ini memembahas tentang tipe data tuple pada bahasa pemrograman Python.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 Tuple merupakan tipe data yang sangat mirip dengan `list`, hanya saja `tuple` bersifat _immutable_, yang artinya tipe data `tuple` tidak dapat diubah-ubah.
@@ -15,7 +15,7 @@ Sehingga, metode-metode seperti `.insert()`, `.append()`, `.remove()` dan sebaga
 Untuk membuat sebuah `tuple`, kita hanya perlu memasukkan item-item ke dalam tanda kurung `()`, atau bisa juga tanpa perlu menggunakan tanda kurung,
 cukup dengan meng-_assign_ beberapa item dalam satu variabel dengan dibatasi koma `,` untuk masing-masing item.
 
-<Code
+<CodeHL
 code={
 `tuple1 = ("a", "b", "c")
 tuple2 = 1, 2, 3
@@ -30,7 +30,7 @@ lang="python"
 
 Sebagamana `list`, item dalam `tuple` juga dapat diakses dengan metode _indexing_ dan _slicing_.
 
-<Code
+<CodeHL
 code={
 `tuple1 = ("a", "b", "c", "d", "e")
 idx = tuple1[1]
@@ -48,7 +48,7 @@ Hanya ada 2 metode dalam `tuple` yang tersedia secara _default_. Yaitu `.count()
 
 Metode `.count()` menghitung jumlah kemunculan suatu item dalam sebuah `tuple` atau `list`.
 
-<Code
+<CodeHL
 code={
 `tuple1 = (1, 3, 5, 1, 4, 7, 3, 1, 2)
 
@@ -59,7 +59,7 @@ lang="python"
 
 Metode `.index()` menghasilkan _index_ kemunculan pertama dari sebuah item.
 
-<Code
+<CodeHL
 code={
 `tuple1 = (1, 3, 5, 1, 4, 7, 3, 1, 2)
 
@@ -73,7 +73,7 @@ Pada kode di atas, item dengan nilai 3 muncul pada _index_ 1 dan 6, maka metode 
 Selain itu, kita juga dapat menggunakan fungsi `len()` untuk menghitung jumlah item dalam sebuah `tuple`. Pada dasarnya, fungsi ini dapat digunakan dalam 
 semua tipe data sekuen seperti `list`, `tuple`, dan `str` (string). `len()` maksudnya adalah _length_ atau panjang dari suatu sekuen.
 
-<Code
+<CodeHL
 code={
 `tuple1 = (1, 3, 5, 1, 4, 7, 3, 1, 2)
 
@@ -87,7 +87,7 @@ lang="python"
 Meskipun kita tidak dapat mengubah `tuple`, tapi kita dapat menggabungkan dua atau lebih `tuple` atau menggandakan sebuah `tuple`. Untuk menggabungkan `tuple` kita hanya perlu
 menggunakan operator `+`, begitu pula untuk menggandakan `tuple` kita hanya perlu menggunakan operator `*`
 
-<Code
+<CodeHL
 code={
 `tuple1 = ("kuda", "sapi", "kambing")
 tuple2 = ("ayam", "puyuh", "bebek")

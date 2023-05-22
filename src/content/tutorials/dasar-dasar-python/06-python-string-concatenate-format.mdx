@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-string-concatenate-dan-format
 draft: false
 description: Bagian ini memembahas bagaimana kita menggabungkan beberapa string dengan concatenation, dan menggunakan metode .format() dan f-string
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 Selain menggunakan string secara mandiri, kita juga dapat menggabungkan beberapa string menjadi satu. Untuk melakukannya, kita dapat menggunakan
@@ -16,7 +16,7 @@ _concatenation_, metode `.format()`, dan _f_-string.
 
 Untuk melakukan _concatenation_, kita cukup menggabungkan beberapa string dengan tanda `+`.
 
-<Code
+<CodeHL
 code={
 `sayur = "bayam"
 buah = "apel"
@@ -35,7 +35,7 @@ Namun, metode _concatenation_ hanya dapat menggabungkan string dengan string, se
 Metode `.format()` pada string dapat menggabungkan tipe data apapun ke dalam string, dan metode ini jauh lebih praktis digunakan dibandingkan 
 dengan _concatenation_ di mana kita harus menambahkan banyak tanda `+`.
 
-<Code
+<CodeHL
 code={
 `nama = "Shan"
 umur = 26
@@ -51,7 +51,7 @@ Seluruh tanda `{}` akan diganti dengan nilai yang kita masukkan sebagai argumen 
 dengan urutan kita memasukkan argumen. Untuk menghindari perilaku ini, kita dapat memasukkan angka urutan mulai dari `0` (seperti indeks) 
 berdasarkan urutan argumen.
 
-<Code
+<CodeHL
 code={
 `nama = "Shan"
 umur = 26
@@ -68,7 +68,7 @@ lang="python"
 Untuk menggunakan _f_-string kita cukup menambahkan huruf _f_ di depan string yang kita buat. Penggunaan _f_-string sangat mirip dengan metode `.format()`,
 hanya saja kita perlu memasukkan nama variabel ke dalam tanda kurung `{}`.
 
-<Code
+<CodeHL
 code={
 `nama = "Shan"
 umur = 26

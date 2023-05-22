@@ -4,13 +4,12 @@ import "highlight.js/styles/tokyo-night-dark.css"
 
 const {code, lang} = Astro.props;
 
-const coded = hljs.highlight(code, {language:lang}).value;
-console.log(coded);
+const coded = hljs.highlight(code, {language:lang ?? "plaintext"}).value;
 ---
 
 
-<pre class="hljs font-mono astro-code">
-    <code>
-        <Fragment set:html={coded}/>
+<pre class="">
+    <code class="hljs astro-code py-0 h-fit">
+        <div set:html={coded}></div>
     </code>
 </pre>

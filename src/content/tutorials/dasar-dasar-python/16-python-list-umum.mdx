@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-list-umum
 draft: false
 description: Bagian ini memembahas tentang gambaran umum tipe data list dalam bahasa pemrograman Python
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 Jika sejauh ini kita sudah melihat tentang tipe data _primitive_, selanjutnya kita akan masuk ke tipe-tipe data berbasis _object_, yang pertama
@@ -21,7 +21,7 @@ Keunggulan `list` adalah dapat menyimpan banyak data dalam satu variabel. Karakt
 Untuk membuat `list` baru, harus memasukkan seluruh data dalam kurung siku `[]` dan setiap data (biasa disebut item) dibatasi dengan koma `,`.
 `list` dapat menampung tipe data apapun, bahkan bisa mencampurkan antara satu tipe data dengan tipe data lain dalam satu `list`.
 
-<Code
+<CodeHL
 code={
 `list_belanja = ["apel", "keju", "nangka", "nanas"]
 list_random = [1, 2, "kucing", 1.0]
@@ -39,7 +39,7 @@ string kita melakukan _indexing_ dan _slicing_ pada setiap karakter, pada `list`
 
 
 **Contoh _indexing_:**
-<Code
+<CodeHL
 code={
 `list_belanja = ["apel", "keju", "nangka", "nanas"]
 
@@ -50,7 +50,7 @@ lang="python"
 />
 
 **Contoh _slicing_:**
-<Code
+<CodeHL
 code={
 `list_belanja = ["apel", "keju", "nangka", "nanas"]
 
@@ -62,7 +62,7 @@ lang="python"
 
 Perlu diingat bahwa _slicing_ akan menghasilkan tipe data dari item itu sendiri, sedangkan _slicing_ akan menghasilkan `list` baru.
 
-<Code
+<CodeHL
 code={
 `list_belanja = ["apel", "keju", "nangka", "nanas"]
 
@@ -79,7 +79,7 @@ lang="python"
 
 Kita dapat menggunakan fungsi `len()` untuk menghitung jumlah item dalam suatu `list`.
 
-<Code
+<CodeHL
 code={
 `list_belanja = ["apel", "keju", "nangka", "nanas"]
 

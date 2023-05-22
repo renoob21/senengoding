@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-function-basic
 draft: false
 description: Bagian ini membahas cara membuat dan menggunakan fungsi (function) dalam bahasa pemrograman Python.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
 
@@ -19,9 +19,8 @@ fungsi ini dapat kita gunakan dalam program lain yang bisa jadi kita buat di wak
 Untuk membuat sebuah fungsi, kita dapat menggunakan _keyword_ `def nama_fungsi()`, keyword `def` yang kita gunakan tersebut maskudnya adalah _define_, atau 
 mendefinisikan fungsi yang kita buat.
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code={
 `def fungsi():
     print("Ini adalah sebuah fungsi")`
@@ -33,9 +32,8 @@ code={
 _Function call_ adalah saat kita menggunakan (memanggil) sebuah fungsi, kita dapat melakukan _fuction call_ dengan _syntax_ `fungsi()`, baik saat kita 
 menggunakan fungsi yang kita buat sendiri maupun fungsi bawaan / fungsi dari sebuah _library_.
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code={
 `import math
 
@@ -54,9 +52,8 @@ fungsi() # Output: Ini adalah sebuah fungsi`
 Ketika kita membuat sebuah fungsi, _statement_ di dalam fungsi tersebut tidak boleh kosong. Namun, apabila kita ingin membuat fungsi kosong, misalnya untuk 
 me-_reserve_ nama fungsi agar tidak dipakai fungsi lain, kita dapat menggunakan statement `pass`.
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code={
 `def fungsi():
     # fungsi masih dalam proses pemikiran programmer

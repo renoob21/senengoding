@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-function-return
 draft: false
 description: Bagian ini membahas statement return dalam bahasa pemrograman Python.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
 
@@ -18,9 +18,8 @@ output, jika kita menggunakan `return`, kita dapat menyimpan hasil tersebut ke d
 
 ## Penggunaan `return`
 
-<Code
+<CodeHL
 lang="python"
-theme="one-dark-pro"
 code={
 `def tambah(a, b):
     return a + b
@@ -32,9 +31,8 @@ tambah(5,6)`
 Dari kode di atas, tidak akan muncul output apapun, padahal sebenarnya operasi tersebut sudah terjadi. Untuk mengeluarkannya sebagai output, kita dapat melakukan seperti 
 di bawah ini.
 
-<Code
+<CodeHL
 lang="python"
-theme="one-dark-pro"
 code={
 `print(tambah(5,6)) # output: 11
 
@@ -46,9 +44,8 @@ print(hasil) # output: 16`
 
 Kita juga dapat menggunakan beberapa _keyword_ `return` dalam sebuah fungsi dengan menggunakan _conditional statement_.
 
-<Code
+<CodeHL
 lang="python"
-theme="one-dark-pro"
 code={
 `def gage(num):
     if num % 2:
@@ -62,9 +59,8 @@ print(gage(5)) # output: ganjil`
 
 Sebagai contoh lagi, kita coba ubah fungsi `jumlah()` pada bagian sebelumnya dengan menggunakan `return`.
 
-<Code
+<CodeHL
 lang="python"
-theme="one-dark-pro"
 code={
 `def jumlah(*nums):
     jml = 0
@@ -86,9 +82,8 @@ dan menarik untuk kita pelajari.
 
 Kita coba dengan melihat pada fungsi `jumlah()` di atas untuk dapat lebih kita pahami.
 
-<Code
+<CodeHL
 lang="python"
-theme="one-dark-pro"
 code={
 `def jumlah(*nums):
     jml = 0

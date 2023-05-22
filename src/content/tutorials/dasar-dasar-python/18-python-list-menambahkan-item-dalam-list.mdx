@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-list-menambahkan-item-ke-dalam-list
 draft: false
 description: Bagian ini memembahas tentang bagaimana kita dapat menambahkan item ke dalam sebuah list pada bahasa pemrograman Python
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 Selain mengubah data dalam list, kita juga dapat menambahkan item ke dalam `list`. Ini merupakan salah satu atribut dari `list` sangat berguna dan sering digunakan.
@@ -15,7 +15,7 @@ Selain mengubah data dalam list, kita juga dapat menambahkan item ke dalam `list
 
 Metode `.insert()` menerima 2 buah argumen, argumen pertama adalah _index_ di mana kita ingin memasukkan item, sedangkan argumen kedua adalah item yang akan kita masukkan.
 
-<Code
+<CodeHL
 code={
 `list1 = ["sapi", "kambing", "unta"]
 list2 = ["bayam", "kangkung", "sawi"]
@@ -36,7 +36,7 @@ Item yang baru akan dimasukkan ke dalam list dalam posisi _index_ yang kita masu
 Metode `.append()` hanya menerima satu argumen saja, yaitu item baru yang akan dimasukkan. Metode ini akan memasukkan item baru pada posisi paling belakang dari _list_
 (pada akhir list).
 
-<Code
+<CodeHL
 code={
 `list2 = ["bayam", "kangkung", "sawi"]
 
@@ -57,7 +57,7 @@ Metode `.extend()` menerima suatu data _sequence_ / _iterable_ dan akan menambah
 Metode ini akan menambahkan item baru tersebut pada bagian belakang `list`. Yang dimaksud dengan data _sequence_ / _iterable_ di sini 
 adalah data seperti `list`, `tuple`, dan `str`.
 
-<Code
+<CodeHL
 code={
 `sayur = ["sop", "lodeh", "tumis"]
 lauk = ["gorengan", "rendang", "opor"]
@@ -81,7 +81,7 @@ item baru.
 
 Selain menggunakan metode `.extend()` kita juga dapat menggabungkan dua buah `list` dengan operator `+`.
 
-<Code
+<CodeHL
 code={
 `sayur = ["sop", "lodeh", "tumis"]
 lauk = ["gorengan", "rendang", "opor"]

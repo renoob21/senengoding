@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-string-metode-metode-dalam-string
 draft: false
 description: Bagian ini memembahas beberapa metode yang umum digunakan dalam modifikasi data string
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 Ada beberapa metode yang sering digunakan dalam manipulasi / modifikasi data string. Metode ini sering digunakan untuk 
@@ -18,7 +18,7 @@ dan sebagainya.
 Metode `.upper()` digunakan untuk mengubah seluruh karakter dalam sebuah string menjadi huruf kapital (_uppercase_).
 
 
-<Code
+<CodeHL
 code = {
 `teks = "Halo, Apa Kabar?"
 
@@ -31,7 +31,7 @@ lang="python"
 
 Metode `.lower()` digunakan untuk mengubah seluruh karakter dalam sebuah string menjadi huruf kecil (_lowercase_).
 
-<Code
+<CodeHL
 code = {
 `teks = "Halo, Apa Kabar?"
 
@@ -44,7 +44,7 @@ lang="python"
 
 Metode `.strip()` menghilangkan karakter _whitespaces_ (spasi, tab, enter, dsb) yang berada pada awal dan akhir string.
 
-<Code
+<CodeHL
 code = {
 `teks = "   Halo, Apa Kabar? "
 
@@ -60,7 +60,7 @@ di mana:
 - **a**, adalah karakter yang akan diubah
 - **b**, adalah karakter baru
 
-<Code
+<CodeHL
 code = {
 `teks = "Halo, Apa Kabar?"
 
@@ -71,7 +71,7 @@ lang="python"
 
 Apabila terdapat beberapa karakter yang sama, maka semua akan diubah menjadi karakter yang baru.
 
-<Code
+<CodeHL
 code = {
 `teks = "Halo, Apa Kabar?"
 
@@ -86,7 +86,7 @@ Metode `.split()` akan memisahkan string berdasarkan karakter yang kita tentukan
 secara _default_, metode `.split()` akan memotong string pada setiap karakter spasi. Namun, kita juga bisa menambahkan argumen
 untuk mengubah karakter apa yang akan kita gunakan.
 
-<Code
+<CodeHL
 code = {
 `teks = "Halo, Apa Kabar?"
 

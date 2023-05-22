@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-while-loop
 draft: false
 description: Bagian ini membahas penggunaan while loop dalam bahasa pemrograman Python.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
 
@@ -14,7 +14,7 @@ import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astr
 While loop, merupakan salah satu _loop_ dalam Python. While loop akan menjalankan sebuah kode secara berulang selama suatu
 kondisi terpenuhi.
 
-<Code
+<CodeHL
 code={
 `i = 0
 while i < 5:
@@ -24,7 +24,6 @@ while i < 5:
 # output = 0 1 2 3 4`
 }
 lang="python"
-theme="dracula-soft"
 />
 
 Dalam kode di atas, nilai `i` yang mulanya bernilai `0` akan dikeluarkan sebagai output. Begitu pula seterusnya, interpreter
@@ -43,9 +42,8 @@ Mari berkenalan dengan salah satu _library_ dalam Python bernama `time`. _Librar
 menggunakan fungsi `time.sleep()` untuk memberikan jeda antar input yang dilakukan user. Untuk menggunakan _library_ ini, kita harus terlebih dahulu meng-_import_ `time` ke 
 dalam kode kita.
 
-<Code
+<CodeHL
 lang="python"
-theme="dracula-soft"
 code={
 `import time # mengimport library time
 
@@ -68,9 +66,8 @@ _comment_ yang tepat sangatlah bermanfaat, untuk kita menjelaskan bagaimana suat
 Dalam menjalanka while loop, perlu diperhatikan bahwa kita harus memastikan bahwa syarat program berhenti akan terpenuhi. Apabila syarat ini tidak terpenuhi, maka program akan
 terus berjalan dan dapat membebani memori. Misalnya pada kode di bawah ini:
 
-<Code
+<CodeHL
 lang="python"
-theme="dracula-soft"
 code={
 `i = 10
 
@@ -93,7 +90,6 @@ Mari coba kita buat sebuah aplikasi _timer_ sederhana. Dengan ketentuan:
 Buka jawabannya di sini:
 <CollapsibleCode
 lang='python'
-theme="monokai"
 title="Jawaban Challenge Aplikasi Timer"
 code={
 `import time

@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-list-menghapus-item-di-dalam-list
 draft: false
 description: Bagian ini memembahas tentang bagaimana kita dapat menghapus item yang ada di dalam sebuah list pada bahasa pemrograman Python
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 Selain menambahkan item, kita juga dapat menghapus item yang ada di dalam sebuah `list`.
@@ -15,7 +15,7 @@ Selain menambahkan item, kita juga dapat menghapus item yang ada di dalam sebuah
 
 Metode `.remove()` akan menghapus item tertentu yang ada di dalam sebuah `list`.
 
-<Code
+<CodeHL
 code={
 `list_a = ["kacang", "tomat", "kemangi", "apel"]
 list_a.remove("kacang")
@@ -27,7 +27,7 @@ lang="python"
 
 Jika terdapat beberapa item yang sama dalam sebuah `list`, metode ini hanya akan menghapus kemunculan pertama dari item tersebut (item yang paling depan).
 
-<Code
+<CodeHL
 code={
 `list_a = ["kacang", "tomat", "kemangi", "tomat", "apel"]
 list_a.remove("tomat")
@@ -41,7 +41,7 @@ lang="python"
 
 Jika metode `.remove()` akan menghapus item tertentu, maka `.pop()` akan menghapus _index_ tertentu dari sebuah `list`.
 
-<Code
+<CodeHL
 code={
 `list_a = ["kacang", "tomat", "kemangi", "apel"]
 list_a.pop(1)
@@ -54,7 +54,7 @@ lang="python"
 Metode ini menerima satu argumen, yaitu _index_ yang ingin kita hapus. Apabila kita tidak memasukkan argumen apapun, maka secara _default_, akan menghapus
 item terakhir di dalam `list`.
 
-<Code
+<CodeHL
 code={
 `list_a = ["kacang", "tomat", "kemangi", "apel"]
 list_a.pop()
@@ -68,7 +68,7 @@ lang="python"
 
 Metode ini akan menghapus seluruh item yang ada di dalam sebuah `list`
 
-<Code
+<CodeHL
 code={
 `list_a = ["kacang", "tomat", "kemangi", "apel"]
 list_a.clear()
@@ -82,7 +82,7 @@ lang="python"
 
 Menggunakan keyword `del`, kita dapat menghapus _index_ tertentu pada sebuah `list`.
 
-<Code
+<CodeHL
 code={
 `list_a = ["kacang", "tomat", "kemangi", "apel"]
 del list_a[1]
@@ -95,7 +95,7 @@ lang="python"
 Selain itu, keyword ini dapat digunakan untuk menghapus `list` sepenuhnya. Berbeda dengan metode `.clear()` yang hanya menghapus isi dari `list`,
 metode ini menghapus suatu variabel list (dapat digunakan untuk menghapus variabel apapun).
 
-<Code
+<CodeHL
 code={
 `list_a = ["kacang", "tomat", "kemangi", "apel"]
 del list_a

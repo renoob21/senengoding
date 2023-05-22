@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-for-loop-iterables
 draft: false
 description: Bagian ini membahas penggunaan for loop untuk mengiterasi tipe-tipe data berbasis objek yang termasuk iterables dalam bahasa pemrograman Python.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
 
@@ -18,9 +18,8 @@ bahwa pada tipe data tersebut dapat dilakukan _loop_ atas elemen-elemen di dalam
 
 Contoh iterasi pada `list`
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code = {
 `list1 = ["kucing", "sapi", "kambing"]
 
@@ -40,9 +39,8 @@ cara yang sama persis dengan kode di atas.
 
 Untuk menambah _readability_ atau keterbacaan kode kita, kita dapat mengubah nama variabel-variabel di atas menjadi seperti ini
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code = {
 `peternakan = ["kucing", "sapi", "kambing"]
 
@@ -58,9 +56,8 @@ Kode tersebut akan menghasilkan output yang sama persis dengan kode di atasnya.
 Kita juga dapat mengiterasi tipe data string dengan metode sama persis dengan cara di atas. Hanya saja, nilai variabel iterasi akan menyesuaikan dengan masing-masing 
 karakter pada objek yang diiterasikan.
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code = {
 `for char in "kucing":
     print(char)
@@ -80,9 +77,8 @@ variabel untuk dilakukan iterasi.
 
 Kita coba sekali lagi, dengan mengubah seluruh huruf "a" pada kaliman "aku suka belajar programming" menjadi huruf "i".
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code = {
 `kalimat = "aku suka belajar programming"
 
@@ -102,9 +98,8 @@ Bagaimana kita bisa melakukan iterasi terhadap objek dengan cara yang sama persi
 
 Jawabannya sangatlah mudah, karena kedua loop tersebut menggunakan prinsip yang sama. Lihat pada kode di bawah ini, dan cobalah jalankan sendiri.
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code = {
 `print(range(5)) # output : [0, 1, 2, 3, 4]`
 }
@@ -123,7 +118,6 @@ hewan lain maka keluarkan output "hmmmm".
 <CollapsibleCode
 title="Jawaban Challenge Suara Hewan"
 lang="python"
-theme="monokai"
 code = {
 `binatang = ["kucing", "kambing", "rubah", "sapi", "singa"]
 

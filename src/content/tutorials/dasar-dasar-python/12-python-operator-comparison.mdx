@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-operator-comparison
 draft: false
 description: Bagian ini memembahas tentang operator pembanding (comparison operators) dalam bahasa pemrograman Python
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 Operator pembanding (_comparison operators_) digunakan untuk membandingkan dua nilai, apakah sama, lebih besar, lebih kecil, dan sebagainya. _Comparison operators_ akan 
@@ -28,7 +28,7 @@ selalu menghasilkan boolean atau `bool` sebagai outputnya.
 _Comparison Operators_ `==` berbeda dengan operator `=`. Operator `=` (satu karakter sama dengan) digunakan untuk menetapkan nilai dari suatu variabel, sedangkan`==`
 digunakan untuk membandingkan dua buah nilai. 
 
-<Code
+<CodeHL
 code={
 `print(5 == 6) # output: False
 print(6 == 6.0) # output: True
@@ -42,7 +42,7 @@ dibandingkan dengan angka numerik menggunakan operator `==`, akan selalu menghas
 
 Sedangkan untuk data boolean (`bool`), `True` setara dengan angka 1, dan `False` setara dengan angka 0.
 
-<Code
+<CodeHL
 code={
 `print(5 == "5") # output: False
 print(6 == True) # output: False
@@ -59,7 +59,7 @@ Untuk _comparison operators_ selain `==`, yaitu `>`, `<`, `>=`, `<=` dapat digun
 
 Apabila kita membandingkan string dengan tipe data lain, maka akan menghasilkan `TypeError`, sehingga kode tidak akan berjalan.
 
-<Code
+<CodeHL
 code={
 `print(5 >= 6.0) # output: False
 print(6 >= True) # output: True
@@ -74,7 +74,7 @@ Untuk komparasi string, berikut urutan dari yang terkecil hingga terbesar:
 `whitespace` &rarr; `puctuation (tanda baca)` &rarr; `angka` &rarr; `huruf kapital` &rarr; `huruf kecil`
 
 Berlaku juga urutan di mana `a` &rarr; `z` adalah urutan dari terkecil ke terbesar, baik huruf kapital maupun huruf kecil.
-<Code
+<CodeHL
 code={
 `print("a" > "A") # output: True
 print("6" > "!") # output: True

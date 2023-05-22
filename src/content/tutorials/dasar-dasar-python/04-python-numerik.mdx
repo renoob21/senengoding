@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-tipe-data-numerik
 draft: false
 description: Bagian ini memembahas tipe data numerik berupa integer (int) dan floating point (float) dalam bahasa pemrograman Python
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 Tipe data numerik dalam Python yang utama adalah integer (`int`) dan _floating point_ (`float`). Sebenarnya ada satu lagi tipe
@@ -20,7 +20,7 @@ secara otomatis dianggap sebagai integer dalam bahasa pemrograman python.
 
 Contoh:
 
-<Code
+<CodeHL
 code = {
 `x = 5
 
@@ -32,7 +32,7 @@ lang="python"
 
 Output:
 
-<Code
+<CodeHL
 code = {
 `int
 int`
@@ -41,7 +41,7 @@ int`
 
 Selain itu, kita juga dapat melakukan _type casting_ atau mengubah tipe data lain menjadi integer dengan fungsi `int()`. Misalnya:
 
-<Code
+<CodeHL
 code = {
 `x = "5"
 y = int(x)
@@ -57,7 +57,7 @@ lang="python"
 
 Output:
 
-<Code
+<CodeHL
 code = {
 `str -> int
 9.5 -> 9
@@ -71,7 +71,7 @@ baik angka X.1 maupun X.9 akan menjadi angka X apabila diubah menjadi integer.
 Selain itu, ketika kita mengkonversi _string_ menjadi integer, seluruh elemen dalam _string_ tersebut haruslah berupa angka (numerik). Kalau ada karakter selain angka, maka akan 
 menyebabkan galat (_error_). Misal:
 
-<Code
+<CodeHL
 code = {
 `a = "5"
 b = "haha5"
@@ -86,7 +86,7 @@ lang="python"
 
 Output:
 
-<Code
+<CodeHL
 code = {
 `5
 ValueError: invalid literal for int() with base10: 'haha5'`
@@ -100,7 +100,7 @@ Baris `print` ke-3 tidak akan dieksekusi karena terjadi eror pada baris di atasn
 Tipe data _floating point_ adalah berupa angka desimal. Untuk menetapkan `float`, kita hanya perlu memasukkan angka desimal, pembatas desimal yang digunakan adalah "."
 karena Python menggunakan standard penulisan angka internasional.
 
-<Code
+<CodeHL
 code = {
 `a = 5.3
 b = 6.9
@@ -114,7 +114,7 @@ lang="python"
 
 Apabila kita akan menetapkan angka bulat sebagai `float`, maka kita hanya perlu menambahkan ".0" atau cukup "." saja di belakang angka tersebut.
 
-<Code
+<CodeHL
 code = {
 `a = 5.0
 b = 6.
@@ -128,7 +128,7 @@ lang="python"
 
 Untuk mengkonversi tipe data lain ke _floating point_, kita dapat menggunakan fungsi `float()`.
 
-<Code
+<CodeHL
 code = {
 `a = 5
 b = float(a)

@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-hello-world
 draft: false
 description: Bagian ini akan menjelaskan bagaimana dasar-dasar dalam menggunakan fungsi "print" pada python
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 "Hello, World!" merupakan kata yang paling populer digunakan untuk menggambarkan _syntax_ dasar dari sebuah bahasa pemrograman. 
@@ -15,14 +15,14 @@ untuk menampilkan output.
 
 Contoh penggunaan:
 
-<Code
+<CodeHL
 code={`print("Hello, world!")`}
 lang="python"
 />
 
 Maka akan keluar output:
 
-<Code
+<CodeHL
 code={`Hello, world!`}
 />
 
@@ -34,7 +34,7 @@ nyatakan dalam fungsi print.
 
 Misalnya kode di bawah ini:
 
-<Code
+<CodeHL
 code={`500 + 900
 print(700 + 900)`}
 lang="python"
@@ -42,7 +42,7 @@ lang="python"
 
 Maka output yang muncul adalah:
 
-<Code
+<CodeHL
 code={`1600`}
 />
 
@@ -59,7 +59,7 @@ sebagai argumen (penjeasan mengenai argumen akan dibahas saat kita membahas fung
 
 Untuk mendeklarasi variabel di Python, kita cukup menuliskan nama variabel diikuti dengan tanda `=` dan nilai / _value_ dari variabel tersebut. Misalnya:
 
-<Code
+<CodeHL
 code={`variabel1 = "kucing"
 variabel2 = "naga"
 variabel1 = "mawar"`}
@@ -73,7 +73,7 @@ Kita dapat menggunakan nama apapun sebagai nama variabel, dengan syarat:
 
 Namun, alangkah baiknya kita menggunakan nama yang deskriptif, misalnya variabel di atas dapat kita ubah menjadi lebih deskriptif
 
-<Code
+<CodeHL
 code={`hewan1 = "kucing"
 hewan2 = "naga"
 bunga1 = "mawar"`}
@@ -82,7 +82,7 @@ lang="python"
 
 Kemudian untuk menampilkan _value_ pada variabel sebagai output, kita hanya perlu memasukkan nama variabel sebagai argumen pada fungsi print.
 
-<Code
+<CodeHL
 code={`hewan1 = "kucing"
 hewan2 = "naga"
 bunga1 = "mawar"
@@ -95,7 +95,7 @@ lang="python"
 
 Output:
 
-<Code
+<CodeHL
 code={
 `kucing
 naga
@@ -109,7 +109,7 @@ Dapat dilihat bahwa pada setiap _statement_ `print` akan menghasilkan baris baru
 Selain melakukan `print` untuk setiap variabel di atas, kita juga dapat melakukan print secara sekaligus dalam satu fungsi `print`, dengan cara membatasi 
 semua variabel di atas dengan dibatasi koma (,).
 
-<Code
+<CodeHL
 code={`hewan1 = "kucing"
 hewan2 = "naga"
 bunga1 = "mawar"
@@ -120,7 +120,7 @@ lang="python"
 
 Output:
 
-<Code
+<CodeHL
 code={
 `kucing naga mawar`
 }
@@ -129,7 +129,7 @@ code={
 Seluruh argumen dalam fungsi `print` akan muncul dengan dipisahkan oleh karakter (spasi) yang membatasi antar argumen. Kita juga dapat menggabungkan antara 
 variabel dengan teks (_string_), angka, dan sebaganya dalam satu fungsi `print`, misalnya:
 
-<Code
+<CodeHL
 code={
 `print(hewan1, "kuda", bunga1, 10)`
 }
@@ -138,7 +138,7 @@ lang="python"
 
 Output:
 
-<Code
+<CodeHL
 code={
 `kucing kuda mawar 10`
 }
@@ -153,7 +153,7 @@ setiap _statement_ `print` akan dibatasi oleh bari baru / enter (setiap akhir fu
 
 Argumen `sep=` akan mengganti pembatas antar argumen dari spasi menjadi nilai lain yang kita tentukan. Misalnya:
 
-<Code
+<CodeHL
 code={
 `print(hewan1, "kuda", bunga1, 10, sep="-")`
 }
@@ -162,7 +162,7 @@ lang="python"
 
 Pernyataan diatas akan mengubah pembatas dari spasi menjadi tanda strip (-) seperti ini:
 
-<Code
+<CodeHL
 code={
 `kucing-kuda-mawar-10`
 }
@@ -170,7 +170,7 @@ code={
 
 Sedangkan argumen `end=` akan mengubah akhir dari setiap fungsi `print` dari enter menjadi nilai yang kita tentukan. Misalnya:
 
-<Code
+<CodeHL
 code={
 `print(hewan1, end=" ")
 print(hewan2, end="/")
@@ -181,7 +181,7 @@ lang="python"
 
 Output:
 
-<Code
+<CodeHL
 code={
 `kucing naga/mawar`
 }

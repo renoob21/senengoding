@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-dictionary-memodifikasi-item-dalam-dictionary
 draft: false
 description: Bagian ini memembahas tentang bagaimana kita dapat mengubah, menambah, dan mengurangi item dalam sebuah Dictionary pada bahasa pemrograman Python.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 Dictionary merupakan tipe data yang _mutable_, yang artinya dapat diubah-ubah. Kita dapat mengubah suatu entri / item, menambah, maupun mengurangi item dalam suatu `dict`.
@@ -19,7 +19,7 @@ Untuk mengubah item dalam sebuah `dict`, kita dapat menggunakan notasi _index_ m
 
 Untuk mengubah item dalam suatu `dict` dengan notasi _indexing_, kita dapat mengambil salah satu `key` dan meng-_assign_ `key` tersebut pada `value` / nilai baru.
 
-<Code
+<CodeHL
 code={
 `dict1 = {
     "bayam" : "sayur",
@@ -32,14 +32,13 @@ dict1["steak"] = "daging"
 print(dict1)`
 }
 lang="python"
-theme="dracula-soft"
 />
 
 ### Menggunakan Metode `.update()`
 
 Dengan menggunakan metode `.update()`, kita dapat memasukkan sebuah _key-value pair_ untuk mengubah _value_ dari sebuah item dalam `dict`.
 
-<Code
+<CodeHL
 code={
 `dict1 = {
     "bayam" : "sayur",
@@ -52,7 +51,6 @@ dict1.update({"nasi" : "goreng"}
 print(dict1))`
 }
 lang="python"
-theme="dracula-soft"
 />
 
 ## Menambah Item ke dalam Sebuah `dict`
@@ -60,7 +58,7 @@ theme="dracula-soft"
 Untuk menambah item ke dalam sebuah `dict`, kita dapat menggunakan cara yang sama persis dengan bagaimana kita mengubah item dalam sebuah `dict`, yaitu dengan
 notasi _indexing_ atau dengan metode `.update()` Hanya saja, kita perlu menambahkan sebuah `key` baru untuk dimasukkan ke dalam sebuah `dict`.
 
-<Code
+<CodeHL
 code={
 `mobil1 = {
     "merk" : "Toyota",
@@ -81,7 +79,6 @@ print(mobil1)
 print(mobil2)`
 }
 lang="python"
-theme="dracula-soft"
 />
 
 ## Mengurangi / Menghapus Item dalam Sebuah `dict`
@@ -92,7 +89,7 @@ Ada beberapa cara yang dapat kita gunakan untuk menghapus item dalam sebuah `dic
 
 Metode ini akan menghapus item berdasarkan `key` yang kita tentukan.
 
-<Code
+<CodeHL
 code={
 `dict1 = {
     "bayam" : "sayur",
@@ -105,7 +102,6 @@ dict1.pop("steak")
 print(dict1))`
 }
 lang="python"
-theme="dracula-soft"
 />
 
 Kode di atas akan menghapus item dengan `key` "steak".
@@ -119,7 +115,7 @@ metode ini akan menghapus item secara acak / random.
 Hal ini terjadi karena pada versi sebelum 3.7, _dictionary_ dalam Python dianggap _unordered_ (tidak berurutan), sedangkan sejak Python versi 3.7, _dictionary_ dianggap _ordered_ 
 (berurutan).
 
-<Code
+<CodeHL
 code={
 `dict1 = {
     "bayam" : "sayur",
@@ -132,7 +128,6 @@ dict1.popitem()
 print(dict1))`
 }
 lang="python"
-theme="dracula-soft"
 />
 
 Apabila kode di atas dijalankan pada Python versi 3.7 dan setelahnya, maka akan menghapus item "nasi", karena item tersebut dimasukkan paling akhir / bawah.
@@ -141,7 +136,7 @@ Apabila kode di atas dijalankan pada Python versi 3.7 dan setelahnya, maka akan 
 
 Dengan _keyword_ `del`, kita dapat menghapus item berdasarkan `key` dengan notasi _indexing_.
 
-<Code
+<CodeHL
 code={
 `dict1 = {
     "bayam" : "sayur",
@@ -155,7 +150,6 @@ del dict1["apel"]
 print(dict1))`
 }
 lang="python"
-theme="dracula-soft"
 />
 
 Selain ketiga metode di atas, kita juga dapat menggunakan metode `.clear()` untuk menghapus seluruh item dalam sebuah dictionary sebagaimana kita menggunakannya pada tipe data lain

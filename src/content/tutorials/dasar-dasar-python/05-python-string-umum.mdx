@@ -6,14 +6,14 @@ slug: dasar-dasar-python/python-string-umum
 draft: false
 description: Bagian ini memembahas tipe data teks berupa string (str) dalam bahasa pemrograman Python
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 String adalah tipe data teks dalam Python. Untuk menetapkan data berupa string, kita hanya perlu memasukkan data dalam bentuk apapun
 di antara dua tanda petik. Baik petik satu (') maupun petik dua (") keduanya dapat digunakan, asalkan tanda pembuka dan 
 penutup menggunakan tanda yang sama.
 
-<Code
+<CodeHL
 code = {
 `x = "ini adalah string"
 y = 'ini juga string'
@@ -26,7 +26,7 @@ lang = "python"
 Metode di atas hanya berlaku untuk membuat string dalams satu baris. Sedangkan untuk membuat string dengan beberapa baris (multi-_line_) 
 kita harus menggunakan tanda petik 3 kali (''') atau (""").
 
-<Code
+<CodeHL
 code = {
 `a = """ Ini string baris 1
 ini string baris 2
@@ -39,7 +39,7 @@ lang = "python"
 
 Output:
 
-<Code
+<CodeHL
 code = {
 `ini string baris 1
 ini string baris 2
@@ -50,7 +50,7 @@ dan seterusnya`
 Untuk mengkonversi tipe data lain menjadi string, maka kita dapat menggunakan fungsi `str()`. Hampir semua tipe data dan
 karakter apapun dapat dikonfersi menjadi string.
 
-<Code
+<CodeHL
 code = {
 `a = 6
 b = str(6)
@@ -70,7 +70,7 @@ Indeks pada python dimulai dari angka 0, yaitu dihitung karakter pertama adalah 
 
 Untuk _indexing_ kita menggunakan tanda kurung siku "[]" dengan di dalamnya kita memasukkan angka index.
 
-<Code
+<CodeHL
 code = {
 `a = "kucing garong"
 
@@ -83,7 +83,7 @@ lang = "python"
 Untuk mengambil huruf terakhir, kita bisa menggunakan indeks -1. Indeks negatif menunjukkan urutan dari belakang, misalnya -1 adalah paling belakang, 
 -2 adalah nomor 2 dari paling belakang, dan seterusnya.
 
-<Code
+<CodeHL
 code = {
 `a = "kucing garong"
 
@@ -99,7 +99,7 @@ Sedangkan _slicing_ adalah mengambil beberapa karakter dari sebuah string. Untuk
 
 Kenapa indeks akhir harus kita ambil satu? Karena indeks akhir dalam python akan dianggap "_exclude_" atau tidak termasuk ke dalam indeks yang kita _slice_.
 
-<Code
+<CodeHL
 code = {
 `a = "kucing garong"
 
@@ -111,7 +111,7 @@ lang = "python"
 
 Untuk _slicing_, jika kita ingin mengambil indeks awal atau indeks terakhir, maka kita tidak harus membubuhkan nomor indeks. 
 
-<Code
+<CodeHL
 code = {
 `a = "kucing garong"
 b = a[:5] # mengambil indeks 0 s.d. 4

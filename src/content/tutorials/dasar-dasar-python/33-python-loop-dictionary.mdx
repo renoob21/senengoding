@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-for-loop-dictionary
 draft: false
 description: Bagian ini membahas penggunaan for loop untuk mengiterasi tipe data dictionary dalam bahasa pemrograman Python.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
 
@@ -17,9 +17,8 @@ menggunakan `key` - `value` pair untuk menyatakan elemen-elemen dalam objek ters
 
 Jika kita melakukan iterasi pada sebuah `dict`, maka kita akan mendapatkan seluruh `key` dalam dictionary tersebut.
 
-<Code
+<CodeHL
 lang="python"
-theme="dracula"
 code={
 `mafa = {
     "Rudi" : "nasi goreng",
@@ -39,9 +38,8 @@ for nama in mafa:
 Metode ini berlaku sama persis seperti saat kita mengiterasi sebuah _dictionary_ secara langsung. Hanya saja, metode `.keys()` 
 akan mengambil seluruh `key` pada sebuah `dict` dan mengubahnya menjadi `list`.
 
-<Code
+<CodeHL
 lang="python"
-theme="dracula"
 code={
 `mafa = {
     "Rudi" : "nasi goreng",
@@ -63,9 +61,8 @@ for nama in mafa.keys():
 Selain kode di atas, kita juga dapat memanfaatkan iterasi `keys` dari sebuah `dict` untuk mendapatkan `values`-nya. Kita dapat sedikit memodifikasi for loop di atas menjadi
 seperti di bawah ini.
 
-<Code
+<CodeHL
 lang="python"
-theme="dracula"
 code={
 `mafa = {
     "Rudi" : "nasi goreng",
@@ -89,9 +86,8 @@ Kode di atas juga dapat juga digunakan dengan mengiterasi `dict` secara langsung
 
 Dengan metode `.values()`, kita akan mendapatkan seluruh `value` dari sebuah _dictionary_.
 
-<Code
+<CodeHL
 lang="python"
-theme="dracula"
 code={
 `mafa = {
     "Rudi" : "nasi goreng",
@@ -114,9 +110,8 @@ for makan in mafa.values():
 Metode `.items()` mengubah sebuah _dictionary_ menjadi `list` berisi `tuple` yang di dalamnya memuat pasangan `key` dan `value` dari sebuah `dict`.
 Agar lebih mudah, coba jalankan kode ini.
 
-<Code
+<CodeHL
 lang="python"
-theme="dracula"
 code={
 `mafa = {
     "Rudi" : "nasi goreng",
@@ -133,9 +128,8 @@ print(mafa.items())
 Lalu, bagaimana cara kita mendapatkan elemen `key` dan `value` dari _dictionary_ tersebut? Kita dapat melakukannya dengan menggabungkan 
 for loop dengan _tuple unpacking_. 
 
-<Code
+<CodeHL
 lang="python"
-theme="dracula"
 code={
 `mafa = {
     "Rudi" : "nasi goreng",
@@ -181,7 +175,6 @@ Lihat jawabannya di sini:
 <CollapsibleCode
 title="Jawaban Challenge Naik Gaji"
 lang="python"
-theme="monokai"
 code= {
 `pegawai = {
     "Reno" : "CEO",

@@ -1,24 +1,23 @@
 ---
-import {Code} from "astro/components";
+import CodeHL from "./CodeHL.astro";
 
 interface Props {
     title:string;
     code: string;
-    lang:any;
-    theme: string;
+    lang:string;
 }
 
-const {code, lang, title, theme} = Astro.props;
+const {code, lang, title} = Astro.props;
 ---
 
 <div>
     <button data-open-modal>Buka <span class="italic">Code</span></button>
     <dialog class="rounded-xl w-1/2">
         <div><p class="text-lg font-bold">{title}</p></div>
-        <Code
+        <CodeHL
          code={code}
          lang={lang}
-         theme={theme}/>
+         />
         <button data-close-modal>Tutup</button>
     </dialog>
 </div>

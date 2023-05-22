@@ -6,16 +6,15 @@ slug: dasar-dasar-python/python-for-loop-basic
 draft: false
 description: Bagian ini membahas dasar penggunaan for loop dalam bahasa pemrograman Python.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
 
 For loop pada Python akan mengulang sebuah program sebanyak nilai yang kita tentukan. Misalnya kita dapat mengulang sebuah 
 program sebanyak 5 kali, 10, kali, 17 kali, dan sebagainya. _Syntax_ dasar for loop adalah seperti di bawah ini.
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code={
 `for i in range(5):
    print(i, end=" ")
@@ -30,9 +29,8 @@ Pada kode di atas, nilai `i` akan disetting menjadi angka yang ditentukan pada f
 
 ## Menggunakan Dua Argumen dalam Fungsi "range()"
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code={
 `for i in range(2, 7):
    print(i, end=" ")
@@ -49,9 +47,8 @@ berakhir pada angka `y-1`.
 Nama variabel `i` bukan sebuah keharusan, hanya saja huruf i sering digunakan dalam for loop untuk menandai _index_. Variabel ini pun tidak harus kita gunakan, 
 misalnya kita akan memunculkan output kata kucing sebanyak 5 kali, maka kita dapat menulis kode seperti di bawah ini.
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code = {
 `for i in range(5):
    print("kucing", end = " ")
@@ -67,9 +64,8 @@ _conditional statement_ secara bersamaan merupakan hal yang sangat banyak diguna
 
 Misalnya kita ingin mengidentifikasi angka ganjil dan genap dari angka 1 sampai dengan _n_. Maka kita dapat menulis kode seperti di bawah ini.
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code={
 `top_num = int(input("Masukkan angka: "))
 
@@ -97,7 +93,7 @@ Dengan menggunakan for loop, buatlah sebuah program dengan syarat:
 
 Contoh output seperti di bawah ini:
 
-<Code
+<CodeHL
 code={
 `*
 **
@@ -111,7 +107,6 @@ Buka jawabannya di sini:
 <CollapsibleCode
 title="Jawaban Challenge Piramida"
 lang="python"
-theme="monokai"
 code={
 `max_num = int(input("Masukkan angka: "))
 

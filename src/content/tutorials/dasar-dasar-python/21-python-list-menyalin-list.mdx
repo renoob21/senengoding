@@ -6,12 +6,12 @@ slug: dasar-dasar-python/python-list-menyalin-list-list-copy
 draft: false
 description: Bagian ini memembahas tentang bagaimana kita dapat menyalin data dari sebuah list pada bahasa pemrograman Python.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 Dalam bahasa pemrograman Python, kita dapat menyalin sebuah variabel ke variabel lain. Seperti di bawah ini.
 
-<Code
+<CodeHL
 code={
 `x = 3
 y = x
@@ -25,7 +25,7 @@ lang="python"
 Pada contoh di atas, angka 3 sebagai nilai dari variabel `x` akan diassign ke variabel `y`, kemudian variabel `y` akan berdiri sendiri
 sebagai variabel baru. Tapi bagaimana kalau kita ingin menyalin data dalam bentuk `list`?
 
-<Code
+<CodeHL
 code={
 `x = ["kucing", "tupai", "perkutut"]
 y = x
@@ -51,7 +51,7 @@ Sedangkan ketika kita meng-_assign_ tipe data berbasis objek (list, tuple, dicti
 Yang artinya, variabel tersebut bukan menyimpan nilai dari data tersebut, melainkan referensi di mana lokasi data tersebut disimpan dalam memori. Sehingga ketika variabel tersebut
 di-_assign_ ulang pada variabel baru, maka data yang disimpan pada variabel baru juga merupakan referensi pada sebuah objek yang sama.
 
-<Code
+<CodeHL
 code={
 `x = ["kucing", "tupai", "perkutut"]
 y = x
@@ -69,7 +69,7 @@ mengubahnya tanpa mempengaruhi variabel aslinya?
 
 Jalan keluarnya sangatlah mudah, kita hanya perlu menambahkan metode `.copy()` ketika kita meng-_assign_ `list` pada variabel baru.
 
-<Code
+<CodeHL
 code={
 `x = ["kucing", "tupai", "perkutut"]
 y = x.copy()
@@ -93,7 +93,7 @@ Kita bisa lihat bahwa dengan menggunakan metode `.copy()`, ketika kita menambahk
 
 Selain metode `.copy()`, kita juga dapat menyalin `list` dengan notasi _slicing_.
 
-<Code
+<CodeHL
 code={
 `x = ["kucing", "tupai", "perkutut"]
 y = x[:]

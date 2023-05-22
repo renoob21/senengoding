@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-tuple-tuple-unpacking-bagian-1
 draft: false
 description: Bagian ini memembahas tentang bagaimana kita melakukan unpacking pada tipe data tuple pada bahasa pemrograman Python.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 _Tuple unpacking_ adalah salah satu fitur yang paling ditonjolkan tipe data `tuple`. Fitur ini memungkinkan kita untuk dapat mengeluarkan item dari sebuah tuple dan meng-_assign_ 
@@ -16,7 +16,7 @@ item tersebut pada variabel baru.
 
 Kita dapat meng-_assign_ setiap item dalam sebuah `tuple` menjadi variabel baru dengan notasi seperti di bawah ini.
 
-<Code
+<CodeHL
 code={
 `buah = ("apel", "nanas", "jeruk")
 (merah, kuning, oranye) = buah
@@ -34,7 +34,7 @@ Dari kode di atas, setiap item pada variabel `buah` akan diassign ke variabel ba
 
 Dengan menambahkan tanda bintang pada nama variabel yang akan diassign dengan item pada `tuple`, akan menambahkan beberapa item sekaligus dalam sebuah variabel.
 
-<Code
+<CodeHL
 code={
 `buah = ("nanas", "melon", "apel", "strawberry", "cherry")
 (kuning, hijau, *merah) = buah
@@ -49,7 +49,7 @@ lang="python"
 Sebagaimana pada kode di atas, _index_ 0 akan diassign ke variabel `kuning`, _index_ 1 akan diassign pada variabel `hijau`, dan sisanya akan diassign pada variabel `merah`
 sebagai sebuah `list`
 
-<Code
+<CodeHL
 code={
 `buah = ("melon", "nanas", "lemon", "apel")
 (hijau, *kuning, merah) = buah

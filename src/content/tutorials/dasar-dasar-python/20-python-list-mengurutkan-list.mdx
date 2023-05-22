@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-list-mengurutkan-list-sorting
 draft: false
 description: Bagian ini memembahas tentang bagaimana kita dapat mengubah urutan item-item di dalam sebuah list pada bahasa pemrograman Python. Misalnya mengurutkan secara ascending dan descending, membalik urutan (reverse), dan menukar posisi item.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 Selain menambah, mengurangi, dan mengubah item dalam sebuah `list`, kita juga dapat mengubah urutan item yang ada dalam sebuah `list`.
@@ -15,7 +15,7 @@ Selain menambah, mengurangi, dan mengubah item dalam sebuah `list`, kita juga da
 
 Untuk menggunakan metode `.sort()`, cukuplah mudah, kita tidak harus memasukkan argumen apapun ke dalam metode ini.
 
-<Code
+<CodeHL
 code={
 `list_a = ["kucing", "ayam", "kambing", "sapi"]
 list_b = [50, 31, 15, 45]
@@ -29,7 +29,7 @@ lang="python"
 Secara _default_, metode ini akan mengurutkan `list` secara _ascending_ (dari kecil ke besar), untuk mengubahnya menjadi descending, kita hanya perlu menambahkan argumen
 `reverse=True`
 
-<Code
+<CodeHL
 code={
 `list_a = ["kucing", "ayam", "kambing", "sapi"]
 list_b = [50, 31, 15, 45]
@@ -47,7 +47,7 @@ item dalam `list`.
 
 Misalnya saja kita ingin mengurutkan angka mana yang paling mendekati 30. Kita dapat membuat fungsi yang menghasilkan selisih setiap item dengan angka 30.
 
-<Code
+<CodeHL
 code={
 `angka = [50, 31, 15, 45]
 
@@ -65,7 +65,7 @@ Fungsi `selisih_30` akan menghasilkan nilai setiap angka dikurangi 30, kita juga
 Hal ini juga bisa diterapkan pada item berupa string. Misalnya saja, ketika kita menggunakan metode `.sort()` pada item string, secara _default_ akan mengurutkan huruf kapital
 sebelum huruf kecil. Dengan kode di bawah ini, kita dapat mengurutkan string dengan mengabaikan huruf besar dan kecil.
 
-<Code
+<CodeHL
 code={
 `hewan = ["Kucing", "ayam", "Sapi", "rusa"]
 
@@ -90,7 +90,7 @@ operasi fungsi tersebut hanya terjadi di latar belakang, dan tidak mengubah item
 
 Metode ini sangat simpel, metode ini akan membalik urutan item dari sebuah `list`.
 
-<Code
+<CodeHL
 code={
 `list_a = ["kucing", "ayam", "kambing", "sapi"]
 list_b = [50, 31, 15, 45]

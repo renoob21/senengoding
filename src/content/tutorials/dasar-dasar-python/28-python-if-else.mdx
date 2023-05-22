@@ -7,7 +7,7 @@ draft: false
 description: Bagian ini membahas penggunaan conditional statement (if ... else ...) dalam bahasa pemrograman Python.
 ---
 
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 import {Image} from "@astrojs/image/components"
@@ -31,7 +31,7 @@ _Conditional statement_ memungkinkan program kita berjalan secara bercabang, sep
 
 Agar lebih menarik, kita akan menggunakan fungsi `input()` untuk mengambil data dari pengguna. Fungsi ini akan memunculkan _prompt_ yang dapat diisi dengan data.
 
-<Code
+<CodeHL
 code={
 `hewan = input("Masukkan nama hewan:")
 
@@ -39,7 +39,6 @@ if hewan.lower() == "kucing":
     print("meong")`
 }
 lang="python"
-theme="monokai"
 />
 
 Coba jalankan kode di atas, dan masukkan kata "kucing", kemudian coba jalankan lagi dan masukkan kata-kata lain. Lihat apa bedanya.
@@ -49,7 +48,7 @@ Coba jalankan kode di atas, dan masukkan kata "kucing", kemudian coba jalankan l
 Pada kode sebelumnya, ketika syarat tidak terpenuhi, maka tidak akan terjadi apa-apa. Statement `else` akan dieksekusi, **jika dan hanya jika** syarat dalam statement `if`
 tidak terpenuhi.
 
-<Code
+<CodeHL
 code={
 `hewan = input("Masukkan nama hewan:")
 
@@ -59,7 +58,6 @@ else:
     print("hmmm")`
 }
 lang="python"
-theme="monokai"
 />
 
 Pada kode di atas, apabila kita menginput kata "kucing", maka akan mengeluarkan output "meow", sedangkan apabila kita menginput kata selain "kucing", maka akan keluar output "hmm".
@@ -77,7 +75,7 @@ Misalnya, seorang siswa memiliki jadwal les sebagai berikut:
 
 Maka, apabila dinyatakan dalam statement `if ... else` akan menjadi seperti ini
 
-<Code
+<CodeHL
 code={
 `hari = input("Hari apa ini? ")
 
@@ -91,7 +89,6 @@ else:
     print("Les libur")`
 }
 lang="python"
-theme="monokai"
 />
 
 ## _Challenge_: Bonus Tahunan
@@ -124,7 +121,6 @@ else:
 print(f"Selamat! Kamu dapat bonus sebesar {bonus}USD!")`
 }
 lang="python"
-theme="monokai"
 />
 
 <PostsNav

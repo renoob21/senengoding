@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-tipe-data-boolean
 draft: false
 description: Bagian ini memembahas tentang tipe data boolean (bool) dalam bahasa pemrograman Python
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 Tipe data boolean (`bool`) adalah tipe data yang hanya memiliki dua nilai, benar (`True`) dan salah (`False`).
@@ -26,7 +26,7 @@ _value_ sehingga menghasilkan nilai `True` sedangkan 0 akan menghasilkan `False`
 
 Ketika kita menggunakan fungsi `bool()` sebagian besar akan menghasilkan `True`, karena sebagian besar data dalam Python pastinya memiliki nilai.
 
-<Code
+<CodeHL
 code={
 `print(bool(15)) # output : True
 print(bool("Keramas")) # output : True`
@@ -39,7 +39,7 @@ lang="python"
 Hanya nilai-nilai "kosong" yang akan dievaluasi sebagai `False` dalam bahasa pemrograman Python. Seperti string kosong `""`, `0`, tipe data seperti `list`, `tuple`, dan
 `dict` yang kosong (`[]`, `()`, `{}`), dan `None`. `False` tentu saja juga akan menghasilkan nilai `False`.
 
-<Code
+<CodeHL
 code={
 `print(bool(False)) # output : False
 print(bool("")) # output : False

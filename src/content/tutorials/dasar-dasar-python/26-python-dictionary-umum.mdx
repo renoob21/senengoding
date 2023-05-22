@@ -6,14 +6,14 @@ slug: dasar-dasar-python/python-dictionary-umum
 draft: false
 description: Bagian ini memembahas tentang gambaran umum tipe data Dictionary pada bahasa pemrograman Python.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 Dictionary atau `dict` adalah salah satu tipe data dalam bahasa pemrograman Python yang berbentuk _key - value pair_.
 Mengapa disebut _dictionary_? Karena bentuknya yang mirip dengan kamus, di mana dalam kamus terdapat pasangan antara sebuah kata dengan makna / artinya.
 Tipe data ini mirip dengan tipe data HashMap, atau dengan format file JSON. Format sebuah `dict` adalah `{key:value}`.
 
-<Code
+<CodeHL
 code={
 `dict1 = {
     "ayam" : "unggas",
@@ -31,7 +31,7 @@ lang="python"
 Untuk mengakses data yang ada dalam sebuah `dict`, kita dapat menggunakan notasi _indexing_, hanya saja kita tidak menggunakan angka _index_, melainkan menggunakan
 `key` dari suatu _dictionary_ untuk mendapatkan `value`-nya.
 
-<Code
+<CodeHL
 code={
 `dict1 = {
     "ayam" : "unggas",
@@ -49,7 +49,7 @@ lang="python"
 
 Kita dapat mengambil seluruh `key` dalam sebuah _dictionary_ dengan menggunakan metode `.keys()`. Metode ini akan menghasilkan `list` berisi seluruh `key`.
 
-<Code
+<CodeHL
 code={
 `dict1 = {
     "ayam" : "unggas",
@@ -66,7 +66,7 @@ lang="python"
 
 Sebagaimana metode `.keys()`, kita juga dapat menggunakan metode `.values()` untuk mendapatkan seluruh `value`.
 
-<Code
+<CodeHL
 code={
 `dict1 = {
     "ayam" : "unggas",
@@ -84,7 +84,7 @@ lang="python"
 Selain mendapatkan seluruh `key` dan `value`, kita juga dapat mendapatkan seluruh item dalam sebuah `dict` menggunakan metode `.items()`. Metode ini akan 
 menghasilkan sebuah `list` berisi `tuple` yang di dalamnya berupa `key` dan `value` yang ada dalam sebuah _dictionary_.
 
-<Code
+<CodeHL
 code={
 `dict1 = {
     "ayam" : "unggas",
@@ -104,7 +104,7 @@ Mengapa ketiga metode di atas penting? Ketiga metode di atas penting ketika kita
 
 Nested dictionary merupakan tipe data dictionary berlapis / berjenjang, yaitu dimana di dalam sebuah `dict` terdapat di dalamnya tipe data `dict`.
 
-<Code
+<CodeHL
 code={
 `siswa = {
     "rayya" : {
@@ -126,18 +126,16 @@ code={
 }`
 }
 lang="python"
-theme="dracula-soft"
 />
 
 Untuk mengakses item di dalamnya, kita juga melakukan notasi _indexing_ secara berlapis.
 
-<Code
+<CodeHL
 code={
 `print(siswa["rayya"]["kelas"]) # output : 3
 print(siswa["sae"]["nilai"]["matematika"]) # output : 100`
 }
 lang="python"
-theme="dracula-soft"
 />
 
 Apa yang terjadi apabila kita menggunakan metode `.keys()`, `.values()`, dan `.items()` pada _dictionary_ `siswa`? Cobalah dan amati apa yang terjadi!

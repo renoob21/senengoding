@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-loop-continue-dan-break
 draft: false
 description: Bagian ini membahas penggunaan notasi break dan continue pada loop dalam bahasa pemrograman Python.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
 
@@ -18,9 +18,8 @@ Dalam bahasa pemrograman Python, `continue` dan `break` adalah _control flow_ kh
 
 Kita dapat menggunakan `continue` untuk melompati sebuah loop apabila suatu syarat terpenuhi.
 
-<Code
+<CodeHL
 lang="python"
-theme="one-dark-pro"
 code= {
 `for i in range(5):
     if i == 3:
@@ -40,9 +39,8 @@ Statement `continue` dapat digunakan baik dalam for loop maupun while loop.
 
 Sedangkan `break` dapat kita gunakan untuk menghentikan loop jika suatu kondisi terpenuhi.
 
-<Code
+<CodeHL
 lang="python"
-theme="one-dark-pro"
 code= {
 `num = 0
 
@@ -63,9 +61,8 @@ loop tersebut apabila suatu kondisi terpenuhi.
 
 Kita juga dapat kedua statement ini dengan string, hal ini akan berguna apabila kita ingin memformat ulang sebuah string.
 
-<Code
+<CodeHL
 lang="python"
-theme="one-dark-pro"
 code= {
 `nama = "Komarudin Jamal, S.Kom, M.Cs, Ph.D"
 gabung = []
@@ -117,7 +114,6 @@ Cek jawabannya di sini:
 <CollapsibleCode
 title="Jawaban Challenge Username"
 lang="python"
-theme = "monokai"
 code = {
 ` # basic
 email = input("Masukkan alamat email: ")

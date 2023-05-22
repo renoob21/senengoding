@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-tuple-tuple-unpacking-bagian-2
 draft: false
 description: Bagian ini memembahas tentang bagaimana kita memanfaatkan fitur tuple unpacking pada bahasa pemrograman Python untuk penggunaan yang lebih luas dan praktikal.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 
 _Tuple unpacking_ tidak hanya kita gunakan semata-mata dalam mengambil item dari sebuah `tuple` saja, melainkan ada beberapa metode yang lebih praktikal ketika kita melakukan
@@ -17,7 +17,7 @@ pemrograman.
 Masih ingat bukan, bahwa kita dapat meng-_assign_ sebuah `tuple` tanpa menggunakan tanda kurung `()`? Dengan begitu, kita dapat mendeklarasikan beberapa variabel secara 
 sekaligus dalam satu baris seperti ini.
 
-<Code
+<CodeHL
 code={
 `a, b, c = 5, 6 ,11
 
@@ -35,7 +35,7 @@ maka akan membuat kode kita sulit dibaca.
 
 _Tuple unpacking_ juga dapat kita gunakan untuk menukar nilai dari dua variabel.
 
-<Code
+<CodeHL
 code={
 `a = 11
 b = 7
@@ -53,7 +53,7 @@ sehingga nilai dari kedua variabel tersebut menjadi "tertukar" (belum ada rencan
 
 Apabila kita mencoba operasi tersebut tanpa _tuple unpacking_, maka yang terjadi adalah seperti di bawah ini.
 
-<Code
+<CodeHL
 code={
 `a = 11
 b = 7
@@ -74,7 +74,7 @@ Sehingga ketika kita meng-_assign_ ulang dengan `b = a` maka ini sama saja denga
 
 Selain menukar nilai dari dua variabel, _tuple unpacking_ juga dapat digunakan untuk menukar posisi dari item pada sebuah `list`.
 
-<Code
+<CodeHL
 code={
 `angka = [1, 5, 7, 11, 8]
 

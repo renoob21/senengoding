@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-loop-statement
 draft: false
 description: Bagian ini membahas gambaran umum penggunaan Loop Statement dalam Python, bagaimana kita dapat menjalankan salah satu bagian dalam kode kita secara berulang-ulang.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 import Loop from "@Assets/Images/dasar-dasar-python/Loop.png"
 import {Image} from "@astrojs/image/components"
@@ -24,7 +24,7 @@ Dalam bahasa pemrograman Python, kita mengenal dua jenis _loop_:
 lebih dari atau sama dengan 5.
 - `for` _loop_, menjalankan program selama berulang, dengan jumlah pengulangan yang kita tentukan. Misalnya, `for i in range(5)`, maka program akan diulang sebanyak 5 kali.
 
-<Code
+<CodeHL
 code={
 `while hidup:
     belajar.run()
@@ -36,7 +36,6 @@ code={
         continue`
 }
 lang="python"
-theme="monokai"
 />
 
 Mari kita lanjutkan belajar! Selalu semangat belajar, selama kita masih hidup.

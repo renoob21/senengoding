@@ -6,7 +6,7 @@ slug: dasar-dasar-python/python-function-menggunakan-arguments
 draft: false
 description: Bagian ini membahas cara membuat dan menggunakan fungsi yang menggunakan argumen dalam bahasa pemrograman Python.
 ---
-import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
 import CollapsibleCode from "../../../components/PostsComps/CollapsibleCode.astro"
 
@@ -19,9 +19,8 @@ Sebagai catatan, kedua perbedaan ini tidaklah terlalu penting, hanya sebagai pen
 
 ## _Syntax_ Dasar Argumen / Parameter
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code={
 `def tambah(num1, num2):
     hasil = num1 + 2
@@ -38,9 +37,8 @@ Pada kode di atas, dapat kita lihat bahwa variabel `num1` dan `num2` adalah para
 Secara _default_, Python menggunakan _positional argument_. Artinya, argumen yang akan kita masukkan haruslah kita urutkan berdasarkan posisinya
 sebagaimana urutan parameter saat membuat fungsi.
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code={
 `nama_depan = "Linus"
 nama_belakang = "Harvey"
@@ -64,9 +62,8 @@ dianggap sebagai nilai `namaD` dan argumen kedua akan menjadi nilai `namaB`.
 Selain menggunakan _positional argument_, kita juga dapat melakukan _function call_ dengan menggunakan _keyword argument_, caranya adalah dengan memasukkan nama parameter dan 
 value dari argumen dalam sebuah fungsi. Kita gunakan fungsi `identitas` di atas sebagai contoh.
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code={
 `nama_depan = "Linus"
 nama_belakang = "Harvey"
@@ -87,9 +84,8 @@ baru kemudian `namaB`.
 _Arbitrary argument_ memungkinkan kita untuk memasukkan argumen dengan jumlah tak terbatas, yang kemudian argumen tersebut akan diterima oleh fungsi sebagai sebuah `tuple`
 berisi seluruh argumen yang dimasukkan. Caranya, adalah dengan menambahkan tanda bintang `*` pada awal nama argumen.
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code={
 `def jumlah(*nums):
     jml = 0
@@ -108,9 +104,8 @@ Untuk membuktikan, cobalah sisipkan kode `print(nums)` sebelum _for loop_ pada f
 Hampir sama dengan _arbitrary argument_, _arbitrary keyword argument_ juga dapat kita gunakan dalam sebuah fungsi untuk menerima nama argumen dan argumen yang tidak kita
 atur sejak awal. Berbeda dengan `*args` yang menerima argumen sebagai `tuple`, `**kwargs` menerima argumen sebagai `dict`.
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code={
 `def perkenalan(**nama):
     print("Nama saya adalah", nama['depan'])
@@ -127,9 +122,8 @@ _Arbitrary keyword argument_ menggunakan tanda `**` di awalan nama variabel saat
 Kita dapat menentukan nilai _default_ dari sebuah parameter dalam fungsi yang kita buat. Apabila nilai sebuah parameter kita tentukan, maka jika kita tidak memasukkan
 argumen sebagai nilai dari parameter tersebut, fungsi akan secara otomatis menggunakan nilai _default_ yang kita tentukan.
 
-<Code
+<CodeHL
 lang="python"
-theme="monokai"
 code={
 `def perkenalan(nama="Dudung"):
     print("Nama saya adalah", nama)
