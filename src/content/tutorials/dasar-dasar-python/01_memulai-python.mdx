@@ -7,6 +7,7 @@ draft: false
 description: Bagian ini akan menjelaskan bagaimana memulai pemrograman dengan Python. Yaitu cara menginstall interpreter, memilih editor / Integrated Development Environment (IDE), manajemen virtual environment, dan alternatif aplikasi yang dapat digunakan tanpa instalasi
 ---
 import {Code} from "astro/components"
+import CodeHL from "../../../components/PostsComps/CodeHL.astro"
 import Python_org from "@Assets/Images/dasar-dasar-python/Python_org.png"
 import anaconda_com from "@Assets/Images/dasar-dasar-python/anaconda_com.png"
 import PostsNav from "../../../components/PostsComps/PostsNav.svelte"
@@ -81,6 +82,13 @@ Sekarang buka editormu! Buat file dengan nama apapun dengan ekstensi `.py`.
 Masukkan kode di bawah ini dan klik "Run"!
 
 <Code
+  code={
+`print("Saya siap belajar Python")`
+  }
+  lang={'python'}
+/>
+
+<CodeHL
   code={
 `print("Saya siap belajar Python")`
   }
