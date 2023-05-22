@@ -4,5 +4,5 @@
 
 [build]
   base = "."
-  publish = "dist"
+  publish = "packages/site"
   command = "npx pnpm install --store=node_modules/.pnpm-store && npx pnpm build && (cd packages/site && npx pnpm gen)"
